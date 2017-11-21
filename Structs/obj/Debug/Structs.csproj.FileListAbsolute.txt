@@ -1,0 +1,14 @@
+C:\Documents and Settings\hao\My Documents\Visual Studio 2010\Projects\ServerControl1\Structs\bin\Debug\Structs.dll
+C:\Documents and Settings\hao\My Documents\Visual Studio 2010\Projects\ServerControl1\Structs\bin\Debug\Structs.pdb
+C:\Documents and Settings\hao\My Documents\Visual Studio 2010\Projects\ServerControl1\Structs\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\hao\My Documents\Visual Studio 2010\Projects\ServerControl1\Structs\obj\Debug\Structs.dll
+C:\Documents and Settings\hao\My Documents\Visual Studio 2010\Projects\ServerControl1\Structs\obj\Debug\Structs.pdb
+E:\ServerControl1\Structs\bin\Debug\Structs.dll
+E:\ServerControl1\Structs\bin\Debug\Structs.pdb
+E:\ServerControl1\Structs\obj\Debug\Structs.csprojResolveAssemblyReference.cache
+E:\ServerControl1\Structs\obj\Debug\Structs.dll
+E:\ServerControl1\Structs\obj\Debug\Structs.pdb
+E:\gitrepos\ll\localtest\Structs\bin\Debug\Structs.dll
+E:\gitrepos\ll\localtest\Structs\bin\Debug\Structs.pdb
+E:\gitrepos\ll\localtest\Structs\obj\Debug\Structs.dll
+E:\gitrepos\ll\localtest\Structs\obj\Debug\Structs.pdb

@@ -1,0 +1,4 @@
+﻿SearchImageAsync.aspx
+异步加载,加载图片
+http://blog.csdn.net/zztfj/article/details/6837985
+我的测试

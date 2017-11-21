@@ -1,0 +1,4 @@
+e:\gitrepos\ll\localtest\work\bin\Debug\work.dll
+e:\gitrepos\ll\localtest\work\bin\Debug\work.pdb
+e:\gitrepos\ll\localtest\work\obj\Debug\work.dll
+e:\gitrepos\ll\localtest\work\obj\Debug\work.pdb

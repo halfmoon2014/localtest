@@ -1,0 +1,4 @@
+e:\gitrepos\ll\localtest\TestWeb\bin\Debug\TestWeb.dll
+e:\gitrepos\ll\localtest\TestWeb\bin\Debug\TestWeb.pdb
+e:\gitrepos\ll\localtest\TestWeb\obj\Debug\TestWeb.dll
+e:\gitrepos\ll\localtest\TestWeb\obj\Debug\TestWeb.pdb
