@@ -26,5 +26,3 @@ E:\gitrepos\ll\localtest\WebApplication1\bin\WebApplication1.dll
 E:\gitrepos\ll\localtest\WebApplication1\bin\WebApplication1.pdb
 E:\gitrepos\ll\localtest\WebApplication1\bin\Structs.dll
 E:\gitrepos\ll\localtest\WebApplication1\bin\Structs.pdb
-E:\gitrepos\ll\localtest\WebApplication1\bin\Newtonsoft.Json.pdb
-E:\gitrepos\ll\localtest\WebApplication1\bin\Newtonsoft.Json.xml

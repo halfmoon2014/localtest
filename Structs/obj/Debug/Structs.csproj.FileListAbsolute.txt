@@ -12,3 +12,4 @@ E:\gitrepos\ll\localtest\Structs\bin\Debug\Structs.dll
 E:\gitrepos\ll\localtest\Structs\bin\Debug\Structs.pdb
 E:\gitrepos\ll\localtest\Structs\obj\Debug\Structs.dll
 E:\gitrepos\ll\localtest\Structs\obj\Debug\Structs.pdb
+E:\gitrepos\ll\localtest\Structs\obj\Debug\Structs.csprojResolveAssemblyReference.cache
