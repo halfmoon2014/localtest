@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web\", "{F53DA47F-9DBE-491A-AF66-05FE4CAC7E69}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web", "{F53DA47F-9DBE-491A-AF66-05FE4CAC7E69}"
 	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = "SAK"
-		SccAuxPath = "SAK"
-		SccLocalPath = "SAK"
-		SccProvider = "SAK"
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{5101E1E4-31F5-4746-B2F2-87496749B1EE}|work.dll;{82A8DD2B-4F37-4AE0-8BF4-4078CF847C8F}|TestWeb.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/web"
@@ -36,12 +36,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb", "TestWeb\TestWeb.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{123E8B74-C57C-4950-B1C8-563908215589}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web2", "web2\", "{0E3C9E4D-A6E7-446C-A315-B04AA78273F1}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web2", "web2", "{0E3C9E4D-A6E7-446C-A315-B04AA78273F1}"
 	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = "SAK"
-		SccAuxPath = "SAK"
-		SccLocalPath = "SAK"
-		SccProvider = "SAK"
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/web2"
