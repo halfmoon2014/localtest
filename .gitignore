@@ -1,0 +1,16 @@
+.vs
+ConsoleApplication1/bin
+ConsoleApplication1/obj
+packages
+Structs/bin
+Structs/obj
+TestWeb/bin
+TestWeb/obj
+web/bin
+web/App_Data/RequestLog.txt
+WebApplication1/.vs
+WebApplication1/obj
+WindowsFormsApplication1/bin
+WindowsFormsApplication1/obj
+work/bin
+work/obj
