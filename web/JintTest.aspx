@@ -10,22 +10,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        eeabc
+        
     </div>
     </form>
-</body>
-    
+</body>    
 </html>
-<%--<script >
-    var engine = new Engine()
-        .SetValue("log", new Action<object>(Console.WriteLine))
-    ;
+<script type="text/javascript">
+
+</script>
     
-    engine.Execute(@"
-    function hello() { 
-        log('Hello World');
-    };
-      
-    hello();
-    ");
-</script>--%>
