@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.8.0.min.js"></script>
+</head>
+<body>
+    <input type="button" id="testBtn" value="test" />
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#testBtn").click(function () {
+            go();
+        });
+    });
+    function go() {
+        //chrome ie11 都有
+        var e = event || window.event;
+    }
+</script>
