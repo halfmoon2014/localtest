@@ -7,8 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace WindowsFormsApplication1
-{
+
     public static class EncryptUtil
     {
         #region MD5加密
@@ -451,4 +450,3 @@ namespace WindowsFormsApplication1
         #endregion
 
     }
-}

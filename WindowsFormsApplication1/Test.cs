@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
-namespace WindowsFormsApplication1
+namespace PlanTODO
 {
     public partial class Test : Form
     {

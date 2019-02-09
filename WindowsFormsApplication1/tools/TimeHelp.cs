@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WindowsFormsApplication1
-{
+
     /// <summary>
     /// 时间戳
     /// </summary>
@@ -94,4 +93,3 @@ namespace WindowsFormsApplication1
             }
         }
     }
-}
