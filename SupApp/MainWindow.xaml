@@ -1,0 +1,40 @@
+﻿<Window x:Class="SupApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SupApp"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <sys:String x:Key="name">一红</sys:String>
+
+        <Style TargetType="{x:Type TextBox}">            
+            <Setter Property="Background" Value="Red"/>            
+        </Style>
+        <x:Array x:Key="abc" Type="{x:Type sys:Int32}">
+            <sys:Int32>1</sys:Int32>
+            <sys:Int32>2</sys:Int32>
+            <sys:Int32>3</sys:Int32>
+        </x:Array>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="227*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="148*"/>
+            <ColumnDefinition Width="285*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="{StaticResource ResourceKey=name}" Margin="0,0,0,0"  Click="Button_Click" Grid.Column="2" Grid.Row="1" />
+        <Button Content="{DynamicResource ResourceKey=name}" Margin="0,0,0,0"  Click="Button_Click" Grid.Column="2" Grid.Row="0" />
+        <TextBox Height="23" Margin="10,10,102,59" Name="textBox1"  Width="120" Text="x:Static local:App.Current" Grid.ColumnSpan="2" />
+
+        <TextBox Height="23" Margin="10,38,102,31" Name="textBox2"  Width="120" 
+                   Text="{Binding ElementName=textBox1, Path=Text}" Grid.ColumnSpan="2" />
+        <ListBox ItemsSource="{StaticResource ResourceKey=abc}" Grid.Column="1" Margin="23,20,41,115" Grid.Row="1" SelectionChanged="ListBox_SelectionChanged"  ></ListBox>
+    </Grid>
+</Window>

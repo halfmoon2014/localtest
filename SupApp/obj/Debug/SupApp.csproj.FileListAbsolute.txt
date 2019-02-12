@@ -1,0 +1,15 @@
+G:\gitRepos\localtest\SupApp\bin\Debug\SupApp.exe.config
+G:\gitRepos\localtest\SupApp\bin\Debug\SupApp.exe
+G:\gitRepos\localtest\SupApp\bin\Debug\SupApp.pdb
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.csprojResolveAssemblyReference.cache
+G:\gitRepos\localtest\SupApp\obj\Debug\MainWindow.g.cs
+G:\gitRepos\localtest\SupApp\obj\Debug\App.g.cs
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp_MarkupCompile.cache
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp_MarkupCompile.lref
+G:\gitRepos\localtest\SupApp\obj\Debug\MainWindow.baml
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.g.resources
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.Properties.Resources.resources
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.csproj.GenerateResource.Cache
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.csproj.CoreCompileInputs.cache
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.exe
+G:\gitRepos\localtest\SupApp\obj\Debug\SupApp.pdb

@@ -51,8 +51,8 @@
             this.lbtip = new System.Windows.Forms.Label();
             this.btndel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.planlist = new ListViewEx();
             this.loadpc = new System.Windows.Forms.PictureBox();
+            this.planlist = new ListViewEx();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -251,6 +251,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // loadpc
+            // 
+            this.loadpc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loadpc.Image = ((System.Drawing.Image)(resources.GetObject("loadpc.Image")));
+            this.loadpc.Location = new System.Drawing.Point(1039, 505);
+            this.loadpc.Name = "loadpc";
+            this.loadpc.Size = new System.Drawing.Size(132, 132);
+            this.loadpc.TabIndex = 18;
+            this.loadpc.TabStop = false;
+            // 
             // planlist
             // 
             this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -261,16 +271,6 @@
             this.planlist.TabIndex = 0;
             this.planlist.UseCompatibleStateImageBehavior = false;
             this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
-            // 
-            // loadpc
-            // 
-            this.loadpc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loadpc.Image = global::PlanTODO.Properties.Resources.loading;
-            this.loadpc.Location = new System.Drawing.Point(1039, 505);
-            this.loadpc.Name = "loadpc";
-            this.loadpc.Size = new System.Drawing.Size(132, 132);
-            this.loadpc.TabIndex = 18;
-            this.loadpc.TabStop = false;
             // 
             // Pasn
             // 
