@@ -36,6 +36,7 @@
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
             this.loadpc = new System.Windows.Forms.PictureBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(75, 23);
             this.btnlogin.TabIndex = 18;
-            this.btnlogin.Text = "Login";
+            this.btnlogin.Text = "Login(&L)";
             this.btnlogin.UseVisualStyleBackColor = true;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
@@ -90,7 +91,7 @@
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(75, 23);
             this.btnexit.TabIndex = 19;
-            this.btnexit.Text = "exit";
+            this.btnexit.Text = "Exit(&E)";
             this.btnexit.UseVisualStyleBackColor = true;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
@@ -105,11 +106,21 @@
             this.loadpc.TabIndex = 20;
             this.loadpc.TabStop = false;
             // 
+            // lblInfo
+            // 
+            this.lblInfo.ForeColor = System.Drawing.Color.Red;
+            this.lblInfo.Location = new System.Drawing.Point(158, 132);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(232, 20);
+            this.lblInfo.TabIndex = 22;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 270);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.loadpc);
             this.Controls.Add(this.btnexit);
             this.Controls.Add(this.btnlogin);
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.PictureBox loadpc;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

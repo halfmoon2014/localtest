@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using nrWebClass;
-using System.Net;
 using System.IO;
-using System.Threading;
-using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
+using System.Windows.Forms;
+using System.Net;
+using System.Diagnostics;
 using ICSharpCode.SharpZipLib.Zip;
 namespace AutoUp
 {
@@ -19,17 +13,17 @@ namespace AutoUp
         public UpdateForm(string[] args)
         {
             InitializeComponent();
+           
+            //this.ver = "1";
+            //this.url = "http://192.168.35.231/autoupdate/1.zip";
+            //this.startPath = "E:\\gitrepos\\localtest\\WindowsFormsApplication1\\bin\\Debug\\plantodo.exe";
             this.ver = args[0];
             this.url = args[1];
             this.startPath = args[2];
-
-
-
-            MaterialPacking.localLog.WriteInfo(url);
-            string ApplicationExecutablePath = Assembly.GetExecutingAssembly().GetName().CodeBase;
-            this.directory = Path.GetDirectoryName(ApplicationExecutablePath) + "\\" + Guid.NewGuid().ToString() + "\\";
+            localLog.WriteInfo(url);
+            //string ApplicationExecutablePath = Assembly.GetExecutingAssembly().GetName().CodeBase;
+            this.directory = System.Windows.Forms.Application.StartupPath + "\\" + Guid.NewGuid().ToString() + "\\";
         }
-
         private delegate void UpdateProcessDelegate(long percent);
         /// <summary>
         /// 版本号
@@ -53,9 +47,32 @@ namespace AutoUp
         private string directory = string.Empty;
         private bool isDownLoading = false;
 
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            this.btn_Update.Enabled = false;
+            this.isDownLoading = true;
+            this.lbl_Status.Visible = true;
+            this.lbl_Status.Text = "正在下载...";
+            Thread thread = new Thread(DownLoad);
+            thread.IsBackground = true;
+            thread.Name = "Update";
+            thread.Start();
+        }
+
+        private void btn_Complete_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(this.startPath))
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = this.startPath;
+                p.Start();
+            }
+
+            this.Close();
+        }
+
         private void UpdateForm_Load(object sender, EventArgs e)
         {
-          
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             contentLength = Convert.ToInt64(response.Headers["Content-Length"]);
@@ -76,19 +93,6 @@ namespace AutoUp
             this.lbl_Percent.Text = "0%";
             this.lbl_Size.Text = size;
         }
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            this.btn_Update.Enabled = false;
-            this.isDownLoading = true;
-            this.lbl_Status.Visible = true;
-            this.lbl_Status.Text = "正在下载...";
-            Thread thread = new Thread(DownLoad);
-            thread.IsBackground = true;
-            thread.Name = "Update";
-            thread.Start();
-        }
-
         private void DownLoad()
         {
             try
@@ -121,7 +125,7 @@ namespace AutoUp
                 stream.Close();
                 fs.Close();
 
-                this.BeginInvoke((ThreadStart)delegate()
+                this.BeginInvoke((ThreadStart)delegate ()
                 {
                     this.lbl_Status.Text = "下载完成";
                     Thread.Sleep(500);
@@ -135,12 +139,12 @@ namespace AutoUp
                     Directory.Delete(directory, true);
                 }
 
-                Thread.Sleep(500);         
+                Thread.Sleep(500);
 
                 this.isDownLoading = false;
-                this.BeginInvoke((ThreadStart)delegate()
+                this.BeginInvoke((ThreadStart)delegate ()
                 {
-                    clsConfig.SetConfigValue("ver", ver);
+                    LocalConfig.SetConfigValue("ver", ver);
                     this.lbl_Status.Text = "完成更新";
                     this.btn_Complete.Enabled = true;
                     this.btn_Update.Enabled = true;
@@ -150,7 +154,7 @@ namespace AutoUp
             catch (Exception ex)
             {
                 this.isDownLoading = false;
-                this.BeginInvoke((ThreadStart)delegate()
+                this.BeginInvoke((ThreadStart)delegate ()
                 {
                     this.lbl_Status.Text = "更新失败";
                     this.btn_Complete.Enabled = true;
@@ -180,19 +184,7 @@ namespace AutoUp
             this.lbl_CurrentSize.Text = size;
         }
 
-        private void btn_Complete_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(this.startPath))
-            {
-                Process p = new Process();
-                p.StartInfo.FileName = this.startPath;
-                p.Start();
-            }
-
-            this.Close();
-        }
-
-        private void UpdateForm_FormClosing(object sender, CancelEventArgs e)
+        private void UpdateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.isDownLoading)
             {
@@ -211,8 +203,8 @@ namespace AutoUp
             using (ZipInputStream s = new ZipInputStream(File.OpenRead(zipFilePath)))
             {
                 ZipEntry theEntry;
-                string ApplicationExecutablePath = Assembly.GetExecutingAssembly().GetName().CodeBase;
-                string mbDirectory = Path.GetDirectoryName(ApplicationExecutablePath) ;
+                //string ApplicationExecutablePath = Assembly.GetExecutingAssembly().GetName().CodeBase;
+                string mbDirectory = System.Windows.Forms.Application.StartupPath;
 
                 while ((theEntry = s.GetNextEntry()) != null)
                 {
@@ -230,7 +222,7 @@ namespace AutoUp
                     {
                         try
                         {
-                            using (FileStream streamWriter = File.Create(mbDirectory+"\\"+theEntry.Name))
+                            using (FileStream streamWriter = File.Create(mbDirectory + "\\" + theEntry.Name))
                             {
 
                                 int size = 2048;
@@ -257,6 +249,5 @@ namespace AutoUp
                 }
             }
         }
-
     }
 }

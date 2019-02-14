@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using System.Reflection;
-using System.IO;
-//using System.Web;
 
-namespace nrWebClass
-{
+using System.Data;
+
+using System.IO;
+
+
+
     /// <summary>
     /// 读取支持热部署的系统配置文件
     /// </summary>
-    public class clsConfig
+    public class LocalConfig
     {
         /// <summary>
         /// 设置配置文件的路径
@@ -22,11 +20,11 @@ namespace nrWebClass
         private static DataTable _dtConfig = new DataTable();
         private static DataTable dtConfig()
         {
-            if (ConfigFile == "")       //如果配置文件的路径并没有设置，则探测WEBBLL目录中是否存在 BLL.config 文件(为了安全性起见，扩展名已经更变为config)。
+            if (ConfigFile == "")      
             { 
-                string Apppath = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase;
-                string path = new FileInfo(Apppath).DirectoryName;
-                clsConfig.ConfigFile = string.Concat(path, "\\LocalSystemConfig.xml");
+                //string Apppath = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase;
+                //string path = new FileInfo(Apppath).DirectoryName;
+                LocalConfig.ConfigFile = string.Concat(System.Windows.Forms.Application.StartupPath, "\\LocalConfig.xml");
             }
 
             if (ConfigFile != "")
@@ -75,8 +73,8 @@ namespace nrWebClass
             else {
                 int index = dtConfig().Rows.IndexOf(dr);
                 dtConfig().Rows[index]["ConfigValue"] = ConfigValue;
-                dtConfig().WriteXml(clsConfig.ConfigFile, XmlWriteMode.WriteSchema, false);
+                dtConfig().WriteXml(LocalConfig.ConfigFile, XmlWriteMode.WriteSchema, false);
             }
         }
     }
-}
+

@@ -1,9 +1,0 @@
-E:\project\PDA\材料装箱软件\AutoUp\bin\Debug\AutoUp.exe
-E:\project\PDA\材料装箱软件\AutoUp\bin\Debug\AutoUp.pdb
-E:\project\PDA\材料装箱软件\AutoUp\obj\Debug\ResolveAssemblyReference.cache
-E:\project\PDA\材料装箱软件\AutoUp\obj\Debug\AutoUp.UpdateForm.resources
-E:\project\PDA\材料装箱软件\AutoUp\obj\Debug\AutoUp.Properties.Resources.resources
-E:\project\PDA\材料装箱软件\AutoUp\obj\Debug\AutoUp.csproj.GenerateResource.Cache
-E:\project\PDA\材料装箱软件\AutoUp\obj\Debug\AutoUp.exe
-E:\project\PDA\材料装箱软件\AutoUp\obj\Debug\AutoUp.pdb
-E:\project\PDA\材料装箱软件\AutoUp\bin\Debug\ICSharpCode.CE.SharpZLib.dll

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-namespace AutoUp
-{
+ 
     public class localLog
     {
         public static string Apppath = System.Windows.Forms.Application.StartupPath;
@@ -98,4 +97,4 @@ namespace AutoUp
             LogError(ex);
         }
     }
-}
+ 

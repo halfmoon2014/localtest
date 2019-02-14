@@ -20,10 +20,12 @@ namespace PlanTODO
         /// 列表头信息
         /// </summary>
         List<ListColumn> PlanListColumn = new List<ListColumn>();
-
-        public Pasn()
+        private  string name;
+        public Pasn(string name)
         {
             InitializeComponent();
+            this.name = name;
+            this.txtzdr.Text = name;
         }
         private void Pasn_Load(object sender, EventArgs e)
         {
@@ -52,6 +54,8 @@ namespace PlanTODO
             PlanListColumn.Add(new ListColumn("备注", 200, "remark"));
             PlanListColumn.Add(new ListColumn("状态", 100, "Status"));
             PlanListColumn.Add(new ListColumn("内容", 200, "Content"));
+            PlanListColumn.Add(new ListColumn("修改人", 120, "modior"));
+            PlanListColumn.Add(new ListColumn("修改日期", 120, "modidate"));
             PlanListColumn.Add(new ListColumn("文件名", 120, "filename"));
             PlanListColumn.Add(new ListColumn("id", 0, "id"));
             foreach (ListColumn l in PlanListColumn)
@@ -82,6 +86,7 @@ namespace PlanTODO
             string begin = null, end = null;
             begin = dtsearchbegin.Text;
             end = dtsearchend.Text;
+            string creator = txtzdr.Text;
             string status = txtsearchstatus.Text;
             this.Invoke(new Action(() =>
             {
@@ -90,7 +95,7 @@ namespace PlanTODO
                 //Console.WriteLine(this.loadpc.Visible);
             }));
             //Thread.Sleep(500);//看效果用的，可注释
-            ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' and status like '%"+status+"%' order by id desc ");
+            ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' and status like '%"+status+"%' and creator like '%"+ creator + "%' order by id desc ");
             this.Invoke(new Action(() =>
             {
                 CreateListView(ds);
@@ -170,11 +175,11 @@ namespace PlanTODO
             if (string.IsNullOrEmpty(id))
             {
                 sql = @"insert pasn(title,BizDate,CreateDate,Creator,Remark,Status,Content,filename) 
-                    values('" + title + "',now(),now(),'sys','" + remark + "','" + status + "','" + content + "','" + filename + "');  select @@IDENTITY; ";
+                    values('" + title + "',now(),now(),'"+this.name+"','" + remark + "','" + status + "','" + content + "','" + filename + "');  select @@IDENTITY; ";
             }
             else
             {
-                sql = @"update pasn set title='" + title + "',Remark='" + remark + "',Status='" + status + "',Content='" + content + "'  where id=" + id + ";select " + id + "; ";
+                sql = @"update pasn set modiDate=now(),modior='"+this.name+"', title='" + title + "',Remark='" + remark + "',Status='" + status + "',Content='" + content + "'  where id=" + id + ";select " + id + "; ";
             }
             DataSet ds = MySqlHelper.ExecuteSQL(sql);
             this.Invoke(new Action(() =>
@@ -297,6 +302,11 @@ namespace PlanTODO
         {
             clearDetail();
             lbtip.Text = "new  status ";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

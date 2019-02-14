@@ -72,10 +72,10 @@ public class ListViewEx : ListView
         listView1_LostFocus(null, null);
         listView1_GotFocus(null, null);
         return;
-        if (FocusedItem != null)
-        {
-            // FocusedItem.Selected = true;
-        }
+        //if (FocusedItem != null)
+        //{
+        //    // FocusedItem.Selected = true;
+        //}
 
         HideSelection = true;
         foreach (ListViewItem item in Items)

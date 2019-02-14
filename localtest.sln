@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web\", "{F53DA47F-9DBE-491A-AF66-05FE4CAC7E69}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web", "{F53DA47F-9DBE-491A-AF66-05FE4CAC7E69}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""
 		SccAuxPath = ""
@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb", "TestWeb\TestWeb.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{123E8B74-C57C-4950-B1C8-563908215589}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web2", "web2\", "{0E3C9E4D-A6E7-446C-A315-B04AA78273F1}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web2", "web2", "{0E3C9E4D-A6E7-446C-A315-B04AA78273F1}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""
 		SccAuxPath = ""
@@ -70,6 +70,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanTODO", "WindowsFormsApplication1\PlanTODO.csproj", "{8A060C03-92AB-47FA-9EF0-F2BF9D4CD0C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupApp", "SupApp\SupApp.csproj", "{579C76DE-01BD-470A-9437-8CC1C4ADB6B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUp", "AutoUp\AutoUp.csproj", "{96A5FE74-885B-43B5-B397-E337B615129C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -179,6 +181,18 @@ Global
 		{579C76DE-01BD-470A-9437-8CC1C4ADB6B1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{579C76DE-01BD-470A-9437-8CC1C4ADB6B1}.Release|x86.ActiveCfg = Release|Any CPU
 		{579C76DE-01BD-470A-9437-8CC1C4ADB6B1}.Release|x86.Build.0 = Release|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Debug|x86.Build.0 = Debug|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Release|x86.ActiveCfg = Release|Any CPU
+		{96A5FE74-885B-43B5-B397-E337B615129C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

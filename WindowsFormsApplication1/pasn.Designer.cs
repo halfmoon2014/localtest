@@ -52,18 +52,21 @@
             this.btndel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.loadpc = new System.Windows.Forms.PictureBox();
+            this.txtzdr = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.planlist = new ListViewEx();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnsearch
             // 
             this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsearch.Location = new System.Drawing.Point(853, 16);
+            this.btnsearch.Location = new System.Drawing.Point(765, 14);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 1;
-            this.btnsearch.Text = "Search";
+            this.btnsearch.Text = "Search(&F)";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -71,7 +74,7 @@
             // 
             this.dtsearchbegin.Location = new System.Drawing.Point(101, 17);
             this.dtsearchbegin.Name = "dtsearchbegin";
-            this.dtsearchbegin.Size = new System.Drawing.Size(119, 21);
+            this.dtsearchbegin.Size = new System.Drawing.Size(105, 21);
             this.dtsearchbegin.TabIndex = 2;
             // 
             // dtsearchend
@@ -84,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(401, 21);
+            this.label1.Location = new System.Drawing.Point(542, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 4;
@@ -92,7 +95,8 @@
             // 
             // txtsearchstatus
             // 
-            this.txtsearchstatus.Location = new System.Drawing.Point(448, 16);
+            this.txtsearchstatus.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtsearchstatus.Location = new System.Drawing.Point(589, 16);
             this.txtsearchstatus.Name = "txtsearchstatus";
             this.txtsearchstatus.Size = new System.Drawing.Size(100, 21);
             this.txtsearchstatus.TabIndex = 5;
@@ -102,6 +106,7 @@
             this.ContentRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ContentRTB.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ContentRTB.Location = new System.Drawing.Point(26, 254);
             this.ContentRTB.Name = "ContentRTB";
             this.ContentRTB.Size = new System.Drawing.Size(1145, 370);
@@ -111,16 +116,17 @@
             // btnsave
             // 
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsave.Location = new System.Drawing.Point(1015, 16);
+            this.btnsave.Location = new System.Drawing.Point(927, 14);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 7;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "Save(&S)";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.button2_Click);
             // 
             // txttitle
             // 
+            this.txttitle.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txttitle.Location = new System.Drawing.Point(430, 202);
             this.txttitle.Name = "txttitle";
             this.txttitle.Size = new System.Drawing.Size(100, 21);
@@ -146,6 +152,7 @@
             // 
             // txtremark
             // 
+            this.txtremark.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtremark.Location = new System.Drawing.Point(83, 229);
             this.txtremark.Name = "txtremark";
             this.txtremark.Size = new System.Drawing.Size(606, 21);
@@ -162,6 +169,7 @@
             // 
             // txtstatus
             // 
+            this.txtstatus.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtstatus.Location = new System.Drawing.Point(589, 202);
             this.txtstatus.Name = "txtstatus";
             this.txtstatus.Size = new System.Drawing.Size(100, 21);
@@ -232,18 +240,18 @@
             // btndel
             // 
             this.btndel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndel.Location = new System.Drawing.Point(1096, 16);
+            this.btndel.Location = new System.Drawing.Point(1008, 14);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(75, 23);
             this.btndel.TabIndex = 23;
-            this.btndel.Text = "Del";
+            this.btndel.Text = "Del(&D)";
             this.btndel.UseVisualStyleBackColor = true;
             this.btndel.Click += new System.EventHandler(this.btndel_Click);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(934, 16);
+            this.button1.Location = new System.Drawing.Point(846, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -261,6 +269,23 @@
             this.loadpc.TabIndex = 18;
             this.loadpc.TabStop = false;
             // 
+            // txtzdr
+            // 
+            this.txtzdr.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtzdr.Location = new System.Drawing.Point(447, 16);
+            this.txtzdr.Name = "txtzdr";
+            this.txtzdr.Size = new System.Drawing.Size(83, 21);
+            this.txtzdr.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(400, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "制单人";
+            // 
             // planlist
             // 
             this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -272,11 +297,25 @@
             this.planlist.UseCompatibleStateImageBehavior = false;
             this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(1089, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Close(&C)";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Pasn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 649);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtzdr);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btndel);
             this.Controls.Add(this.lbtip);
@@ -340,5 +379,8 @@
         private System.Windows.Forms.Label lbtip;
         private System.Windows.Forms.Button btndel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtzdr;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
     }
 }
