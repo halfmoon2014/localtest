@@ -5,21 +5,34 @@ using System.Threading;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using System.Drawing;
 
 namespace PlanTODO
 {
     public partial class Login : Form
     {
+        
+       
         private delegate void MsgInfoDelegate(string strInfo, bool isShow);
         private MsgInfoDelegate ShowInfo;
         private delegate void SetStaticDelegate(bool enabled);
         private SetStaticDelegate SetStatic;
         private Pasn pasn;
+        Sunisoft.IrisSkin.SkinEngine s;
         public Login()
         {
             InitializeComponent();
             ShowInfo = new MsgInfoDelegate(MessageShowSub);
             SetStatic = new SetStaticDelegate(SetStaticSub);
+            //this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
+            //this.skinEngine1.SkinFile = Application.StartupPath + "//Page.ssk";     
+            s = new Sunisoft.IrisSkin.SkinEngine();
+            //s.SkinDialogs = false;
+            s.SkinFile = Application.StartupPath + "//Skins//Page.ssk";
+            Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//main.ico");
+            Icon ic = Icon.FromHandle(bmp.GetHicon());
+            this.Icon = ic;
+
         }
         private void SetStaticSub(bool enabled)
         {
@@ -39,7 +52,7 @@ namespace PlanTODO
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
-        {
+        {            
             Thread thread;
             thread = new Thread(() => login());
             thread.Start();
@@ -122,5 +135,14 @@ namespace PlanTODO
             }
 
         }
+
+        private void txtpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)//如果输入的是回车键  
+            {
+                btnlogin_Click(sender, e);//触发button事件  
+            }
+        }
+        
     }
 }

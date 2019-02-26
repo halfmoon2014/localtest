@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label4 = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.txtpassword.PasswordChar = '#';
             this.txtpassword.Size = new System.Drawing.Size(100, 21);
             this.txtpassword.TabIndex = 16;
+            this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpassword_KeyDown);
             // 
             // label2
             // 
@@ -68,6 +68,7 @@
             // 
             // txtname
             // 
+            this.txtname.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtname.Location = new System.Drawing.Point(240, 66);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(100, 21);
@@ -128,7 +129,6 @@
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtname);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

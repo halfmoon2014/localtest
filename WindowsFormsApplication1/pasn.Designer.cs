@@ -33,7 +33,6 @@
             this.dtsearchbegin = new System.Windows.Forms.DateTimePicker();
             this.dtsearchend = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtsearchstatus = new System.Windows.Forms.TextBox();
             this.ContentRTB = new System.Windows.Forms.RichTextBox();
             this.btnsave = new System.Windows.Forms.Button();
             this.txttitle = new System.Windows.Forms.TextBox();
@@ -41,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtremark = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtstatus = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtfilename = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,17 +50,25 @@
             this.btndel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.loadpc = new System.Windows.Forms.PictureBox();
-            this.txtzdr = new System.Windows.Forms.TextBox();
+            this.txtcreator = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.planlist = new ListViewEx();
             this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtrelor = new System.Windows.Forms.TextBox();
+            this.cbstatus = new System.Windows.Forms.ComboBox();
+            this.cbsearchstatus = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtcompor = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.planlist = new ListViewEx();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnsearch
             // 
             this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsearch.Location = new System.Drawing.Point(765, 14);
+            this.btnsearch.Location = new System.Drawing.Point(846, 14);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 1;
@@ -93,14 +99,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Status";
             // 
-            // txtsearchstatus
-            // 
-            this.txtsearchstatus.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtsearchstatus.Location = new System.Drawing.Point(589, 16);
-            this.txtsearchstatus.Name = "txtsearchstatus";
-            this.txtsearchstatus.Size = new System.Drawing.Size(100, 21);
-            this.txtsearchstatus.TabIndex = 5;
-            // 
             // ContentRTB
             // 
             this.ContentRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -116,7 +114,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsave.Location = new System.Drawing.Point(927, 14);
+            this.btnsave.Location = new System.Drawing.Point(927, 200);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 7;
@@ -127,7 +125,7 @@
             // txttitle
             // 
             this.txttitle.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txttitle.Location = new System.Drawing.Point(430, 202);
+            this.txttitle.Location = new System.Drawing.Point(554, 202);
             this.txttitle.Name = "txttitle";
             this.txttitle.Size = new System.Drawing.Size(100, 21);
             this.txttitle.TabIndex = 8;
@@ -135,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(389, 205);
+            this.label2.Location = new System.Drawing.Point(513, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 9;
@@ -155,42 +153,36 @@
             this.txtremark.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtremark.Location = new System.Drawing.Point(83, 229);
             this.txtremark.Name = "txtremark";
-            this.txtremark.Size = new System.Drawing.Size(606, 21);
+            this.txtremark.Size = new System.Drawing.Size(1081, 21);
             this.txtremark.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(542, 205);
+            this.label4.Location = new System.Drawing.Point(660, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 13;
             this.label4.Text = "Status";
             // 
-            // txtstatus
-            // 
-            this.txtstatus.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtstatus.Location = new System.Drawing.Point(589, 202);
-            this.txtstatus.Name = "txtstatus";
-            this.txtstatus.Size = new System.Drawing.Size(100, 21);
-            this.txtstatus.TabIndex = 12;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(205, 205);
+            this.label5.Location = new System.Drawing.Point(843, 628);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 15;
             this.label5.Text = "FileName";
+            this.label5.Visible = false;
             // 
             // txtfilename
             // 
-            this.txtfilename.Location = new System.Drawing.Point(264, 202);
+            this.txtfilename.Location = new System.Drawing.Point(902, 625);
             this.txtfilename.Name = "txtfilename";
             this.txtfilename.ReadOnly = true;
             this.txtfilename.Size = new System.Drawing.Size(100, 21);
             this.txtfilename.TabIndex = 14;
+            this.txtfilename.Visible = false;
             // 
             // label6
             // 
@@ -240,7 +232,7 @@
             // btndel
             // 
             this.btndel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndel.Location = new System.Drawing.Point(1008, 14);
+            this.btndel.Location = new System.Drawing.Point(1089, 200);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(75, 23);
             this.btndel.TabIndex = 23;
@@ -251,11 +243,11 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(846, 14);
+            this.button1.Location = new System.Drawing.Point(927, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
-            this.button1.Text = "New";
+            this.button1.Text = "New(&N)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -269,13 +261,13 @@
             this.loadpc.TabIndex = 18;
             this.loadpc.TabStop = false;
             // 
-            // txtzdr
+            // txtcreator
             // 
-            this.txtzdr.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtzdr.Location = new System.Drawing.Point(447, 16);
-            this.txtzdr.Name = "txtzdr";
-            this.txtzdr.Size = new System.Drawing.Size(83, 21);
-            this.txtzdr.TabIndex = 26;
+            this.txtcreator.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtcreator.Location = new System.Drawing.Point(447, 16);
+            this.txtcreator.Name = "txtcreator";
+            this.txtcreator.Size = new System.Drawing.Size(83, 21);
+            this.txtcreator.TabIndex = 26;
             // 
             // label9
             // 
@@ -285,17 +277,6 @@
             this.label9.Size = new System.Drawing.Size(41, 12);
             this.label9.TabIndex = 25;
             this.label9.Text = "制单人";
-            // 
-            // planlist
-            // 
-            this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.planlist.Location = new System.Drawing.Point(26, 47);
-            this.planlist.Name = "planlist";
-            this.planlist.Size = new System.Drawing.Size(1145, 147);
-            this.planlist.TabIndex = 0;
-            this.planlist.UseCompatibleStateImageBehavior = false;
-            this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
             // 
             // button2
             // 
@@ -308,17 +289,109 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(199, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "业务";
+            // 
+            // txtrelor
+            // 
+            this.txtrelor.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtrelor.Location = new System.Drawing.Point(234, 202);
+            this.txtrelor.Name = "txtrelor";
+            this.txtrelor.Size = new System.Drawing.Size(100, 21);
+            this.txtrelor.TabIndex = 28;
+            // 
+            // cbstatus
+            // 
+            this.cbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbstatus.FormattingEnabled = true;
+            this.cbstatus.Location = new System.Drawing.Point(707, 202);
+            this.cbstatus.Name = "cbstatus";
+            this.cbstatus.Size = new System.Drawing.Size(100, 20);
+            this.cbstatus.TabIndex = 30;
+            // 
+            // cbsearchstatus
+            // 
+            this.cbsearchstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbsearchstatus.FormattingEnabled = true;
+            this.cbsearchstatus.Location = new System.Drawing.Point(589, 17);
+            this.cbsearchstatus.Name = "cbsearchstatus";
+            this.cbsearchstatus.Size = new System.Drawing.Size(100, 20);
+            this.cbsearchstatus.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(348, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "完结人";
+            // 
+            // txtcompor
+            // 
+            this.txtcompor.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtcompor.Location = new System.Drawing.Point(395, 202);
+            this.txtcompor.Name = "txtcompor";
+            this.txtcompor.Size = new System.Drawing.Size(100, 21);
+            this.txtcompor.TabIndex = 32;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(1008, 200);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "完结";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // planlist
+            // 
+            this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.planlist.Location = new System.Drawing.Point(26, 47);
+            this.planlist.Name = "planlist";
+            this.planlist.Size = new System.Drawing.Size(1145, 147);
+            this.planlist.TabIndex = 0;
+            this.planlist.UseCompatibleStateImageBehavior = false;
+            this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(1008, 14);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 35;
+            this.button4.Text = "流程分享";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Pasn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 649);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtcompor);
+            this.Controls.Add(this.cbsearchstatus);
+            this.Controls.Add(this.cbstatus);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtrelor);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtzdr);
+            this.Controls.Add(this.txtcreator);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btndel);
-            this.Controls.Add(this.lbtip);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.loadpc);
@@ -327,20 +400,18 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtfilename);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtstatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtremark);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txttitle);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.ContentRTB);
-            this.Controls.Add(this.txtsearchstatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtsearchend);
             this.Controls.Add(this.dtsearchbegin);
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.planlist);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.lbtip);
             this.Name = "Pasn";
             this.Text = "pasn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -360,7 +431,6 @@
         private System.Windows.Forms.DateTimePicker dtsearchbegin;
         private System.Windows.Forms.DateTimePicker dtsearchend;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtsearchstatus;
         private System.Windows.Forms.RichTextBox ContentRTB;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.TextBox txttitle;
@@ -368,7 +438,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtremark;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtstatus;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtfilename;
         private System.Windows.Forms.Label label6;
@@ -379,8 +448,16 @@
         private System.Windows.Forms.Label lbtip;
         private System.Windows.Forms.Button btndel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtzdr;
+        private System.Windows.Forms.TextBox txtcreator;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtrelor;
+        private System.Windows.Forms.ComboBox cbstatus;
+        private System.Windows.Forms.ComboBox cbsearchstatus;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtcompor;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
