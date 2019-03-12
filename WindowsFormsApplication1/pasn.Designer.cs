@@ -60,8 +60,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtcompor = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.planlist = new ListViewEx();
             this.button4 = new System.Windows.Forms.Button();
+            this.planlist = new ListViewEx();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,14 +79,14 @@
             // 
             // dtsearchbegin
             // 
-            this.dtsearchbegin.Location = new System.Drawing.Point(101, 17);
+            this.dtsearchbegin.Location = new System.Drawing.Point(71, 17);
             this.dtsearchbegin.Name = "dtsearchbegin";
             this.dtsearchbegin.Size = new System.Drawing.Size(105, 21);
             this.dtsearchbegin.TabIndex = 2;
             // 
             // dtsearchend
             // 
-            this.dtsearchend.Location = new System.Drawing.Point(285, 17);
+            this.dtsearchend.Location = new System.Drawing.Point(241, 16);
             this.dtsearchend.Name = "dtsearchend";
             this.dtsearchend.Size = new System.Drawing.Size(104, 21);
             this.dtsearchend.TabIndex = 3;
@@ -93,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(542, 21);
+            this.label1.Location = new System.Drawing.Point(487, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 4;
@@ -105,9 +106,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ContentRTB.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.ContentRTB.Location = new System.Drawing.Point(26, 254);
+            this.ContentRTB.Location = new System.Drawing.Point(12, 251);
             this.ContentRTB.Name = "ContentRTB";
-            this.ContentRTB.Size = new System.Drawing.Size(1145, 370);
+            this.ContentRTB.Size = new System.Drawing.Size(1159, 373);
             this.ContentRTB.TabIndex = 6;
             this.ContentRTB.Text = "";
             // 
@@ -125,7 +126,7 @@
             // txttitle
             // 
             this.txttitle.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txttitle.Location = new System.Drawing.Point(554, 202);
+            this.txttitle.Location = new System.Drawing.Point(467, 201);
             this.txttitle.Name = "txttitle";
             this.txttitle.Size = new System.Drawing.Size(100, 21);
             this.txttitle.TabIndex = 8;
@@ -133,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(513, 205);
+            this.label2.Location = new System.Drawing.Point(426, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 9;
@@ -142,7 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 232);
+            this.label3.Location = new System.Drawing.Point(273, 227);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 11;
@@ -151,15 +152,15 @@
             // txtremark
             // 
             this.txtremark.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtremark.Location = new System.Drawing.Point(83, 229);
+            this.txtremark.Location = new System.Drawing.Point(320, 224);
             this.txtremark.Name = "txtremark";
-            this.txtremark.Size = new System.Drawing.Size(1081, 21);
+            this.txtremark.Size = new System.Drawing.Size(400, 21);
             this.txtremark.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(660, 205);
+            this.label4.Location = new System.Drawing.Point(573, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 13;
@@ -168,7 +169,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(843, 628);
+            this.label5.Location = new System.Drawing.Point(12, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 15;
@@ -177,17 +178,15 @@
             // 
             // txtfilename
             // 
-            this.txtfilename.Location = new System.Drawing.Point(902, 625);
+            this.txtfilename.Location = new System.Drawing.Point(71, 224);
             this.txtfilename.Name = "txtfilename";
-            this.txtfilename.ReadOnly = true;
-            this.txtfilename.Size = new System.Drawing.Size(100, 21);
+            this.txtfilename.Size = new System.Drawing.Size(196, 21);
             this.txtfilename.TabIndex = 14;
-            this.txtfilename.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(60, 205);
+            this.label6.Location = new System.Drawing.Point(48, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 12);
             this.label6.TabIndex = 17;
@@ -195,16 +194,16 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(83, 202);
+            this.txtid.Location = new System.Drawing.Point(71, 200);
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
-            this.txtid.Size = new System.Drawing.Size(100, 21);
+            this.txtid.Size = new System.Drawing.Size(55, 21);
             this.txtid.TabIndex = 16;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 21);
+            this.label7.Location = new System.Drawing.Point(12, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 19;
@@ -213,7 +212,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(226, 21);
+            this.label8.Location = new System.Drawing.Point(182, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 20;
@@ -221,7 +220,8 @@
             // 
             // lbtip
             // 
-            this.lbtip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbtip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbtip.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbtip.Location = new System.Drawing.Point(24, 628);
             this.lbtip.Name = "lbtip";
@@ -264,7 +264,7 @@
             // txtcreator
             // 
             this.txtcreator.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtcreator.Location = new System.Drawing.Point(447, 16);
+            this.txtcreator.Location = new System.Drawing.Point(398, 16);
             this.txtcreator.Name = "txtcreator";
             this.txtcreator.Size = new System.Drawing.Size(83, 21);
             this.txtcreator.TabIndex = 26;
@@ -272,7 +272,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(400, 21);
+            this.label9.Location = new System.Drawing.Point(351, 21);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 12);
             this.label9.TabIndex = 25;
@@ -292,7 +292,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(199, 205);
+            this.label10.Location = new System.Drawing.Point(132, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 29;
@@ -301,7 +301,7 @@
             // txtrelor
             // 
             this.txtrelor.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtrelor.Location = new System.Drawing.Point(234, 202);
+            this.txtrelor.Location = new System.Drawing.Point(167, 200);
             this.txtrelor.Name = "txtrelor";
             this.txtrelor.Size = new System.Drawing.Size(100, 21);
             this.txtrelor.TabIndex = 28;
@@ -310,7 +310,7 @@
             // 
             this.cbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbstatus.FormattingEnabled = true;
-            this.cbstatus.Location = new System.Drawing.Point(707, 202);
+            this.cbstatus.Location = new System.Drawing.Point(620, 200);
             this.cbstatus.Name = "cbstatus";
             this.cbstatus.Size = new System.Drawing.Size(100, 20);
             this.cbstatus.TabIndex = 30;
@@ -319,7 +319,7 @@
             // 
             this.cbsearchstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbsearchstatus.FormattingEnabled = true;
-            this.cbsearchstatus.Location = new System.Drawing.Point(589, 17);
+            this.cbsearchstatus.Location = new System.Drawing.Point(534, 16);
             this.cbsearchstatus.Name = "cbsearchstatus";
             this.cbsearchstatus.Size = new System.Drawing.Size(100, 20);
             this.cbsearchstatus.TabIndex = 31;
@@ -327,7 +327,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(348, 205);
+            this.label11.Location = new System.Drawing.Point(273, 203);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 33;
@@ -336,7 +336,7 @@
             // txtcompor
             // 
             this.txtcompor.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtcompor.Location = new System.Drawing.Point(395, 202);
+            this.txtcompor.Location = new System.Drawing.Point(320, 200);
             this.txtcompor.Name = "txtcompor";
             this.txtcompor.Size = new System.Drawing.Size(100, 21);
             this.txtcompor.TabIndex = 32;
@@ -352,17 +352,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // planlist
-            // 
-            this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.planlist.Location = new System.Drawing.Point(26, 47);
-            this.planlist.Name = "planlist";
-            this.planlist.Size = new System.Drawing.Size(1145, 147);
-            this.planlist.TabIndex = 0;
-            this.planlist.UseCompatibleStateImageBehavior = false;
-            this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
-            // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -374,11 +363,32 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // planlist
+            // 
+            this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.planlist.Location = new System.Drawing.Point(12, 47);
+            this.planlist.Name = "planlist";
+            this.planlist.Size = new System.Drawing.Size(1159, 147);
+            this.planlist.TabIndex = 0;
+            this.planlist.UseCompatibleStateImageBehavior = false;
+            this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(732, 625);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(439, 23);
+            this.progressBar1.TabIndex = 36;
+            this.progressBar1.Visible = false;
+            // 
             // Pasn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 649);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label11);
@@ -459,5 +469,6 @@
         private System.Windows.Forms.TextBox txtcompor;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
