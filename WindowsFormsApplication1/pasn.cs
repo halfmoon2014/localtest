@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
+using System.Web;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
@@ -23,6 +24,7 @@ namespace PlanTODO
         /// </summary>
         private static string UpFileAdrees = @"http://192.168.35.231/MYUPLOAD/SaveFileWebForm.aspx";
         private static string FileUrl = @"http://192.168.35.231/MYUPLOAD/file/";
+        private static int filenameMaxLen = 60;
         /// <summary>
         /// 列表头信息
         /// </summary>
@@ -269,15 +271,24 @@ namespace PlanTODO
             {
                 sql = @"update pasn set relor='" + relor + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "',Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "'  where id=" + id + ";select " + id + "; ";
             }
-            DataSet ds = MySqlHelper.ExecuteSQL(sql);
-            this.Invoke(new Action(() =>
+            try
             {
-                txtid.Text = ds.Tables[0].Rows[0][0].ToString();
-                this.loadpc.Visible = false;
-                btnsave.Enabled = true;
-                lbtip.Text = "save success";
-                MessageBoxEx.Show(this, "save success");
-            }));
+                DataSet ds = MySqlHelper.ExecuteSQL(sql);
+                this.Invoke(new Action(() =>
+                {
+                    txtid.Text = ds.Tables[0].Rows[0][0].ToString();
+                    this.loadpc.Visible = false;
+                    btnsave.Enabled = true;
+                    lbtip.Text = "save success";
+                    MessageBoxEx.Show(this, "save success");
+                }));
+            }
+            catch (Exception ex) {
+                this.Invoke(new Action(() =>
+                {
+                    MessageBoxEx.Show(this, "" + ex.GetBaseException());
+                }));
+            }
 
         }
 
@@ -299,13 +310,15 @@ namespace PlanTODO
             sb.Append("Content-Disposition: form-data; name=\"");
             sb.Append("file");
             sb.Append("\"; filename=\"");
-            sb.Append(saveName);
+            sb.Append(HttpUtility.UrlEncode(saveName, Encoding.UTF8));
             sb.Append("\";");
             sb.Append("\r\n");
             sb.Append("Content-Type: ");
             sb.Append("application/octet-stream");
             sb.Append("\r\n");
             sb.Append("\r\n");
+            
+            
             byte[] postHeaderBytes = Encoding.UTF8.GetBytes(sb.ToString());
             // 根据uri创建HttpWebRequest对象   
             HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create(new Uri(address));
@@ -634,10 +647,12 @@ namespace PlanTODO
 
         public string NewFileName(string filename, string relor, string title, string remark)
         {
+
             if (filename.Length == 0)
             {
                 filename = this.name + "_" + relor + "_" + title + "_" + remark;
-                filename = filename.Substring(1, 60);//限定最大文件长度
+                if(filename.Length> filenameMaxLen)
+                    filename = filename.Substring(1, 60);//限定最大文件长度
             }
             else
             {

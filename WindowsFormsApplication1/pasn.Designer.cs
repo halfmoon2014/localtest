@@ -61,15 +61,15 @@
             this.txtcompor = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.planlist = new ListViewEx();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.planlist = new ListViewEx();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnsearch
             // 
             this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsearch.Location = new System.Drawing.Point(846, 14);
+            this.btnsearch.Location = new System.Drawing.Point(1088, 14);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 1;
@@ -108,14 +108,14 @@
             this.ContentRTB.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ContentRTB.Location = new System.Drawing.Point(12, 251);
             this.ContentRTB.Name = "ContentRTB";
-            this.ContentRTB.Size = new System.Drawing.Size(1159, 373);
+            this.ContentRTB.Size = new System.Drawing.Size(1401, 526);
             this.ContentRTB.TabIndex = 6;
             this.ContentRTB.Text = "";
             // 
             // btnsave
             // 
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsave.Location = new System.Drawing.Point(927, 200);
+            this.btnsave.Location = new System.Drawing.Point(1169, 200);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 7;
@@ -174,7 +174,6 @@
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 15;
             this.label5.Text = "FileName";
-            this.label5.Visible = false;
             // 
             // txtfilename
             // 
@@ -223,16 +222,16 @@
             this.lbtip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbtip.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbtip.Location = new System.Drawing.Point(24, 628);
+            this.lbtip.Location = new System.Drawing.Point(24, 781);
             this.lbtip.Name = "lbtip";
-            this.lbtip.Size = new System.Drawing.Size(1147, 12);
+            this.lbtip.Size = new System.Drawing.Size(1389, 12);
             this.lbtip.TabIndex = 22;
             this.lbtip.Text = "tip";
             // 
             // btndel
             // 
             this.btndel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndel.Location = new System.Drawing.Point(1089, 200);
+            this.btndel.Location = new System.Drawing.Point(1331, 200);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(75, 23);
             this.btndel.TabIndex = 23;
@@ -243,7 +242,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(927, 14);
+            this.button1.Location = new System.Drawing.Point(1169, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -255,7 +254,7 @@
             // 
             this.loadpc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loadpc.Image = ((System.Drawing.Image)(resources.GetObject("loadpc.Image")));
-            this.loadpc.Location = new System.Drawing.Point(1039, 505);
+            this.loadpc.Location = new System.Drawing.Point(1160, 582);
             this.loadpc.Name = "loadpc";
             this.loadpc.Size = new System.Drawing.Size(132, 132);
             this.loadpc.TabIndex = 18;
@@ -274,14 +273,14 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(351, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.Size = new System.Drawing.Size(47, 12);
             this.label9.TabIndex = 25;
-            this.label9.Text = "制单人";
+            this.label9.Text = "Creator";
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(1089, 14);
+            this.button2.Location = new System.Drawing.Point(1331, 14);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 27;
@@ -344,7 +343,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1008, 200);
+            this.button3.Location = new System.Drawing.Point(1250, 200);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 34;
@@ -355,7 +354,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(1008, 14);
+            this.button4.Location = new System.Drawing.Point(1250, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 35;
@@ -363,31 +362,31 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(974, 778);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(439, 23);
+            this.progressBar1.TabIndex = 36;
+            this.progressBar1.Visible = false;
+            // 
             // planlist
             // 
             this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.planlist.Location = new System.Drawing.Point(12, 47);
             this.planlist.Name = "planlist";
-            this.planlist.Size = new System.Drawing.Size(1159, 147);
+            this.planlist.Size = new System.Drawing.Size(1401, 147);
             this.planlist.TabIndex = 0;
             this.planlist.UseCompatibleStateImageBehavior = false;
             this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(732, 625);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(439, 23);
-            this.progressBar1.TabIndex = 36;
-            this.progressBar1.Visible = false;
             // 
             // Pasn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 649);
+            this.ClientSize = new System.Drawing.Size(1425, 802);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
