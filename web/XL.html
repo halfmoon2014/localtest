@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+    <style>
+    </style>  
+    <div>
+        温度(°C)：<input type="text" id="C"><input type="button"   value="确认" id="Q">
+        <textarea></textarea>
+        
+        <label>确定</label>
+        <span></span>
+        <select></select>
+        <input type="radio" />
+        <input type="password" />
+    </div>
+    <div>
+        温度(°F)：<input type="text" name="" id="F">
+    </div>
+        <input id="S" name="" value="" type="text" style="width:300px; height:100px;" />
+
+    <script type="text/javascript">
+
+        //var WINDOWS_LOAD = "";
+        window.onload = function () {
+            document.getElementById("Q").onclick = function () {
+                go();
+            }         
+        }
+
+        function go() {            
+            var c = document.getElementById("C").value;
+            var z = 1.8 * c + 32;
+            document.getElementById("F").value = z;
+           
+            if (c >= 100) {              
+                document.getElementById("S").value="水已沸腾"
+            } else {
+                document.getElementById("S").value = "水未沸腾"
+            }
+            var WINDOWS_LOAD = "nihao"
+         
+        }
+
+        function go2(c) {
+            var z = 1.8 * c + 32;
+            return z;
+        }
+
+
+        function test() {
+            var r = go();
+        }
+        function c() {
+            //WINDOWS_LOAD = "123";
+        }
+        
+//        function funname() {
+//            var z = c.value;
+//            z = 1.8 * z + 32;
+//            f.value = z;
+
+//            if (c.value >= 100)
+//                h.value = '水已沸腾';
+//            else h.value = '水未沸腾';
+//        }
+//(function(){
+//    var c = document.getElementById('C'),
+//        f = document.getElementById('F'),
+//		h = document.getElementById('S'),
+//        b = document.getElementById('Q');
+//    //AJAX
+//	b.onclick = function() {
+//	    funname();
+//    };
+//})();
+
+    </script>
+</body>
+</html>

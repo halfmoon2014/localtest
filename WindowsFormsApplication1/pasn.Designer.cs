@@ -59,10 +59,15 @@
             this.cbsearchstatus = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtcompor = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.cbprocessor = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbsearchprocessor = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.planlist = new ListViewEx();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txthour = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +120,7 @@
             // btnsave
             // 
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsave.Location = new System.Drawing.Point(1169, 200);
+            this.btnsave.Location = new System.Drawing.Point(1250, 200);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 7;
@@ -126,7 +131,7 @@
             // txttitle
             // 
             this.txttitle.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txttitle.Location = new System.Drawing.Point(467, 201);
+            this.txttitle.Location = new System.Drawing.Point(467, 200);
             this.txttitle.Name = "txttitle";
             this.txttitle.Size = new System.Drawing.Size(100, 21);
             this.txttitle.TabIndex = 8;
@@ -134,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(426, 205);
+            this.label2.Location = new System.Drawing.Point(426, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 9;
@@ -154,7 +159,7 @@
             this.txtremark.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtremark.Location = new System.Drawing.Point(320, 224);
             this.txtremark.Name = "txtremark";
-            this.txtremark.Size = new System.Drawing.Size(400, 21);
+            this.txtremark.Size = new System.Drawing.Size(570, 21);
             this.txtremark.TabIndex = 10;
             // 
             // label4
@@ -340,17 +345,6 @@
             this.txtcompor.Size = new System.Drawing.Size(100, 21);
             this.txtcompor.TabIndex = 32;
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1250, 200);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "完结";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -371,6 +365,42 @@
             this.progressBar1.TabIndex = 36;
             this.progressBar1.Visible = false;
             // 
+            // cbprocessor
+            // 
+            this.cbprocessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbprocessor.FormattingEnabled = true;
+            this.cbprocessor.Location = new System.Drawing.Point(790, 199);
+            this.cbprocessor.Name = "cbprocessor";
+            this.cbprocessor.Size = new System.Drawing.Size(100, 20);
+            this.cbprocessor.TabIndex = 38;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(731, 204);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "处理人员";
+            // 
+            // cbsearchprocessor
+            // 
+            this.cbsearchprocessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbsearchprocessor.FormattingEnabled = true;
+            this.cbsearchprocessor.Location = new System.Drawing.Point(699, 16);
+            this.cbsearchprocessor.Name = "cbsearchprocessor";
+            this.cbsearchprocessor.Size = new System.Drawing.Size(100, 20);
+            this.cbsearchprocessor.TabIndex = 40;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(640, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "处理人员";
+            // 
             // planlist
             // 
             this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -382,14 +412,36 @@
             this.planlist.UseCompatibleStateImageBehavior = false;
             this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(899, 204);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 12);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "工时";
+            // 
+            // txthour
+            // 
+            this.txthour.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txthour.Location = new System.Drawing.Point(934, 201);
+            this.txthour.Name = "txthour";
+            this.txthour.Size = new System.Drawing.Size(46, 21);
+            this.txthour.TabIndex = 41;
+            // 
             // Pasn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1425, 802);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txthour);
+            this.Controls.Add(this.cbsearchprocessor);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cbprocessor);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtcompor);
             this.Controls.Add(this.cbsearchstatus);
@@ -466,8 +518,13 @@
         private System.Windows.Forms.ComboBox cbsearchstatus;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtcompor;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ComboBox cbprocessor;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbsearchprocessor;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txthour;
     }
 }

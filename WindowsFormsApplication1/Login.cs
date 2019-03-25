@@ -74,7 +74,7 @@ namespace PlanTODO
                 loadpc.Visible = false;
                 if (ds.Tables[0].Rows.Count == 1)
                 {
-                    pasn = new Pasn(name);
+                    pasn = new Pasn(name,ds.Tables[0].Rows[0]["username"].ToString());
                     this.Hide();
                     pasn.ShowDialog();
                     Application.ExitThread();
