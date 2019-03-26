@@ -65,9 +65,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cbsearchprocessor = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.planlist = new ListViewEx();
             this.label14 = new System.Windows.Forms.Label();
             this.txthour = new System.Windows.Forms.TextBox();
+            this.planlist = new ListViewEx();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +77,7 @@
             this.btnsearch.Location = new System.Drawing.Point(1088, 14);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
-            this.btnsearch.TabIndex = 1;
+            this.btnsearch.TabIndex = 10;
             this.btnsearch.Text = "Search(&F)";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.button1_Click);
@@ -87,7 +87,7 @@
             this.dtsearchbegin.Location = new System.Drawing.Point(71, 17);
             this.dtsearchbegin.Name = "dtsearchbegin";
             this.dtsearchbegin.Size = new System.Drawing.Size(105, 21);
-            this.dtsearchbegin.TabIndex = 2;
+            this.dtsearchbegin.TabIndex = 1;
             // 
             // dtsearchend
             // 
@@ -102,7 +102,7 @@
             this.label1.Location = new System.Drawing.Point(487, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Status";
             // 
             // ContentRTB
@@ -114,7 +114,7 @@
             this.ContentRTB.Location = new System.Drawing.Point(12, 251);
             this.ContentRTB.Name = "ContentRTB";
             this.ContentRTB.Size = new System.Drawing.Size(1401, 526);
-            this.ContentRTB.TabIndex = 6;
+            this.ContentRTB.TabIndex = 34;
             this.ContentRTB.Text = "";
             // 
             // btnsave
@@ -123,7 +123,7 @@
             this.btnsave.Location = new System.Drawing.Point(1250, 200);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
-            this.btnsave.TabIndex = 7;
+            this.btnsave.TabIndex = 32;
             this.btnsave.Text = "Save(&S)";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.button2_Click);
@@ -134,7 +134,7 @@
             this.txttitle.Location = new System.Drawing.Point(467, 200);
             this.txttitle.Name = "txttitle";
             this.txttitle.Size = new System.Drawing.Size(100, 21);
-            this.txttitle.TabIndex = 8;
+            this.txttitle.TabIndex = 21;
             // 
             // label2
             // 
@@ -142,7 +142,7 @@
             this.label2.Location = new System.Drawing.Point(426, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 20;
             this.label2.Text = "Title";
             // 
             // label3
@@ -151,7 +151,7 @@
             this.label3.Location = new System.Drawing.Point(273, 227);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 11;
+            this.label3.TabIndex = 30;
             this.label3.Text = "Remark";
             // 
             // txtremark
@@ -160,7 +160,7 @@
             this.txtremark.Location = new System.Drawing.Point(320, 224);
             this.txtremark.Name = "txtremark";
             this.txtremark.Size = new System.Drawing.Size(570, 21);
-            this.txtremark.TabIndex = 10;
+            this.txtremark.TabIndex = 31;
             // 
             // label4
             // 
@@ -168,7 +168,7 @@
             this.label4.Location = new System.Drawing.Point(573, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
-            this.label4.TabIndex = 13;
+            this.label4.TabIndex = 22;
             this.label4.Text = "Status";
             // 
             // label5
@@ -177,7 +177,7 @@
             this.label5.Location = new System.Drawing.Point(12, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 15;
+            this.label5.TabIndex = 28;
             this.label5.Text = "FileName";
             // 
             // txtfilename
@@ -185,7 +185,7 @@
             this.txtfilename.Location = new System.Drawing.Point(71, 224);
             this.txtfilename.Name = "txtfilename";
             this.txtfilename.Size = new System.Drawing.Size(196, 21);
-            this.txtfilename.TabIndex = 14;
+            this.txtfilename.TabIndex = 29;
             // 
             // label6
             // 
@@ -193,7 +193,7 @@
             this.label6.Location = new System.Drawing.Point(48, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 12);
-            this.label6.TabIndex = 17;
+            this.label6.TabIndex = 14;
             this.label6.Text = "ID";
             // 
             // txtid
@@ -202,7 +202,7 @@
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(55, 21);
-            this.txtid.TabIndex = 16;
+            this.txtid.TabIndex = 15;
             // 
             // label7
             // 
@@ -210,7 +210,7 @@
             this.label7.Location = new System.Drawing.Point(12, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 19;
+            this.label7.TabIndex = 0;
             this.label7.Text = "开始日期";
             // 
             // label8
@@ -219,7 +219,7 @@
             this.label8.Location = new System.Drawing.Point(182, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
-            this.label8.TabIndex = 20;
+            this.label8.TabIndex = 2;
             this.label8.Text = "结束日期";
             // 
             // lbtip
@@ -230,7 +230,7 @@
             this.lbtip.Location = new System.Drawing.Point(24, 781);
             this.lbtip.Name = "lbtip";
             this.lbtip.Size = new System.Drawing.Size(1389, 12);
-            this.lbtip.TabIndex = 22;
+            this.lbtip.TabIndex = 35;
             this.lbtip.Text = "tip";
             // 
             // btndel
@@ -239,7 +239,7 @@
             this.btndel.Location = new System.Drawing.Point(1331, 200);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(75, 23);
-            this.btndel.TabIndex = 23;
+            this.btndel.TabIndex = 33;
             this.btndel.Text = "Del(&D)";
             this.btndel.UseVisualStyleBackColor = true;
             this.btndel.Click += new System.EventHandler(this.btndel_Click);
@@ -250,7 +250,7 @@
             this.button1.Location = new System.Drawing.Point(1169, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
+            this.button1.TabIndex = 11;
             this.button1.Text = "New(&N)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -271,7 +271,7 @@
             this.txtcreator.Location = new System.Drawing.Point(398, 16);
             this.txtcreator.Name = "txtcreator";
             this.txtcreator.Size = new System.Drawing.Size(83, 21);
-            this.txtcreator.TabIndex = 26;
+            this.txtcreator.TabIndex = 5;
             // 
             // label9
             // 
@@ -279,7 +279,7 @@
             this.label9.Location = new System.Drawing.Point(351, 21);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 12);
-            this.label9.TabIndex = 25;
+            this.label9.TabIndex = 4;
             this.label9.Text = "Creator";
             // 
             // button2
@@ -288,7 +288,7 @@
             this.button2.Location = new System.Drawing.Point(1331, 14);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
+            this.button2.TabIndex = 13;
             this.button2.Text = "Close(&C)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -299,7 +299,7 @@
             this.label10.Location = new System.Drawing.Point(132, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
-            this.label10.TabIndex = 29;
+            this.label10.TabIndex = 16;
             this.label10.Text = "业务";
             // 
             // txtrelor
@@ -308,7 +308,7 @@
             this.txtrelor.Location = new System.Drawing.Point(167, 200);
             this.txtrelor.Name = "txtrelor";
             this.txtrelor.Size = new System.Drawing.Size(100, 21);
-            this.txtrelor.TabIndex = 28;
+            this.txtrelor.TabIndex = 17;
             // 
             // cbstatus
             // 
@@ -317,7 +317,7 @@
             this.cbstatus.Location = new System.Drawing.Point(620, 200);
             this.cbstatus.Name = "cbstatus";
             this.cbstatus.Size = new System.Drawing.Size(100, 20);
-            this.cbstatus.TabIndex = 30;
+            this.cbstatus.TabIndex = 23;
             // 
             // cbsearchstatus
             // 
@@ -326,7 +326,7 @@
             this.cbsearchstatus.Location = new System.Drawing.Point(534, 16);
             this.cbsearchstatus.Name = "cbsearchstatus";
             this.cbsearchstatus.Size = new System.Drawing.Size(100, 20);
-            this.cbsearchstatus.TabIndex = 31;
+            this.cbsearchstatus.TabIndex = 7;
             // 
             // label11
             // 
@@ -334,7 +334,7 @@
             this.label11.Location = new System.Drawing.Point(273, 203);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
-            this.label11.TabIndex = 33;
+            this.label11.TabIndex = 18;
             this.label11.Text = "完结人";
             // 
             // txtcompor
@@ -343,7 +343,7 @@
             this.txtcompor.Location = new System.Drawing.Point(320, 200);
             this.txtcompor.Name = "txtcompor";
             this.txtcompor.Size = new System.Drawing.Size(100, 21);
-            this.txtcompor.TabIndex = 32;
+            this.txtcompor.TabIndex = 19;
             // 
             // button4
             // 
@@ -351,7 +351,7 @@
             this.button4.Location = new System.Drawing.Point(1250, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 35;
+            this.button4.TabIndex = 12;
             this.button4.Text = "流程分享";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -372,7 +372,7 @@
             this.cbprocessor.Location = new System.Drawing.Point(790, 199);
             this.cbprocessor.Name = "cbprocessor";
             this.cbprocessor.Size = new System.Drawing.Size(100, 20);
-            this.cbprocessor.TabIndex = 38;
+            this.cbprocessor.TabIndex = 25;
             // 
             // label12
             // 
@@ -380,7 +380,7 @@
             this.label12.Location = new System.Drawing.Point(731, 204);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 37;
+            this.label12.TabIndex = 24;
             this.label12.Text = "处理人员";
             // 
             // cbsearchprocessor
@@ -390,7 +390,7 @@
             this.cbsearchprocessor.Location = new System.Drawing.Point(699, 16);
             this.cbsearchprocessor.Name = "cbsearchprocessor";
             this.cbsearchprocessor.Size = new System.Drawing.Size(100, 20);
-            this.cbsearchprocessor.TabIndex = 40;
+            this.cbsearchprocessor.TabIndex = 9;
             // 
             // label13
             // 
@@ -398,8 +398,25 @@
             this.label13.Location = new System.Drawing.Point(640, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 39;
+            this.label13.TabIndex = 8;
             this.label13.Text = "处理人员";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(899, 204);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 12);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "工时";
+            // 
+            // txthour
+            // 
+            this.txthour.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txthour.Location = new System.Drawing.Point(934, 201);
+            this.txthour.Name = "txthour";
+            this.txthour.Size = new System.Drawing.Size(46, 21);
+            this.txthour.TabIndex = 27;
             // 
             // planlist
             // 
@@ -411,23 +428,6 @@
             this.planlist.TabIndex = 0;
             this.planlist.UseCompatibleStateImageBehavior = false;
             this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(899, 204);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 12);
-            this.label14.TabIndex = 42;
-            this.label14.Text = "工时";
-            // 
-            // txthour
-            // 
-            this.txthour.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txthour.Location = new System.Drawing.Point(934, 201);
-            this.txthour.Name = "txthour";
-            this.txthour.Size = new System.Drawing.Size(46, 21);
-            this.txthour.TabIndex = 41;
             // 
             // Pasn
             // 

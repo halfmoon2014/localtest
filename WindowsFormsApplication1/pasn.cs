@@ -532,15 +532,14 @@ namespace PlanTODO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            loadpc.Visible = true;
-            //MessageBox.Show(loadpc.Visible.ToString());
+            loadpc.Visible = true;           
         }
 
         private void btndel_Click(object sender, EventArgs e)
         {
 
             DialogResult result2 = MessageBoxEx.Show(this, "Are you sure to delete", "warn", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-            //MessageBoxEx.Show(this,result.ToString());
+            
             if (result2 == DialogResult.OK)
             {
                 Thread thread;

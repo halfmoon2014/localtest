@@ -23,11 +23,8 @@ namespace PlanTODO
         {
             InitializeComponent();
             ShowInfo = new MsgInfoDelegate(MessageShowSub);
-            SetStatic = new SetStaticDelegate(SetStaticSub);
-            //this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
-            //this.skinEngine1.SkinFile = Application.StartupPath + "//Page.ssk";     
-            s = new Sunisoft.IrisSkin.SkinEngine();
-            //s.SkinDialogs = false;
+            SetStatic = new SetStaticDelegate(SetStaticSub);           
+            s = new Sunisoft.IrisSkin.SkinEngine();      
             s.SkinFile = Application.StartupPath + "//Skins//Page.ssk";
             Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//main.ico");
             Icon ic = Icon.FromHandle(bmp.GetHicon());
@@ -43,7 +40,7 @@ namespace PlanTODO
             this.lblInfo.Text = info;
             if (isShow)
             {
-                MessageBox.Show(info, "系统提示");
+                MessageBoxEx.Show(this, info);
             }
         }
         private void btnexit_Click(object sender, EventArgs e)
@@ -52,10 +49,16 @@ namespace PlanTODO
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
-        {            
-            Thread thread;
-            thread = new Thread(() => login());
-            thread.Start();
+        {
+            try
+            {
+                Thread thread;
+                thread = new Thread(() => login());
+                thread.Start();
+            }
+            catch (SystemException ex) {
+                MessageShowSub(ex.Message, true);                
+            }
         }
 
         private void login()
@@ -81,7 +84,7 @@ namespace PlanTODO
                 }
                 else
                 {
-                    MessageBoxEx.Show(this, "用户名密码错误");
+                    MessageShowSub("用户名密码错误", true);                    
                 }
             }));
         }
@@ -111,18 +114,14 @@ namespace PlanTODO
                 DataSet ds = MySqlHelper.ExecuteSQL(" select ver,url from cl_V_pda_ver a where type='ab' order by ver desc ");
                 DataTable dtZXD = ds.Tables[0];
 
-
-
                 string remoteVer = dtZXD.Rows[0]["ver"].ToString();
                 string url = dtZXD.Rows[0]["url"].ToString();
                 if (remoteVer != LocalConfig.GetConfigValue("ver"))
                 {
-                    Process p = new Process();
-                    //CE下需绝对路径，没有工作目录概念
+                    Process p = new Process();                   
                     p.StartInfo.FileName = System.Windows.Forms.Application.StartupPath + "\\autoup.exe";
                     p.StartInfo.Arguments = remoteVer + " " + url + " " + System.Windows.Forms.Application.StartupPath+"\\plantodo.exe";
                     p.Start();
-
                     Process.GetCurrentProcess().Kill();
                 }
 
@@ -131,7 +130,7 @@ namespace PlanTODO
             }
             catch (SystemException ex)
             {
-
+                MessageShowSub(ex.Message, true);
             }
 
         }
