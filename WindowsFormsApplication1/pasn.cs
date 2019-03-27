@@ -266,10 +266,8 @@ namespace PlanTODO
             //上传文件到服务器end
 
             //string content = ContentRTB.Text;
-
             FileInfo fi = new FileInfo(FilePath + "\\" + filename + ".rtf");
             DateTime dt = fi.LastWriteTime;
-
             string sql = "";
             if (string.IsNullOrEmpty(id))
             {
@@ -278,7 +276,7 @@ namespace PlanTODO
             }
             else
             {
-                sql = @"update pasn set relor='" + relor + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "',Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "' ,processor='"+ processor + "',compor='"+ compor + "',hour='"+hour+"' where id=" + id + ";select " + id + "; ";
+                sql = @"update pasn set relor='" + relor + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "',"+(status=="1"? "compDate=now()," : "")+"Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "' ,processor='"+ processor + "',compor='"+ compor + "',hour='"+hour+"' where id=" + id + ";select " + id + "; ";
             }
             try
             {
@@ -288,7 +286,7 @@ namespace PlanTODO
                     txtid.Text = ds.Tables[0].Rows[0][0].ToString();
                     //前端新增一行
                     if (string.IsNullOrEmpty(id)) {
-
+                        //TODO
                     }
                     else
                     {
