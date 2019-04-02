@@ -614,12 +614,12 @@ namespace PlanTODO
 
         public string NewFileName(string filename, string relor, string title, string remark)
         {
-
             if (filename.Length == 0)
             {
-                filename = this.name + "_" + relor + "_" + title + "_" + remark;
+                string uuid = Guid.NewGuid().ToString("N");
+                filename = this.name + "_" + relor + "_" + title + "_" + remark+"_"+ uuid;
                 if(filename.Length> filenameMaxLen)
-                    filename = filename.Substring(1, 60);//限定最大文件长度
+                    filename = filename.Substring(1, 60);//限定最大文件长度                 
             }
             else
             {
