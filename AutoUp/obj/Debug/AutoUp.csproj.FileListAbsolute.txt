@@ -1,8 +1,0 @@
-E:\gitrepos\localtest\AutoUp\bin\Debug\AutoUp.exe
-E:\gitrepos\localtest\AutoUp\bin\Debug\AutoUp.pdb
-E:\gitrepos\localtest\AutoUp\bin\Debug\ICSharpCode.CE.SharpZLib.dll
-E:\gitrepos\localtest\AutoUp\obj\Debug\AutoUp.UpdateForm.resources
-E:\gitrepos\localtest\AutoUp\obj\Debug\AutoUp.Properties.Resources.resources
-E:\gitrepos\localtest\AutoUp\obj\Debug\AutoUp.csproj.GenerateResource.Cache
-E:\gitrepos\localtest\AutoUp\obj\Debug\AutoUp.exe
-E:\gitrepos\localtest\AutoUp\obj\Debug\AutoUp.pdb
