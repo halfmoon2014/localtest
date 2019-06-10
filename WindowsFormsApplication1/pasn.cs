@@ -150,9 +150,9 @@ namespace PlanTODO
             //Thread.Sleep(500);//看效果用的，可注释
             string statusReq = "";
             if (status != "-1")
-                statusReq = "and status like '%" + status + "%'";
+                statusReq += "and status like '%" + status + "%'";
             if(processor != "all")
-                statusReq = "and processor like '%" + processor + "%'";
+                statusReq += "and processor like '%" + processor + "%'";
 
             ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' " + statusReq + " and creator like '%" + creator + "%' order by id desc ");
             this.Invoke(new Action(() =>
