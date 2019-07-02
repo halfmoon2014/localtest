@@ -139,12 +139,13 @@ namespace PlanTODO
             string creator = txtcreator.Text;
             string status = "";
             string processor = "";
+            string content = txtcontent.Text;
             this.Invoke(new Action(() =>
             {
                 this.loadpc.Visible = true;
                 btnsearch.Enabled = false;
                 status = cbsearchstatus.SelectedValue.ToString();
-                processor = cbsearchprocessor.SelectedValue.ToString();
+                processor = cbsearchprocessor.SelectedValue.ToString();                
                 //Console.WriteLine(this.loadpc.Visible);
             }));
             //Thread.Sleep(500);//看效果用的，可注释
@@ -153,8 +154,11 @@ namespace PlanTODO
                 statusReq += "and status like '%" + status + "%'";
             if(processor != "all")
                 statusReq += "and processor like '%" + processor + "%'";
-
+            if (content != "")
+                statusReq += "and CONCAT(remark,content,title,relor) like '%" + content + "%'";
+            
             ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' " + statusReq + " and creator like '%" + creator + "%' order by id desc ");
+
             this.Invoke(new Action(() =>
             {
                 CreateListView(ds);

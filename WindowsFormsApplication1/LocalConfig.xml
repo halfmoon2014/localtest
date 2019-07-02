@@ -20,5 +20,5 @@
     </xs:element>
   </xs:schema>
   <SystemConfig ConfigName="mysql" ConfigValue="Server=192.168.135.99;Uid=root;Pwd=ll=8805;Database=commoditycenter" Remark="" />
-  <SystemConfig ConfigName="ver" ConfigValue="10" Remark="版本号,用于升级"/>
+  <SystemConfig ConfigName="ver" ConfigValue="12" Remark="版本号,用于升级"/>
 </NewDataSet>

@@ -67,6 +67,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txthour = new System.Windows.Forms.TextBox();
+            this.txtcontent = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.planlist = new ListViewEx();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(487, 19);
+            this.label1.Location = new System.Drawing.Point(689, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 6;
@@ -323,7 +325,7 @@
             // 
             this.cbsearchstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbsearchstatus.FormattingEnabled = true;
-            this.cbsearchstatus.Location = new System.Drawing.Point(534, 16);
+            this.cbsearchstatus.Location = new System.Drawing.Point(736, 16);
             this.cbsearchstatus.Name = "cbsearchstatus";
             this.cbsearchstatus.Size = new System.Drawing.Size(100, 20);
             this.cbsearchstatus.TabIndex = 7;
@@ -359,9 +361,9 @@
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(974, 778);
+            this.progressBar1.Location = new System.Drawing.Point(974, 779);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(439, 23);
+            this.progressBar1.Size = new System.Drawing.Size(439, 20);
             this.progressBar1.TabIndex = 36;
             this.progressBar1.Visible = false;
             // 
@@ -387,7 +389,7 @@
             // 
             this.cbsearchprocessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbsearchprocessor.FormattingEnabled = true;
-            this.cbsearchprocessor.Location = new System.Drawing.Point(699, 16);
+            this.cbsearchprocessor.Location = new System.Drawing.Point(901, 16);
             this.cbsearchprocessor.Name = "cbsearchprocessor";
             this.cbsearchprocessor.Size = new System.Drawing.Size(100, 20);
             this.cbsearchprocessor.TabIndex = 9;
@@ -395,7 +397,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(640, 21);
+            this.label13.Location = new System.Drawing.Point(842, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 8;
@@ -418,6 +420,23 @@
             this.txthour.Size = new System.Drawing.Size(46, 21);
             this.txthour.TabIndex = 27;
             // 
+            // txtcontent
+            // 
+            this.txtcontent.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtcontent.Location = new System.Drawing.Point(546, 16);
+            this.txtcontent.Name = "txtcontent";
+            this.txtcontent.Size = new System.Drawing.Size(137, 21);
+            this.txtcontent.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(499, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 12);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Content";
+            // 
             // planlist
             // 
             this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -434,6 +453,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1425, 802);
+            this.Controls.Add(this.txtcontent);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txthour);
             this.Controls.Add(this.cbsearchprocessor);
@@ -526,5 +547,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txthour;
+        private System.Windows.Forms.TextBox txtcontent;
+        private System.Windows.Forms.Label label15;
     }
 }
