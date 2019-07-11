@@ -1,0 +1,8 @@
+G:\迅雷下载\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.exe.config
+G:\迅雷下载\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.exe
+G:\迅雷下载\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.pdb
+G:\迅雷下载\WinFormSkin\WinFormSkin\obj\Debug\WinFormSkin.Form1.resources
+G:\迅雷下载\WinFormSkin\WinFormSkin\obj\Debug\WinFormSkin.Properties.Resources.resources
+G:\迅雷下载\WinFormSkin\WinFormSkin\obj\Debug\WinFormSkin.csproj.GenerateResource.Cache
+G:\迅雷下载\WinFormSkin\WinFormSkin\obj\Debug\WinFormSkin.exe
+G:\迅雷下载\WinFormSkin\WinFormSkin\obj\Debug\WinFormSkin.pdb
