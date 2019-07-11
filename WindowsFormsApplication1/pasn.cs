@@ -64,11 +64,11 @@ namespace PlanTODO
             SetCB(cbsearchprocessor, new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌","all" }, "all");
             SetCB(cbsearchstatus, new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" }, { "-1","全部" } }, "-1");
 
-            loadpc.Location = new System.Drawing.Point((this.Width - loadpc.Width) / 2, (this.Height - loadpc.Height) / 2);
-            loadpc.Visible = false;
-            loadpc.BringToFront();
+            //loadpc.Location = new System.Drawing.Point((this.Width - loadpc.Width) / 2, (this.Height - loadpc.Height) / 2);
+            //loadpc.Visible = false;
+            //loadpc.BringToFront();
             planlist.View = View.Details;
-            planlist.CheckBoxes = true;
+            planlist.CheckBoxes = false;
             planlist.FullRowSelect = true;
             PlanListColumn.Add(new ListColumn("日期", 135, "BizDate"));
             PlanListColumn.Add(new ListColumn("标题", 120, "title"));
@@ -136,10 +136,10 @@ namespace PlanTODO
             string begin = null, end = null;
             begin = dtsearchbegin.Text;
             end = dtsearchend.Text;
-            string creator = txtcreator.Text;
+            string creator = txtcreator.Text.Trim();
             string status = "";
             string processor = "";
-            string content = txtcontent.Text;
+            string content = txtcontent.Text.Trim();
             this.Invoke(new Action(() =>
             {
                 this.loadpc.Visible = true;
@@ -486,7 +486,7 @@ namespace PlanTODO
         /// <param name="Filename">文件名</param>
         /// <param name="Prog">普通进度条ProgressBar</param>
         /// <returns>True/False是否下载成功</returns>
-        public bool DownLoadFile(string URL, string Filename, ProgressBar Prog)
+        public bool DownLoadFile(string URL, string Filename, ToolStripProgressBar Prog)
         {
             try
             {
@@ -527,10 +527,7 @@ namespace PlanTODO
             thread.Start();
         }
 
-        private void Pasn_ResizeEnd(object sender, EventArgs e)
-        {
-            loadpc.Location = new System.Drawing.Point((this.Width - loadpc.Width) / 2, (this.Height - loadpc.Height) / 2);
-        }
+      
 
         private void button3_Click(object sender, EventArgs e)
         {

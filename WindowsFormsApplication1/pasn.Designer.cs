@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pasn));
             this.btnsearch = new System.Windows.Forms.Button();
             this.dtsearchbegin = new System.Windows.Forms.DateTimePicker();
             this.dtsearchend = new System.Windows.Forms.DateTimePicker();
@@ -46,10 +45,8 @@
             this.txtid = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbtip = new System.Windows.Forms.Label();
             this.btndel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.loadpc = new System.Windows.Forms.PictureBox();
             this.txtcreator = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -60,7 +57,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtcompor = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.cbprocessor = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbsearchprocessor = new System.Windows.Forms.ComboBox();
@@ -69,8 +65,14 @@
             this.txthour = new System.Windows.Forms.TextBox();
             this.txtcontent = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbtip = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.loadpc = new System.Windows.Forms.ToolStripStatusLabel();
             this.planlist = new ListViewEx();
-            ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnsearch
@@ -224,17 +226,6 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "结束日期";
             // 
-            // lbtip
-            // 
-            this.lbtip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbtip.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbtip.Location = new System.Drawing.Point(24, 781);
-            this.lbtip.Name = "lbtip";
-            this.lbtip.Size = new System.Drawing.Size(1389, 12);
-            this.lbtip.TabIndex = 35;
-            this.lbtip.Text = "tip";
-            // 
             // btndel
             // 
             this.btndel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -256,16 +247,6 @@
             this.button1.Text = "New(&N)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // loadpc
-            // 
-            this.loadpc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loadpc.Image = ((System.Drawing.Image)(resources.GetObject("loadpc.Image")));
-            this.loadpc.Location = new System.Drawing.Point(1160, 582);
-            this.loadpc.Name = "loadpc";
-            this.loadpc.Size = new System.Drawing.Size(132, 132);
-            this.loadpc.TabIndex = 18;
-            this.loadpc.TabStop = false;
             // 
             // txtcreator
             // 
@@ -358,15 +339,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(974, 779);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(439, 20);
-            this.progressBar1.TabIndex = 36;
-            this.progressBar1.Visible = false;
-            // 
             // cbprocessor
             // 
             this.cbprocessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -410,7 +382,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 12);
             this.label14.TabIndex = 26;
-            this.label14.Text = "工时";
+            this.label14.Text = "Time";
             // 
             // txthour
             // 
@@ -437,6 +409,53 @@
             this.label15.TabIndex = 37;
             this.label15.Text = "Content";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.lbtip,
+            this.toolStripStatusLabel2,
+            this.progressBar1,
+            this.loadpc});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 780);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1425, 22);
+            this.statusStrip1.TabIndex = 39;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 17);
+            this.toolStripStatusLabel1.Text = "提示信息:";
+            // 
+            // lbtip
+            // 
+            this.lbtip.Name = "lbtip";
+            this.lbtip.Size = new System.Drawing.Size(56, 17);
+            this.lbtip.Text = "【你好】";
+            this.lbtip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(10, 3, 1, 3);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 16);
+            this.progressBar1.Visible = false;
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1295, 17);
+            this.toolStripStatusLabel2.Spring = true;
+            // 
+            // loadpc
+            // 
+            this.loadpc.Image = global::PlanTODO.Properties.Resources.loading;
+            this.loadpc.Name = "loadpc";
+            this.loadpc.Size = new System.Drawing.Size(16, 17);
+            this.loadpc.Visible = false;
+            // 
             // planlist
             // 
             this.planlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -453,6 +472,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1425, 802);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtcontent);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -461,7 +481,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cbprocessor);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtcompor);
@@ -476,7 +495,6 @@
             this.Controls.Add(this.btndel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.loadpc);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.label5);
@@ -493,13 +511,12 @@
             this.Controls.Add(this.dtsearchbegin);
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.planlist);
-            this.Controls.Add(this.lbtip);
             this.Name = "Pasn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pasn";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pasn_Load);
-            this.ResizeEnd += new System.EventHandler(this.Pasn_ResizeEnd);
-            ((System.ComponentModel.ISupportInitialize)(this.loadpc)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,10 +541,8 @@
         private System.Windows.Forms.TextBox txtfilename;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.PictureBox loadpc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbtip;
         private System.Windows.Forms.Button btndel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtcreator;
@@ -540,7 +555,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtcompor;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ComboBox cbprocessor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbsearchprocessor;
@@ -549,5 +563,11 @@
         private System.Windows.Forms.TextBox txthour;
         private System.Windows.Forms.TextBox txtcontent;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel lbtip;
+        private System.Windows.Forms.ToolStripProgressBar progressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel loadpc;
     }
 }

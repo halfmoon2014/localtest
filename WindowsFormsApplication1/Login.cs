@@ -2,17 +2,13 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Threading;
-using System.IO;
 using System.Diagnostics;
-using System.Reflection;
 using System.Drawing;
 
 namespace PlanTODO
 {
     public partial class Login : Form
-    {
-        
-       
+    {  
         private delegate void MsgInfoDelegate(string strInfo, bool isShow);
         private MsgInfoDelegate ShowInfo;
         private delegate void SetStaticDelegate(bool enabled);
@@ -25,7 +21,9 @@ namespace PlanTODO
             ShowInfo = new MsgInfoDelegate(MessageShowSub);
             SetStatic = new SetStaticDelegate(SetStaticSub);           
             s = new Sunisoft.IrisSkin.SkinEngine();      
-            s.SkinFile = Application.StartupPath + "//Skins//Page.ssk";
+            //s.SkinFile = Application.StartupPath + "//Skins//Page.ssk";
+            s.SkinFile = Application.StartupPath + "//Skins//SportsBlack.ssk";
+            
             Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//main.ico");
             Icon ic = Icon.FromHandle(bmp.GetHicon());
             this.Icon = ic;
