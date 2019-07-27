@@ -157,7 +157,7 @@ namespace PlanTODO
             if (content != "")
                 statusReq += "and CONCAT(remark,content,title,relor) like '%" + content + "%'";
             
-            ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' " + statusReq + " and creator like '%" + creator + "%' order by id desc ");
+            ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' " + statusReq + " and creator like '%" + creator + "%' order by BizDate desc ");
 
             this.Invoke(new Action(() =>
             {
