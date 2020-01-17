@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SaveFileWebForm.aspx.cs" Inherits="tl_yf_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SaveFileWebForm.aspx.cs" Inherits="WebService_SaveFileWebForm" %>
 
 <!DOCTYPE html>
 

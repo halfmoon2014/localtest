@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="JsBarcode.all.js"></script>
+</head>
+<body>
+    <div>
+        <img id="barcode2" />
+        <script>
+			JsBarcode("#barcode2", "9780199532179", {
+			    format: "CODE128",
+			  displayValue:true,
+			  fontSize:24			  
+			});
+        </script>
+    </div>
+</body>
+</html>

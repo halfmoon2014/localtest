@@ -17,7 +17,7 @@ public partial class JintTest : System.Web.UI.Page
         //string o = (add3.Invoke(1, 2)).ToString(); // -> 3
         //Response.Write(o);
         JintDelegate dataMethod = new JintDelegate(DataMethod);
-
+        Response.Write(form1.FindControl("tes-_t"));
         string data = Request.QueryString["data"];
         string method = Request.QueryString["method"];//RESTful
 

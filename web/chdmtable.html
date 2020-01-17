@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <script src="1.10.2-jquery.min.js"></script>
+    <style type="text/css">
+        * {
+            padding: 2px;
+        }
+
+        #mytable {
+            padding: 0px;
+            table-layout: fixed;
+            word-break: break-all;
+            word-wrap: break-word;
+            width: 800px;
+            margin-left: 100px;
+            font-size: 14px;
+        }
+
+     
+
+       
+    </style>
+</head>
+<body>    
+    <div style="text-align:center">
+        <table id="mytable" border="1" style="margin:auto" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td rowspan="3" style="width:50%;text-align:center">
+                        <img  src="#" onclick="imgclk(this)" id="maintp" style="height:300px;width:300px;cursor:pointer" />
+                    </td>
+                    <td>基本信息</td>
+                    <td colspan="2" id="ghs"></td>
+                </tr>
+                <tr>
+                    <td id="chmc">&nbsp;</td>
+                    <td id="cfbl">&nbsp;</td>
+                    <td id="cbdj">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="info">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td style="text-align:center">实验室检测报告</td>
+                    <td colspan="3" style="text-align:left;padding:2px" id="ml"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" id="lab">&nbsp;</td>
+                    <td colspan="3" style="text-align:left;height:100px;padding:2px" id="jsb"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:left;height:100px;" id="sjs" ></td>
+                </tr>                
+                <tr>
+                    <td colspan="4" style="text-align:left" id="syqk">历史使用情况：</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:left" id="xd">历史下单款式：</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:left">大货质量问题：</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+</body>
+</html>
+<script type="text/javascript">
+    function imgclk(o) {
+        window.open(o.src);
+    }
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) { return pair[1]; }
+        }
+        return (false);
+    }
+
+    $(function () {
+        var input = {}; input.chdm = getQueryVariable("chdm");;
+        $.ajax({
+            type: "POST",
+            url: "../../../service/HttpRequestSkill.jsp?action=getChdmKcinfo&source=pc",
+            contentType: "application/json",
+            data: JSON.stringify(input),
+            async: false,
+            success: function (obj) {
+                if (obj.errcode == 0) {
+                    handle(obj);
+                } else {
+                    alert(obj.errmsg);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status + "|" + XMLHttpRequest.readyState + "|" + textStatus);
+            }
+        });
+    });
+
+    function getDBval(v) {
+        if (v == null) {
+            return "";
+        } else return v;
+    }
+    function handle(obj) {
+        var mainList = obj.data[0];//基本信息
+        var bgList = obj.data[1];//报告
+        var flggList = obj.data[2];//辅料颜色 规格
+        var xdList = obj.data[3];//下单数据
+        var syList = obj.data[4];//使用情况
+        if(mainList.length>0){
+            document.getElementById("maintp").src = mainList[0].tp;
+            document.getElementById("ghs").innerHTML = "供应商:" + mainList[0].khmc;
+            document.getElementById("chmc").innerHTML = "材料名称：" + mainList[0].chmc;
+            document.getElementById("cfbl").innerHTML = "成份：" + mainList[0].cfbl;
+            document.getElementById("cbdj").innerHTML = "单价：" + mainList[0].cbdj;
+            document.getElementById("sjs").innerHTML = "设计使用建议：" + getDBval(mainList[0].sjsyj);
+            document.getElementById("jsb").innerHTML = "技术工厂使用建议：" + getDBval(mainList[0].jsbyj);
+            document.getElementById("ml").innerHTML = "适用范围：" + getDBval(mainList[0].mlyj);
+
+        }
+        if (flggList.length > 0) {
+            var flggHtml = "";
+            var flgg_chdm = ""; var flgg_ys = ""; var flgg_sl = "";
+            for (var i = 0; i < flggList; i++) {
+                flgg_chdm += "<td>" + flggList[i].chdm + "</td>";
+                flgg_ys += "<td>" + flggList[i].ys + "</td>";
+                flgg_sl += "<td>" + flggList[i].sl + "</td>";
+            }
+            flggHtml = "<table><tr>" + flgg_chdm + "</tr><tr>" + flgg_ys + "</tr><tr>" + flgg_sl + "</tr></table>";
+        }
+        if (bgList.length > 0) {
+            var bgHtml = "";
+            for (var i = 0; i < bgList.length; i++) {
+                bgHtml += "<tr><td>报告编号:</td><td>" + bgList[i].bgbh+ "</td><td>结果:</td><td>"+bgList[i].zpdjg+"</td></tr>"             
+            }
+            document.getElementById("lab").innerHTML = "<table>" + bgHtml + "</table>";
+        }
+        if (syList.length > 0) {
+            //syqk
+            var syhtml = "历史使用情况：";
+            for (var i = 0; i < syList.length; i++) {
+                syhtml += "<span>" + syList[i].yphh + ":" + syList[i].bzdh + "</span>"
+            }
+            document.getElementById("syqk").innerHTML = syhtml;
+        }
+
+        if (syList.length > 0) {
+     
+            var xdhtml = "历史下单款式：";
+            for (var i = 0; i < xdList.length; i++) {
+                xdhtml += "<span>" + getDBval(xdList[i].zzr) + ":" + xdList[i].sl + "</span>"
+            }
+            document.getElementById("xd").innerHTML = xdhtml;
+        }
+
+        //var table = document.getElementById("mytable");
+        //table.rows[0].cells[0].innerHTML += obj.tp;  //图片
+        //table.rows[0].cells[1].innerHTML += obj.jbxx; //基本信息
+        //table.rows[0].cells[2].innerHTML += obj.gys;  //供应商
+        //table.rows[1].cells[0].innerHTML += obj.bzd;  //包装袋
+        //table.rows[1].cells[1].innerHTML += obj.jt;  //胶条
+        //table.rows[1].cells[2].innerHTML += obj.dj;  //单价
+        //table.rows[2].cells[0].innerHTML += obj.ys;  //颜色
+        //table.rows[3].cells[0].innerHTML += obj.gg;  //规格
+        //table.rows[4].cells[0].innerHTML += obj.kc;  //库存
+        ////table.rows[5].cells[0].innerHTML +=
+        //table.rows[6].cells[0].innerHTML += obj.jcbg;  //检测报告
+        //table.rows[5].cells[1].innerHTML += obj.sjyj;  //设计建议
+
+        //table.rows[6].cells[1].innerHTML += obj.gcyj;  //工厂建议
+        //table.rows[7].cells[0].innerHTML += obj.syfw;  //使用范围
+        //table.rows[8].cells[0].innerHTML += obj.lssyqk;  //历史使用情况
+        //table.rows[9].cells[0].innerHTML += obj.lsxdks;  //历史下单款式
+        //table.rows[10].cells[0].innerHTML += obj.dhzlwt;  //大货质量问题
+    }
+</script>
