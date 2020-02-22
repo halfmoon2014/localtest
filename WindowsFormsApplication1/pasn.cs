@@ -31,7 +31,7 @@ namespace PlanTODO
         List<ListColumn> PlanListColumn = new List<ListColumn>();
         private string name;
         private string username;
-        public Pasn(string name,string username)
+        public Pasn(string name, string username)
         {
             InitializeComponent();
             this.name = name;
@@ -46,6 +46,9 @@ namespace PlanTODO
             Icon ic = Icon.FromHandle(bmp.GetHicon());
             this.Icon = ic;
         }
+        /// <summary>
+        /// 自定义初始
+        /// </summary>
         public void Init()
         {
             this.loadpc.Visible = false;
@@ -56,13 +59,13 @@ namespace PlanTODO
             DateTime dt = DateTime.Now;
             dtsearchbegin.Text = dt.AddMonths(-1).ToShortDateString();
             dtsearchend.Format = DateTimePickerFormat.Custom;
-            dtsearchend.CustomFormat = "yyyy-MM-dd";                      
-            
-            SetCB(cbstatus, new Dictionary<string, string>() { {"0","进行中" }, { "1", "完成" }, { "4", "取消" } }, "0");
-            
-            SetCB(cbprocessor,new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌" } , username);
-            SetCB(cbsearchprocessor, new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌","all" }, "all");
-            SetCB(cbsearchstatus, new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" }, { "-1","全部" } }, "-1");
+            dtsearchend.CustomFormat = "yyyy-MM-dd";
+
+            SetCB(cbstatus, new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" } }, "0");
+
+            SetCB(cbprocessor, new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌" }, username);
+            SetCB(cbsearchprocessor, new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌", "all" }, "all");
+            SetCB(cbsearchstatus, new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" }, { "-1", "全部" } }, "-1");
 
             //loadpc.Location = new System.Drawing.Point((this.Width - loadpc.Width) / 2, (this.Height - loadpc.Height) / 2);
             //loadpc.Visible = false;
@@ -98,19 +101,30 @@ namespace PlanTODO
             //});
             //this.loadpc.Visible = true;
             Thread thread;
-            thread = new Thread(() => GetPlanListData());
+            thread = new Thread(() => GetPlanListData(""));
             thread.Start();
         }
-
-        private void SetCB(ComboBox cb, string [] dataSource, string selectedValue)
+        /// <summary>
+        /// 初始comb
+        /// </summary>
+        /// <param name="cb"></param>
+        /// <param name="dataSource"></param>
+        /// <param name="selectedValue"></param>
+        private void SetCB(ComboBox cb, string[] dataSource, string selectedValue)
         {
             Dictionary<string, string> ds = new Dictionary<string, string>();
-            foreach (string s in dataSource)            
-                ds.Add(s, s);            
+            foreach (string s in dataSource)
+                ds.Add(s, s);
             SetCB(cb, ds, selectedValue);
         }
-
-        private void SetCB(ComboBox cb, Dictionary<string,string> dataSource, string selectedValue) {
+        /// <summary>
+        /// 初始comb2
+        /// </summary>
+        /// <param name="cb"></param>
+        /// <param name="dataSource"></param>
+        /// <param name="selectedValue"></param>
+        private void SetCB(ComboBox cb, Dictionary<string, string> dataSource, string selectedValue)
+        {
             DataTable dt = new DataTable();
             dt.Columns.Add("Text");
             dt.Columns.Add("Value");
@@ -120,7 +134,7 @@ namespace PlanTODO
                 dr["Text"] = dataSource[key];
                 dr["Value"] = key;
                 dt.Rows.Add(dr);
-            }            
+            }
             cb.DataSource = dt;
             cb.DisplayMember = "Text";
             cb.ValueMember = "Value";
@@ -130,7 +144,7 @@ namespace PlanTODO
         /// <summary>
         /// 初始化列表
         /// </summary>
-        private void GetPlanListData()
+        private void GetPlanListData(string initialVal)
         {
             DataSet ds = null;
             string begin = null, end = null;
@@ -145,23 +159,39 @@ namespace PlanTODO
                 this.loadpc.Visible = true;
                 btnsearch.Enabled = false;
                 status = cbsearchstatus.SelectedValue.ToString();
-                processor = cbsearchprocessor.SelectedValue.ToString();                
+                processor = cbsearchprocessor.SelectedValue.ToString();
                 //Console.WriteLine(this.loadpc.Visible);
             }));
             //Thread.Sleep(500);//看效果用的，可注释
             string statusReq = "";
             if (status != "-1")
                 statusReq += "and status like '%" + status + "%'";
-            if(processor != "all")
+            if (processor != "all")
                 statusReq += "and processor like '%" + processor + "%'";
             if (content != "")
                 statusReq += "and CONCAT(remark,content,title,relor) like '%" + content + "%'";
-            
+
             ds = MySqlHelper.ExecuteSQL("select * from pasn where Date(BizDate)  BETWEEN '" + begin + "' and '" + end + "' " + statusReq + " and creator like '%" + creator + "%' order by BizDate desc ");
 
             this.Invoke(new Action(() =>
             {
                 CreateListView(ds);
+                if (initialVal.Length > 0)
+                {
+                    for (int i = 0; i < planlist.Items.Count; i++)
+                    {
+                        DataRow dr = (DataRow)planlist.Items[i].Tag;
+                        if (dr["id"].ToString() == initialVal)
+                        {
+                            planlist.Items[i].Selected = true;//选中
+                            planlist.Items[i].Focused = true; //焦点
+                            planlist.Items[i].EnsureVisible();//滚动显示
+                        }
+                    }
+                }else
+                {
+                    button1_Click_1(null,EventArgs.Empty);
+                }
                 this.loadpc.Visible = false;
                 btnsearch.Enabled = true;
                 lbtip.Text = "refresh success";
@@ -190,9 +220,7 @@ namespace PlanTODO
             }
             planlist.EndUpdate();//防listview闪烁结束            
         }
-
-
-
+        
         /// <summary>
         /// 新增、保存内容
         /// </summary>
@@ -205,14 +233,18 @@ namespace PlanTODO
                 Thread thread;
                 thread = new Thread(() => SaveWork());
                 thread.Start();
-            }catch(SystemException ex)
+            }
+            catch (SystemException ex)
             {
                 this.Invoke(new Action(() =>
                 {
-                    MessageBoxEx.Show(this, ex.Message );
+                    MessageBoxEx.Show(this, ex.Message);
                 }));
             }
         }
+        /// <summary>
+        /// 保存
+        /// </summary>
         private void SaveWork()
         {
             string content = null;
@@ -272,35 +304,50 @@ namespace PlanTODO
             //string content = ContentRTB.Text;
             FileInfo fi = new FileInfo(FilePath + "\\" + filename + ".rtf");
             DateTime dt = fi.LastWriteTime;
-            string sql = "";
+            string sql = "  ";
             if (string.IsNullOrEmpty(id))
             {
-                sql = @"insert pasn(title,BizDate,CreateDate,Creator,relor,Remark,Status,Content,filename,lastwritetime,processor,compor,hour) 
-                    values('" + title + "',now(),now(),'" + this.name + "','" + relor + "','" + remark + "','" + status + "','" + content + "','" + filename + "','" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "','"+ processor + "','"+ compor + "','"+ hour + "');  select @@IDENTITY; ";
+                sql += @"insert pasn(title,BizDate,CreateDate,Creator,relor,Remark,Status,Content,filename,lastwritetime,processor,compor,hour) 
+                    values('" + title + "',now(),now(),'" + this.name + "','" + relor + "','" + remark + "','" + status + "','" + content + "','" + filename + "','" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "','" + processor + "','" + compor + "','" + hour + "');  set @id=@@IDENTITY;  ";
             }
             else
             {
-                sql = @"update pasn set relor='" + relor + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "',"+(status=="1"? "compDate=now()," : "")+"Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "' ,processor='"+ processor + "',compor='"+ compor + "',hour='"+hour+"' where id=" + id + ";select " + id + "; ";
+                sql += @"update pasn set relor='" + relor + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "'," + (status == "1" ? "compDate=now()," : "") + "Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "' ,processor='" + processor + "',compor='" + compor + "',hour='" + hour + "' where id=" + id + "; ";
+                sql += "set @id=" + id+";";
             }
+            sql += "select * from pasn where id=@id;";
             try
             {
                 DataSet ds = MySqlHelper.ExecuteSQL(sql);
                 this.Invoke(new Action(() =>
                 {
-                    txtid.Text = ds.Tables[0].Rows[0][0].ToString();
+                    txtid.Text = ds.Tables[0].Rows[0]["id"].ToString();
                     //前端新增一行
-                    if (string.IsNullOrEmpty(id)) {
-                        //TODO
+                    if (string.IsNullOrEmpty(id))
+                    {                        
+                        //新增单据的时候，列表刷新一下。但少了一个选中怎么办
+                        Thread thread;
+                        thread = new Thread(() => GetPlanListData(txtid.Text));
+                        thread.Start();
                     }
                     else
-                    {
+                    {   
                         DataRow item = (DataRow)(planlist.SelectedItems[0]).Tag;
-                        item["relor"] = relor;
-                        item["compor"] = compor;
-                        item["Remark"] = remark;
-                        item["status"] = status;
-                        item["content"] = content;
-                        item["processor"] = processor;
+                        planlist.SelectedItems[0].Tag = ds.Tables[0].Rows[0];
+
+                        //List<string> list = new List<string>();
+                        foreach (ListColumn l in PlanListColumn)
+                        {
+                            //   list.Add(ds.Tables[0].Rows[0][l.Key].ToString());                            
+                            planlist.SelectedItems[0].SubItems[PlanListColumn.IndexOf(l)].Text = ds.Tables[0].Rows[0][l.Key].ToString();
+                        }                  
+
+                        //item["relor"] = relor;
+                        //item["compor"] = compor;
+                        //item["Remark"] = remark;
+                        //item["status"] = status;
+                        //item["content"] = content;
+                        //item["processor"] = processor;
                     }
                     //前端新增一行end 
                     this.loadpc.Visible = false;
@@ -309,15 +356,26 @@ namespace PlanTODO
                     MessageBoxEx.Show(this, "save success");
                 }));
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 this.Invoke(new Action(() =>
                 {
+                    this.loadpc.Visible = false;
+                    btnsave.Enabled = true;
+                    lbtip.Text = "erroe";
                     MessageBoxEx.Show(this, "" + ex.GetBaseException());
                 }));
             }
 
         }
 
+        /// <summary>
+        /// 文件的保存
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="fileNamePath"></param>
+        /// <param name="saveName"></param>
+        /// <returns></returns>
         public int UpSound_Request(string address, string fileNamePath, string saveName)
         {
             int returnValue = 0;
@@ -343,8 +401,8 @@ namespace PlanTODO
             sb.Append("application/octet-stream");
             sb.Append("\r\n");
             sb.Append("\r\n");
-            
-            
+
+
             byte[] postHeaderBytes = Encoding.UTF8.GetBytes(sb.ToString());
             // 根据uri创建HttpWebRequest对象   
             HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create(new Uri(address));
@@ -415,6 +473,11 @@ namespace PlanTODO
             return returnValue;
         }
 
+        /// <summary>
+        /// 双击列表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void planlist_DoubleClick(object sender, EventArgs e)
         {
             if (sender.GetType().Name == "ListViewEx")
@@ -437,7 +500,7 @@ namespace PlanTODO
                 txttitle.Text = item["title"].ToString();
                 txthour.Text = item["hour"].ToString();
                 cbstatus.SelectedIndex = int.Parse(item["status"].ToString());
-                cbprocessor.SelectedValue= item["processor"].ToString();
+                cbprocessor.SelectedValue = item["processor"].ToString();
 
                 txtremark.Text = item["remark"].ToString();
                 txtrelor.Text = item["relor"].ToString();
@@ -459,7 +522,8 @@ namespace PlanTODO
                             MessageBoxEx.Show(this, "下载文件失败");
                             ContentRTB.Clear();
                         }
-                    }else
+                    }
+                    else
                     {
                         ContentRTB.LoadFile(FilePath + "\\" + item["filename"].ToString() + ".rtf", RichTextBoxStreamType.RichText);
                     }
@@ -519,26 +583,28 @@ namespace PlanTODO
             }
         }
 
-
+        /// <summary>
+        /// 查询事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Thread thread;
-            thread = new Thread(() => GetPlanListData());
+            thread = new Thread(() => GetPlanListData(""));
             thread.Start();
         }
-
-      
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            loadpc.Visible = true;           
-        }
-
+        
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btndel_Click(object sender, EventArgs e)
         {
 
             DialogResult result2 = MessageBoxEx.Show(this, "Are you sure to delete", "warn", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-            
+
             if (result2 == DialogResult.OK)
             {
                 Thread thread;
@@ -570,12 +636,18 @@ namespace PlanTODO
             this.Invoke(new Action(() =>
             {
                 ClearDetail();
+                Thread thread;
+                thread = new Thread(() => GetPlanListData(""));
+                thread.Start();
                 this.loadpc.Visible = false;
                 btndel.Enabled = true;
                 lbtip.Text = "delete success";
                 MessageBoxEx.Show(this, "delete success");
             }));
         }
+        /// <summary>
+        /// 清除详情区
+        /// </summary>
         private void ClearDetail()
         {
             this.Invoke(new Action(() =>
@@ -593,33 +665,53 @@ namespace PlanTODO
                 txtcompor.Text = "";
             }));
         }
-
+        /// <summary>
+        /// 新增事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             ClearDetail();
             lbtip.Text = "new  status ";
         }
-
+        /// <summary>
+        /// 关闭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
 
+        /// <summary>
+        /// 流程分享
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             Shar shar = new Shar(name);
             shar.Show();
         }
 
+        /// <summary>
+        /// 文件名
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="relor"></param>
+        /// <param name="title"></param>
+        /// <param name="remark"></param>
+        /// <returns></returns>
         public string NewFileName(string filename, string relor, string title, string remark)
         {
             if (filename.Length == 0)
             {
                 string uuid = Guid.NewGuid().ToString("N");
-                filename = this.name + "_" + relor + "_" + title + "_" + remark+"_"+ uuid;
-                if(filename.Length> filenameMaxLen)
+                filename = this.name + "_" + relor + "_" + title + "_" + remark + "_" + uuid;
+                if (filename.Length > filenameMaxLen)
                     filename = filename.Substring(1, 60);//限定最大文件长度                 
             }
             else

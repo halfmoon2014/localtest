@@ -68,8 +68,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbtip = new System.Windows.Forms.ToolStripStatusLabel();
-            this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.loadpc = new System.Windows.Forms.ToolStripStatusLabel();
             this.planlist = new ListViewEx();
             this.statusStrip1.SuspendLayout();
@@ -436,18 +436,18 @@
             this.lbtip.Text = "【你好】";
             this.lbtip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1295, 17);
+            this.toolStripStatusLabel2.Spring = true;
+            // 
             // progressBar1
             // 
             this.progressBar1.Margin = new System.Windows.Forms.Padding(10, 3, 1, 3);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(100, 16);
             this.progressBar1.Visible = false;
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1295, 17);
-            this.toolStripStatusLabel2.Spring = true;
             // 
             // loadpc
             // 
