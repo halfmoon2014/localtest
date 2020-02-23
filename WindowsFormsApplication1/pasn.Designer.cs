@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pasn));
             this.btnsearch = new System.Windows.Forms.Button();
             this.dtsearchbegin = new System.Windows.Forms.DateTimePicker();
             this.dtsearchend = new System.Windows.Forms.DateTimePicker();
@@ -71,8 +72,12 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.loadpc = new System.Windows.Forms.ToolStripStatusLabel();
+            this.listStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.planlist = new ListViewEx();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnsearch
@@ -115,16 +120,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ContentRTB.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.ContentRTB.Location = new System.Drawing.Point(12, 251);
+            this.ContentRTB.Location = new System.Drawing.Point(6, 54);
             this.ContentRTB.Name = "ContentRTB";
-            this.ContentRTB.Size = new System.Drawing.Size(1401, 526);
+            this.ContentRTB.Size = new System.Drawing.Size(1386, 516);
             this.ContentRTB.TabIndex = 34;
             this.ContentRTB.Text = "";
             // 
             // btnsave
             // 
             this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsave.Location = new System.Drawing.Point(1250, 200);
+            this.btnsave.Location = new System.Drawing.Point(1236, 13);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 32;
@@ -135,7 +140,7 @@
             // txttitle
             // 
             this.txttitle.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txttitle.Location = new System.Drawing.Point(467, 200);
+            this.txttitle.Location = new System.Drawing.Point(459, 3);
             this.txttitle.Name = "txttitle";
             this.txttitle.Size = new System.Drawing.Size(100, 21);
             this.txttitle.TabIndex = 21;
@@ -143,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(426, 204);
+            this.label2.Location = new System.Drawing.Point(418, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 20;
@@ -152,7 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(273, 227);
+            this.label3.Location = new System.Drawing.Point(265, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 30;
@@ -161,7 +166,7 @@
             // txtremark
             // 
             this.txtremark.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtremark.Location = new System.Drawing.Point(320, 224);
+            this.txtremark.Location = new System.Drawing.Point(312, 27);
             this.txtremark.Name = "txtremark";
             this.txtremark.Size = new System.Drawing.Size(570, 21);
             this.txtremark.TabIndex = 31;
@@ -169,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(573, 205);
+            this.label4.Location = new System.Drawing.Point(565, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 22;
@@ -178,7 +183,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 230);
+            this.label5.Location = new System.Drawing.Point(4, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 28;
@@ -186,7 +191,7 @@
             // 
             // txtfilename
             // 
-            this.txtfilename.Location = new System.Drawing.Point(71, 224);
+            this.txtfilename.Location = new System.Drawing.Point(63, 27);
             this.txtfilename.Name = "txtfilename";
             this.txtfilename.Size = new System.Drawing.Size(196, 21);
             this.txtfilename.TabIndex = 29;
@@ -194,7 +199,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 202);
+            this.label6.Location = new System.Drawing.Point(40, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 12);
             this.label6.TabIndex = 14;
@@ -202,7 +207,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(71, 200);
+            this.txtid.Location = new System.Drawing.Point(63, 3);
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(55, 21);
@@ -229,7 +234,7 @@
             // btndel
             // 
             this.btndel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btndel.Location = new System.Drawing.Point(1331, 200);
+            this.btndel.Location = new System.Drawing.Point(1317, 13);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(75, 23);
             this.btndel.TabIndex = 33;
@@ -279,7 +284,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(132, 202);
+            this.label10.Location = new System.Drawing.Point(124, 5);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 16;
@@ -288,7 +293,7 @@
             // txtrelor
             // 
             this.txtrelor.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtrelor.Location = new System.Drawing.Point(167, 200);
+            this.txtrelor.Location = new System.Drawing.Point(159, 3);
             this.txtrelor.Name = "txtrelor";
             this.txtrelor.Size = new System.Drawing.Size(100, 21);
             this.txtrelor.TabIndex = 17;
@@ -297,7 +302,7 @@
             // 
             this.cbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbstatus.FormattingEnabled = true;
-            this.cbstatus.Location = new System.Drawing.Point(620, 200);
+            this.cbstatus.Location = new System.Drawing.Point(612, 3);
             this.cbstatus.Name = "cbstatus";
             this.cbstatus.Size = new System.Drawing.Size(100, 20);
             this.cbstatus.TabIndex = 23;
@@ -314,7 +319,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(273, 203);
+            this.label11.Location = new System.Drawing.Point(265, 6);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 18;
@@ -323,7 +328,7 @@
             // txtcompor
             // 
             this.txtcompor.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtcompor.Location = new System.Drawing.Point(320, 200);
+            this.txtcompor.Location = new System.Drawing.Point(312, 3);
             this.txtcompor.Name = "txtcompor";
             this.txtcompor.Size = new System.Drawing.Size(100, 21);
             this.txtcompor.TabIndex = 19;
@@ -343,7 +348,7 @@
             // 
             this.cbprocessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbprocessor.FormattingEnabled = true;
-            this.cbprocessor.Location = new System.Drawing.Point(790, 199);
+            this.cbprocessor.Location = new System.Drawing.Point(782, 2);
             this.cbprocessor.Name = "cbprocessor";
             this.cbprocessor.Size = new System.Drawing.Size(100, 20);
             this.cbprocessor.TabIndex = 25;
@@ -351,7 +356,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(731, 204);
+            this.label12.Location = new System.Drawing.Point(723, 7);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 24;
@@ -378,7 +383,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(899, 204);
+            this.label14.Location = new System.Drawing.Point(891, 7);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 12);
             this.label14.TabIndex = 26;
@@ -387,7 +392,7 @@
             // txthour
             // 
             this.txthour.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txthour.Location = new System.Drawing.Point(934, 201);
+            this.txthour.Location = new System.Drawing.Point(926, 4);
             this.txthour.Name = "txthour";
             this.txthour.Size = new System.Drawing.Size(46, 21);
             this.txthour.TabIndex = 27;
@@ -416,45 +421,94 @@
             this.lbtip,
             this.toolStripStatusLabel2,
             this.progressBar1,
-            this.loadpc});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 780);
+            this.loadpc,
+            this.listStatus,
+            this.toolStripSplitButton1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 779);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1425, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1425, 23);
             this.statusStrip1.TabIndex = 39;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 18);
             this.toolStripStatusLabel1.Text = "提示信息:";
             // 
             // lbtip
             // 
             this.lbtip.Name = "lbtip";
-            this.lbtip.Size = new System.Drawing.Size(56, 17);
+            this.lbtip.Size = new System.Drawing.Size(56, 18);
             this.lbtip.Text = "【你好】";
             this.lbtip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1295, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1188, 18);
             this.toolStripStatusLabel2.Spring = true;
             // 
             // progressBar1
             // 
             this.progressBar1.Margin = new System.Windows.Forms.Padding(10, 3, 1, 3);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 16);
+            this.progressBar1.Size = new System.Drawing.Size(100, 17);
             this.progressBar1.Visible = false;
             // 
             // loadpc
             // 
             this.loadpc.Image = global::PlanTODO.Properties.Resources.loading;
             this.loadpc.Name = "loadpc";
-            this.loadpc.Size = new System.Drawing.Size(16, 17);
+            this.loadpc.Size = new System.Drawing.Size(16, 18);
             this.loadpc.Visible = false;
+            // 
+            // listStatus
+            // 
+            this.listStatus.Name = "listStatus";
+            this.listStatus.Size = new System.Drawing.Size(59, 18);
+            this.listStatus.Text = "listStatus";
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(48, 21);
+            this.toolStripSplitButton1.Text = "隐藏";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnsave);
+            this.panel1.Controls.Add(this.btndel);
+            this.panel1.Controls.Add(this.txtcompor);
+            this.panel1.Controls.Add(this.txttitle);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txthour);
+            this.panel1.Controls.Add(this.txtremark);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cbprocessor);
+            this.panel1.Controls.Add(this.txtfilename);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.ContentRTB);
+            this.panel1.Controls.Add(this.txtid);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtrelor);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.cbstatus);
+            this.panel1.Location = new System.Drawing.Point(14, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1401, 576);
+            this.panel1.TabIndex = 40;
             // 
             // planlist
             // 
@@ -472,40 +526,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1425, 802);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtcontent);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.txthour);
             this.Controls.Add(this.cbsearchprocessor);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.cbprocessor);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtcompor);
             this.Controls.Add(this.cbsearchstatus);
-            this.Controls.Add(this.cbstatus);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtrelor);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtcreator);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btndel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtid);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtfilename);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtremark);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txttitle);
-            this.Controls.Add(this.btnsave);
-            this.Controls.Add(this.ContentRTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtsearchend);
             this.Controls.Add(this.dtsearchbegin);
@@ -517,6 +551,8 @@
             this.Load += new System.EventHandler(this.Pasn_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +605,8 @@
         private System.Windows.Forms.ToolStripProgressBar progressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel loadpc;
+        private System.Windows.Forms.ToolStripStatusLabel listStatus;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

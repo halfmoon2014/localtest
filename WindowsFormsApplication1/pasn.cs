@@ -176,6 +176,7 @@ namespace PlanTODO
             this.Invoke(new Action(() =>
             {
                 CreateListView(ds);
+                this.listStatus.Text = "总记录数："+ds.Tables[0].Rows.Count;
                 if (initialVal.Length > 0)
                 {
                     for (int i = 0; i < planlist.Items.Count; i++)
@@ -722,6 +723,21 @@ namespace PlanTODO
             return filename;
         }
 
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            if (this.panel1.Visible)
+            {
+                this.panel1.Visible = false;
+                this.planlist.Height += this.panel1.Height;
+                this.toolStripSplitButton1.Text = "显示";
+            }
+            else
+            {
+                this.panel1.Visible = true;
+                this.planlist.Height -= this.panel1.Height;
+                this.toolStripSplitButton1.Text = "隐藏";
+            }
+        }
     }
 
 }

@@ -10,11 +10,11 @@ public class ListViewEx : ListView
 {
     public ListViewEx()
     {
-        GotFocus += new EventHandler(listView1_GotFocus);
-        LostFocus += new EventHandler(listView1_LostFocus);
+        //GotFocus += new EventHandler(listView1_GotFocus);
+        //LostFocus += new EventHandler(listView1_LostFocus);
         HideSelection = true;
         //  Invalidated += new InvalidateEventHandler(listView_Validated);
-        ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(listView_ItemSelectionChanged);
+        //ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(listView_ItemSelectionChanged);
     }
     class ItemColor
     {
@@ -24,6 +24,7 @@ public class ListViewEx : ListView
     Dictionary<ListViewItem, ItemColor> dicItemColor = new Dictionary<ListViewItem, ItemColor>();
     void listView1_LostFocus(object sender, EventArgs e)
     {
+        Console.WriteLine("listView1_LostFocus");
         HideSelection = true;
         // dicItemColor.Clear();
         foreach (ListViewItem item in SelectedItems)
@@ -42,6 +43,7 @@ public class ListViewEx : ListView
 
     void listView1_GotFocus(object sender, EventArgs e)
     {
+        Console.WriteLine("listView1_GotFocus");
         foreach (var ic in dicItemColor)
         {
             var item = ic.Key;
@@ -67,6 +69,7 @@ public class ListViewEx : ListView
 
     private void listView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
     {
+        Console.WriteLine("listView_ItemSelectionChanged");
         //  e.Item.ForeColor = Color.Black;
         // e.Item.BackColor = SystemColors.Window;
         listView1_LostFocus(null, null);
