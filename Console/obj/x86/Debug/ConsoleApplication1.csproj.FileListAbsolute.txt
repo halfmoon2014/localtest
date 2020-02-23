@@ -1,0 +1,7 @@
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\gitrepos\localtest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+E:\gitrepos\localtest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+E:\gitrepos\localtest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\Console1.exe.config

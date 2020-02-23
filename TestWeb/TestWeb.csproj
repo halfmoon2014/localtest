@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncRequestLogModule.cs" />
+    <Compile Include="SXBModal.cs" />
+    <Compile Include="Work.cs" />
     <Compile Include="SearchImageAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton.cs" />

@@ -16,3 +16,12 @@ G:\迅雷下载\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.Form1.resource
 G:\迅雷下载\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.Properties.Resources.resources
 G:\迅雷下载\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.csproj.GenerateResource.Cache
 G:\迅雷下载\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.exe.config
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.exe.config
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.exe
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.pdb
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.exe
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\bin\Debug\WinFormSkin.pdb
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.csprojResolveAssemblyReference.cache
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.Form1.resources
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.Properties.Resources.resources
+E:\gitrepos\localtest\WinFormSkin\WinFormSkin\obj\x86\Debug\WinFormSkin.csproj.GenerateResource.Cache

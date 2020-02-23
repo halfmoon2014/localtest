@@ -7,7 +7,7 @@ using System.Data;
 using System.Web.Services;
 using nrWebClass;
 using Newtonsoft.Json;
-using LiLanzModel;
+using TestWeb;
 
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -135,6 +135,7 @@ public class ServiceSXB : System.Web.Services.WebService
         DataTable chdminfo = htzinfoDs.Tables[4].Copy();// '水洗标材料
         DataTable hxgginfo = htzinfoDs.Tables[5].Copy();// '尺码表
         DataTable showinfo = htzinfoDs.Tables[6].Copy();// '要显示哪些尺码
+          
         List<SphhInfo> sphhInfoList = new List<SphhInfo>();
         foreach (DataRow sphhdr in htzinfo.Rows)
         {

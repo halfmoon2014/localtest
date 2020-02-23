@@ -1,0 +1,10 @@
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\gitrepos\localtest\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\gitrepos\localtest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+E:\gitrepos\localtest\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+E:\gitrepos\localtest\Console\bin\Debug\Console.exe.config
+E:\gitrepos\localtest\Console\bin\Debug\Console.exe
+E:\gitrepos\localtest\Console\bin\Debug\Console.pdb
+E:\gitrepos\localtest\Console\obj\x86\Debug\Console.exe
+E:\gitrepos\localtest\Console\obj\x86\Debug\Console.pdb

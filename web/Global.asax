@@ -8,20 +8,16 @@
         //workSpace.work myWork = new workSpace.work();
 
         //System.Threading.Thread thread = new System.Threading.Thread(myWork.doworkempty);
-        //thread.Start(a);
+        ////thread.Start(a);
 
         //System.Threading.Thread t = new System.Threading.Thread(() =>
         //{
         //    myWork.dowork("hello");
         //});
         //t.IsBackground = true;
-        //t.Start();         
+        //t.Start();
 
-        //while (true)
-        //{
-        //    thread.Start();
-        //}
-
+        //thread.Start();
 
     }
     void Application_BeginRequest(object sender, EventArgs e)
@@ -37,7 +33,7 @@
 
     void Application_endrequest(object sender, EventArgs e)
     {
-         HttpContext context = ((HttpApplication)sender).Context;
+        HttpContext context = ((HttpApplication)sender).Context;
 
         string requestPath = context.Request.Path.ToLower();
     }

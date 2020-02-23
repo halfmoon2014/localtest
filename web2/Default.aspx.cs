@@ -5,7 +5,7 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page
 {
-    private string connect = "Data Source=.;Initial Catalog=test;User ID=sa;Password=Hello123456!;";
+    private string connect = "Data Source=.,12742;Initial Catalog=test;User ID=sa;Password=Hello123456!;";
     protected void Page_Load(object sender, EventArgs e)
     {
         bid.Value = ThreadOne().Tables[0].Rows[0]["value"].ToString();

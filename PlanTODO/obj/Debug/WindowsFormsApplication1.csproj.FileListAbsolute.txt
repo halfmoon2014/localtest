@@ -1,0 +1,10 @@
+E:\gitrepos\localtest\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\gitrepos\localtest\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\gitrepos\localtest\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Pasn.resources
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Test.resources
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\gitrepos\localtest\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
