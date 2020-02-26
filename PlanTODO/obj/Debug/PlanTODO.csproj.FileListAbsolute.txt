@@ -28,7 +28,6 @@ E:\gitrepos\localtest\PlanTODO\bin\Debug\PlanTODO.exe
 E:\gitrepos\localtest\PlanTODO\bin\Debug\PlanTODO.pdb
 E:\gitrepos\localtest\PlanTODO\bin\Debug\IrisSkin4.dll
 E:\gitrepos\localtest\PlanTODO\bin\Debug\mysql.data.dll
-E:\gitrepos\localtest\PlanTODO\bin\Debug\Newtonsoft.Json.dll
 E:\gitrepos\localtest\PlanTODO\obj\Debug\PlanTODO.csprojResolveAssemblyReference.cache
 E:\gitrepos\localtest\PlanTODO\obj\Debug\PlanTODO.Form1.resources
 E:\gitrepos\localtest\PlanTODO\obj\Debug\PlanTODO.loading2.LoaderForm.resources
