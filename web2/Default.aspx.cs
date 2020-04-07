@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Data.SqlClient;
 using System.Data;
+using nrWebClass;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -11,8 +12,13 @@ public partial class _Default : System.Web.UI.Page
         bid.Value = ThreadOne().Tables[0].Rows[0]["value"].ToString();
         string s = "<input type=\"text\" value=" + ThreadOne().Tables[0].Rows[0]["value"].ToString() + "  />";
         join.InnerHtml = s;
+        using (LiLanzDALForXLM dal = new LiLanzDALForXLM(1))
+        {
+            string mysql = @" exec yf_cx_xljx {0},{1},{2}";
+            DataSet ds;
+            string errInfo = dal.ExecuteQuery(string.Format(mysql, 1, "TEST", "test"), out ds);
+        }
     }
-
     public DataSet ThreadOne()
     {
         DataSet ds = new DataSet();
