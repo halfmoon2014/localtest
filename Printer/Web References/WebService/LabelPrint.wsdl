@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="list">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="datestart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateend" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listKhid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="datestart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateend" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="khid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listKhidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listKhidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetailItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sphh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetailItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderDetailItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetailEPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetailEPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderDetailEPCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItemInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItemInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarCodeOrderId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarCodeOrderIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BarCodeOrderIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarCodeDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BarCodeDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BarCodeDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetail40mm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orderDetail40mmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderDetail40mmResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listSoapIn">
+    <wsdl:part name="parameters" element="tns:list" />
+  </wsdl:message>
+  <wsdl:message name="listSoapOut">
+    <wsdl:part name="parameters" element="tns:listResponse" />
+  </wsdl:message>
+  <wsdl:message name="listKhidSoapIn">
+    <wsdl:part name="parameters" element="tns:listKhid" />
+  </wsdl:message>
+  <wsdl:message name="listKhidSoapOut">
+    <wsdl:part name="parameters" element="tns:listKhidResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:orderDetail" />
+  </wsdl:message>
+  <wsdl:message name="orderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:orderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderDetailItemSoapIn">
+    <wsdl:part name="parameters" element="tns:orderDetailItem" />
+  </wsdl:message>
+  <wsdl:message name="orderDetailItemSoapOut">
+    <wsdl:part name="parameters" element="tns:orderDetailItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderDetailEPCSoapIn">
+    <wsdl:part name="parameters" element="tns:orderDetailEPC" />
+  </wsdl:message>
+  <wsdl:message name="orderDetailEPCSoapOut">
+    <wsdl:part name="parameters" element="tns:orderDetailEPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderItemSoapIn">
+    <wsdl:part name="parameters" element="tns:orderItem" />
+  </wsdl:message>
+  <wsdl:message name="orderItemSoapOut">
+    <wsdl:part name="parameters" element="tns:orderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItemInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="ItemInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ItemInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BarCodeOrderIdSoapIn">
+    <wsdl:part name="parameters" element="tns:BarCodeOrderId" />
+  </wsdl:message>
+  <wsdl:message name="BarCodeOrderIdSoapOut">
+    <wsdl:part name="parameters" element="tns:BarCodeOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="BarCodeDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:BarCodeDetail" />
+  </wsdl:message>
+  <wsdl:message name="BarCodeDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:BarCodeDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderDetail40mmSoapIn">
+    <wsdl:part name="parameters" element="tns:orderDetail40mm" />
+  </wsdl:message>
+  <wsdl:message name="orderDetail40mmSoapOut">
+    <wsdl:part name="parameters" element="tns:orderDetail40mmResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LabelPrintSoap">
+    <wsdl:operation name="list">
+      <wsdl:input message="tns:listSoapIn" />
+      <wsdl:output message="tns:listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listKhid">
+      <wsdl:input message="tns:listKhidSoapIn" />
+      <wsdl:output message="tns:listKhidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderDetail">
+      <wsdl:input message="tns:orderDetailSoapIn" />
+      <wsdl:output message="tns:orderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderDetailItem">
+      <wsdl:input message="tns:orderDetailItemSoapIn" />
+      <wsdl:output message="tns:orderDetailItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderDetailEPC">
+      <wsdl:input message="tns:orderDetailEPCSoapIn" />
+      <wsdl:output message="tns:orderDetailEPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderItem">
+      <wsdl:input message="tns:orderItemSoapIn" />
+      <wsdl:output message="tns:orderItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ItemInfo">
+      <wsdl:input message="tns:ItemInfoSoapIn" />
+      <wsdl:output message="tns:ItemInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BarCodeOrderId">
+      <wsdl:input message="tns:BarCodeOrderIdSoapIn" />
+      <wsdl:output message="tns:BarCodeOrderIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BarCodeDetail">
+      <wsdl:input message="tns:BarCodeDetailSoapIn" />
+      <wsdl:output message="tns:BarCodeDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orderDetail40mm">
+      <wsdl:input message="tns:orderDetail40mmSoapIn" />
+      <wsdl:output message="tns:orderDetail40mmSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabelPrintSoap" type="tns:LabelPrintSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="list">
+      <soap:operation soapAction="http://tempuri.org/list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listKhid">
+      <soap:operation soapAction="http://tempuri.org/listKhid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetail">
+      <soap:operation soapAction="http://tempuri.org/orderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetailItem">
+      <soap:operation soapAction="http://tempuri.org/orderDetailItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetailEPC">
+      <soap:operation soapAction="http://tempuri.org/orderDetailEPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderItem">
+      <soap:operation soapAction="http://tempuri.org/orderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemInfo">
+      <soap:operation soapAction="http://tempuri.org/ItemInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarCodeOrderId">
+      <soap:operation soapAction="http://tempuri.org/BarCodeOrderId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarCodeDetail">
+      <soap:operation soapAction="http://tempuri.org/BarCodeDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetail40mm">
+      <soap:operation soapAction="http://tempuri.org/orderDetail40mm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LabelPrintSoap12" type="tns:LabelPrintSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="list">
+      <soap12:operation soapAction="http://tempuri.org/list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listKhid">
+      <soap12:operation soapAction="http://tempuri.org/listKhid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetail">
+      <soap12:operation soapAction="http://tempuri.org/orderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetailItem">
+      <soap12:operation soapAction="http://tempuri.org/orderDetailItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetailEPC">
+      <soap12:operation soapAction="http://tempuri.org/orderDetailEPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderItem">
+      <soap12:operation soapAction="http://tempuri.org/orderItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItemInfo">
+      <soap12:operation soapAction="http://tempuri.org/ItemInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarCodeOrderId">
+      <soap12:operation soapAction="http://tempuri.org/BarCodeOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarCodeDetail">
+      <soap12:operation soapAction="http://tempuri.org/BarCodeDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderDetail40mm">
+      <soap12:operation soapAction="http://tempuri.org/orderDetail40mm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabelPrint">
+    <wsdl:port name="LabelPrintSoap" binding="tns:LabelPrintSoap">
+      <soap:address location="http://webt.lilang.com:9001/service/LabelPrint.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LabelPrintSoap12" binding="tns:LabelPrintSoap12">
+      <soap12:address location="http://webt.lilang.com:9001/service/LabelPrint.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

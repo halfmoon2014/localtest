@@ -1,0 +1,12 @@
+G:\gitRepos\localtest\Printer\bin\Debug\Printer.exe.config
+G:\gitRepos\localtest\Printer\bin\Debug\Printer.exe
+G:\gitRepos\localtest\Printer\bin\Debug\Printer.pdb
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.Properties.Resources.resources
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.csproj.GenerateResource.cache
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.csproj.CoreCompileInputs.cache
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.exe
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.pdb
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.Print.resources
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.Set.resources
+G:\gitRepos\localtest\Printer\obj\Debug\Printer.imgForm1.resources
+G:\gitRepos\localtest\Printer\bin\Debug\LocalConfig.xml

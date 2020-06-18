@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web", "{F53DA47F-9DBE-491A-AF66-05FE4CAC7E69}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -99,6 +99,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanTODO", "PlanTODO\PlanTODO.csproj", "{8A060C03-92AB-47FA-9EF0-F2BF9D4CD0C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationDemo", "WebApplicationDemo\WebApplicationDemo.csproj", "{655B3AF6-6420-44FC-87E4-239531647289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Printer", "Printer\Printer.csproj", "{AAD51F24-BC16-445B-8E3F-36CE776D2426}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -471,6 +473,36 @@ Global
 		{655B3AF6-6420-44FC-87E4-239531647289}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
 		{655B3AF6-6420-44FC-87E4-239531647289}.SingleImage|x86.ActiveCfg = Release|Any CPU
 		{655B3AF6-6420-44FC-87E4-239531647289}.SingleImage|x86.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.CD_ROM|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.CD_ROM|Mixed Platforms.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Debug|x86.Build.0 = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Release|x86.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.Release|x86.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{AAD51F24-BC16-445B-8E3F-36CE776D2426}.SingleImage|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
