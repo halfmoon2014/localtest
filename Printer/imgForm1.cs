@@ -97,7 +97,14 @@ namespace Printer
         {
             try
             {
-                string extension = Path.GetExtension(URL);//扩展名 ".aspx"
+                string msg = Filename;
+                string extension = Path.GetExtension(URL);//扩展名 
+                if (!extension.ToLower().Equals(".jpg"))
+                {
+                    msg += "文件名由" + extension + "替换成jpg";
+                    extension = ".jpg";                    
+                }
+                
                 System.Net.HttpWebRequest Myrq = (System.Net.HttpWebRequest)System.Net.HttpWebRequest.Create(URL); //从URL地址得到一个WEB请求   
                 System.Net.HttpWebResponse myrp = (System.Net.HttpWebResponse)Myrq.GetResponse(); //从WEB请求得到WEB响应   
                 long totalBytes = myrp.ContentLength; //从WEB响应得到总字节数   
@@ -117,7 +124,7 @@ namespace Printer
                 }
                 so.Close(); //关闭流
                 st.Close(); //关闭流
-                this.textBox1.Text += Filename+Environment.NewLine;
+                this.textBox1.Text += msg + Environment.NewLine;
                 return true;
             }
             catch(Exception ex)
