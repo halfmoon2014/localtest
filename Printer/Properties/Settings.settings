@@ -5,8 +5,5 @@
     <Setting Name="PrtName" Type="System.String" Scope="User">
       <Value Profile="(Default)">empty</Value>
     </Setting>
-    <Setting Name="Printer_WebService_LabelPrint" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://webt.lilang.com:9001/service/LabelPrint.asmx</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

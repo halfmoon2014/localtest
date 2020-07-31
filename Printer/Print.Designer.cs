@@ -34,10 +34,11 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.refPrt = new System.Windows.Forms.ToolStripButton();
             this.BtnSet = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.textBoxList = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnStatus = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.toolStripSeparator1,
             this.refPrt,
             this.BtnSet,
+            this.toolStripBtnStatus,
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -92,13 +94,21 @@
             this.BtnSet.Text = "设置";
             this.BtnSet.Click += new System.EventHandler(this.BtnSet_Click);
             // 
-            // textBox1
+            // toolStripButton1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 28);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 385);
-            this.textBox1.TabIndex = 7;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButton1.Text = "下载鞋图";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // textBoxList
+            // 
+            this.textBoxList.Location = new System.Drawing.Point(12, 28);
+            this.textBoxList.Multiline = true;
+            this.textBoxList.Name = "textBoxList";
+            this.textBoxList.Size = new System.Drawing.Size(270, 385);
+            this.textBoxList.TabIndex = 7;
             // 
             // statusStrip1
             // 
@@ -116,13 +126,13 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(17, 17);
             this.toolStripStatusLabel1.Text = "...";
             // 
-            // toolStripButton1
+            // toolStripBtnStatus
             // 
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 22);
-            this.toolStripButton1.Text = "下图";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripBtnStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnStatus.Name = "toolStripBtnStatus";
+            this.toolStripBtnStatus.Size = new System.Drawing.Size(72, 22);
+            this.toolStripBtnStatus.Text = "服务已开始";
+            this.toolStripBtnStatus.Click += new System.EventHandler(this.toolStripBtnStatus_Click);
             // 
             // Print
             // 
@@ -131,7 +141,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxList);
             this.Name = "Print";
             this.Text = "Print";
             this.Load += new System.EventHandler(this.Print_Load);
@@ -151,10 +161,11 @@
         private System.Windows.Forms.ToolStripButton btnOrderInfo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton BtnSet;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxList;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripButton refPrt;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripBtnStatus;
     }
 }

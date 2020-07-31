@@ -34,15 +34,5 @@ namespace Printer.Properties {
                 this["PrtName"] = value;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://webt.lilang.com:9001/service/LabelPrint.asmx")]
-        public string Printer_WebService_LabelPrint {
-            get {
-                return ((string)(this["Printer_WebService_LabelPrint"]));
-            }
-        }
     }
 }
