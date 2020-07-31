@@ -1,3 +1,18 @@
+C:\Users\lilanz\Desktop\Printer\bin\Debug\LocalConfig.xml
+C:\Users\lilanz\Desktop\Printer\bin\Debug\Printer.exe.config
+C:\Users\lilanz\Desktop\Printer\bin\Debug\Printer.exe
+C:\Users\lilanz\Desktop\Printer\bin\Debug\Printer.pdb
+C:\Users\lilanz\Desktop\Printer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.csprojAssemblyReference.cache
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.imgForm1.resources
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.Print.resources
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.Properties.Resources.resources
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.Set.resources
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.csproj.GenerateResource.cache
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.csproj.CoreCompileInputs.cache
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.csproj.CopyComplete
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.exe
+C:\Users\lilanz\Desktop\Printer\obj\Debug\Printer.pdb
 G:\gitRepos\localtest\Printer\bin\Debug\LocalConfig.xml
 G:\gitRepos\localtest\Printer\bin\Debug\Printer.exe.config
 G:\gitRepos\localtest\Printer\bin\Debug\Printer.exe
@@ -12,6 +27,3 @@ G:\gitRepos\localtest\Printer\obj\Debug\Printer.csproj.CoreCompileInputs.cache
 G:\gitRepos\localtest\Printer\obj\Debug\Printer.csproj.CopyComplete
 G:\gitRepos\localtest\Printer\obj\Debug\Printer.exe
 G:\gitRepos\localtest\Printer\obj\Debug\Printer.pdb
-G:\gitRepos\localtest\Printer\bin\Debug\GenCode128.dll
-G:\gitRepos\localtest\Printer\bin\Debug\ThoughtWorks.QRCode.dll
-G:\gitRepos\localtest\Printer\obj\Debug\Printer.csprojAssemblyReference.cache
