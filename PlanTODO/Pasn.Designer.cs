@@ -75,6 +75,8 @@
             this.listStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.estimateDate = new System.Windows.Forms.DateTimePicker();
             this.planlist = new ListViewEx();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -168,7 +170,7 @@
             this.txtremark.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtremark.Location = new System.Drawing.Point(312, 27);
             this.txtremark.Name = "txtremark";
-            this.txtremark.Size = new System.Drawing.Size(570, 21);
+            this.txtremark.Size = new System.Drawing.Size(400, 21);
             this.txtremark.TabIndex = 31;
             // 
             // label4
@@ -383,7 +385,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(891, 7);
+            this.label14.Location = new System.Drawing.Point(884, 4);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 12);
             this.label14.TabIndex = 26;
@@ -392,7 +394,7 @@
             // txthour
             // 
             this.txthour.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txthour.Location = new System.Drawing.Point(926, 4);
+            this.txthour.Location = new System.Drawing.Point(919, 1);
             this.txthour.Name = "txthour";
             this.txthour.Size = new System.Drawing.Size(46, 21);
             this.txthour.TabIndex = 27;
@@ -484,7 +486,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.btnsave);
+            this.panel1.Controls.Add(this.estimateDate);
             this.panel1.Controls.Add(this.btndel);
             this.panel1.Controls.Add(this.txtcompor);
             this.panel1.Controls.Add(this.txttitle);
@@ -509,6 +513,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1401, 576);
             this.panel1.TabIndex = 40;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(723, 32);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 12);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "预计完成";
+            // 
+            // estimateDate
+            // 
+            this.estimateDate.Location = new System.Drawing.Point(782, 27);
+            this.estimateDate.Name = "estimateDate";
+            this.estimateDate.Size = new System.Drawing.Size(100, 21);
+            this.estimateDate.TabIndex = 42;
             // 
             // planlist
             // 
@@ -608,5 +628,7 @@
         private System.Windows.Forms.ToolStripStatusLabel listStatus;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker estimateDate;
     }
 }

@@ -31,6 +31,7 @@ namespace PlanTODO
         List<ListColumn> PlanListColumn = new List<ListColumn>();
         private string name;
         private string username;
+        private Dictionary<string, string> cbStatusList;
         public Pasn(string name, string username)
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace PlanTODO
         {
             Init();
             //CheckForIllegalCrossThreadCalls = false;
-            Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//main.ico");
+            Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//Book.png");
             Icon ic = Icon.FromHandle(bmp.GetHicon());
             this.Icon = ic;
         }
@@ -60,11 +61,13 @@ namespace PlanTODO
             dtsearchbegin.Text = dt.AddMonths(-1).ToShortDateString();
             dtsearchend.Format = DateTimePickerFormat.Custom;
             dtsearchend.CustomFormat = "yyyy-MM-dd";
+            estimateDate.Format = DateTimePickerFormat.Custom;
+            estimateDate.CustomFormat = "yyyy-MM-dd";
+            cbStatusList =  new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" } };
+            SetCB(cbstatus, cbStatusList, "0");
 
-            SetCB(cbstatus, new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" } }, "0");
-
-            SetCB(cbprocessor, new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌" }, username);
-            SetCB(cbsearchprocessor, new string[] { "张茂洪", "高嘉富", "陈嘉劲", "王文辉", "吕斌", "all" }, "all");
+            SetCB(cbprocessor, new string[] { "张茂洪", "高嘉富", "林自强", "钟少杰" }, username);
+            SetCB(cbsearchprocessor, new string[] { "张茂洪", "高嘉富", "林自强", "钟少杰", "all" }, "all");
             SetCB(cbsearchstatus, new Dictionary<string, string>() { { "0", "进行中" }, { "1", "完成" }, { "4", "取消" }, { "-1", "全部" } }, "-1");
 
             //loadpc.Location = new System.Drawing.Point((this.Width - loadpc.Width) / 2, (this.Height - loadpc.Height) / 2);
@@ -75,9 +78,9 @@ namespace PlanTODO
             planlist.FullRowSelect = true;
             PlanListColumn.Add(new ListColumn("日期", 135, "BizDate"));
             PlanListColumn.Add(new ListColumn("标题", 120, "title"));
-            PlanListColumn.Add(new ListColumn("人员", 100, "relor"));
-            PlanListColumn.Add(new ListColumn("制单人", 100, "creator"));
-            PlanListColumn.Add(new ListColumn("备注", 200, "remark"));
+            PlanListColumn.Add(new ListColumn("业务", 100, "relor"));
+           
+            PlanListColumn.Add(new ListColumn("预计完成", 100, "estimate"));
             PlanListColumn.Add(new ListColumn("状态", 100, "Status"));
             PlanListColumn.Add(new ListColumn("内容", 200, "Content"));
             PlanListColumn.Add(new ListColumn("完结人", 120, "compor"));
@@ -85,6 +88,8 @@ namespace PlanTODO
             PlanListColumn.Add(new ListColumn("修改人", 120, "modior"));
             PlanListColumn.Add(new ListColumn("修改日期", 120, "modidate"));
             PlanListColumn.Add(new ListColumn("文件名", 120, "filename"));
+            PlanListColumn.Add(new ListColumn("制单人", 100, "creator"));
+            PlanListColumn.Add(new ListColumn("备注", 200, "remark"));
             PlanListColumn.Add(new ListColumn("id", 0, "id"));
             foreach (ListColumn l in PlanListColumn)
             {
@@ -213,7 +218,19 @@ namespace PlanTODO
             {
                 list.Clear();
                 foreach (ListColumn l in PlanListColumn)
-                    list.Add(dr[l.Key].ToString());
+                {
+                    if (l.Key.Equals("Status"))
+                    {
+                        string val="";
+                        foreach(string k in cbStatusList.Keys)
+                        {
+                            if (k.Equals(dr[l.Key].ToString()))                            
+                                val = cbStatusList[k];                            
+                        }
+                        list.Add(val);
+                    }
+                    else    list.Add(dr[l.Key].ToString());
+                }
 
                 ListViewItem lvi = new ListViewItem(list.ToArray());
                 lvi.Tag = dr;
@@ -252,10 +269,12 @@ namespace PlanTODO
             string status = "";
             string processor = "";
             string compor = "";
+            string estimate = "";
             this.Invoke(new Action(() =>
             {
                 this.loadpc.Visible = true;
                 content = ContentRTB.Text.Replace("\'", "\\\'");
+                estimate = estimateDate.Text;
                 btnsave.Enabled = false;
                 status = cbstatus.SelectedValue.ToString();
                 processor = cbprocessor.SelectedValue.ToString();
@@ -308,12 +327,12 @@ namespace PlanTODO
             string sql = "  ";
             if (string.IsNullOrEmpty(id))
             {
-                sql += @"insert pasn(title,BizDate,CreateDate,Creator,relor,Remark,Status,Content,filename,lastwritetime,processor,compor,hour) 
-                    values('" + title + "',now(),now(),'" + this.name + "','" + relor + "','" + remark + "','" + status + "','" + content + "','" + filename + "','" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "','" + processor + "','" + compor + "','" + hour + "');  set @id=@@IDENTITY;  ";
+                sql += @"insert pasn(title,BizDate,CreateDate,Creator,relor,Remark,Status,Content,filename,lastwritetime,processor,compor,hour,estimate) 
+                    values('" + title + "',now(),now(),'" + this.name + "','" + relor + "','" + remark + "','" + status + "','" + content + "','" + filename + "','" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "','" + processor + "','" + compor + "','" + hour + "','"+ estimate + "');  set @id=@@IDENTITY;  ";
             }
             else
             {
-                sql += @"update pasn set relor='" + relor + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "'," + (status == "1" ? "compDate=now()," : "") + "Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "' ,processor='" + processor + "',compor='" + compor + "',hour='" + hour + "' where id=" + id + "; ";
+                sql += @"update pasn set relor='" + relor + "',estimate='"+ estimate + "',modiDate=now(),modior='" + this.name + "', title='" + title + "',Remark='" + remark + "',Status='" + status + "'," + (status == "1" ? "compDate=now()," : "") + "Content='" + content + "',lastwritetime='" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "' ,processor='" + processor + "',compor='" + compor + "',hour='" + hour + "' where id=" + id + "; ";
                 sql += "set @id=" + id+";";
             }
             sql += "select * from pasn where id=@id;";
@@ -504,6 +523,7 @@ namespace PlanTODO
                 cbprocessor.SelectedValue = item["processor"].ToString();
 
                 txtremark.Text = item["remark"].ToString();
+                estimateDate.Text = item["estimate"].ToString();
                 txtrelor.Text = item["relor"].ToString();
                 if (System.IO.File.Exists(FilePath + "\\" + item["filename"].ToString() + ".rtf"))
                 {

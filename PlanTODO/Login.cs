@@ -20,11 +20,9 @@ namespace PlanTODO
             InitializeComponent();
             ShowInfo = new MsgInfoDelegate(MessageShowSub);
             SetStatic = new SetStaticDelegate(SetStaticSub);           
-            s = new Sunisoft.IrisSkin.SkinEngine();      
-            //s.SkinFile = Application.StartupPath + "//Skins//Page.ssk";
-            s.SkinFile = Application.StartupPath + "//Skins//EmeraldColor3.ssk";
+           
             
-            Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//main.ico");
+            Bitmap bmp = (Bitmap)Bitmap.FromFile(Application.StartupPath + "//ico//Book.png");
             Icon ic = Icon.FromHandle(bmp.GetHicon());
             this.Icon = ic;
 
@@ -89,6 +87,12 @@ namespace PlanTODO
 
         private void Login_Load(object sender, EventArgs e)
         {
+            s = new Sunisoft.IrisSkin.SkinEngine();
+            //s.SkinFile = Application.StartupPath + "//Skins//Page.ssk";
+            s.SkinFile = Application.StartupPath + "//Skins//EmeraldColor3.ssk";
+            s.SkinAllForm = true;
+            if (!s.Active)
+                s.Active = true;
             Init();
         }
         public void Init()
@@ -140,6 +144,18 @@ namespace PlanTODO
                 btnlogin_Click(sender, e);//触发button事件  
             }
         }
-        
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 'a' && e.KeyChar <= 'z') || (e.KeyChar >= 'A' && e.KeyChar <= 'Z')
+                || (e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

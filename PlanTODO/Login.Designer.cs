@@ -73,6 +73,7 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(100, 21);
             this.txtname.TabIndex = 14;
+            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtname_KeyPress);
             // 
             // btnlogin
             // 
@@ -129,6 +130,7 @@
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtname);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
