@@ -82,7 +82,7 @@
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(100, 35);
             this.btnexit.TabIndex = 1;
-            this.btnexit.Text = "Exit(&E)";
+            this.btnexit.Text = "Exit";
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // txtname
@@ -135,7 +135,7 @@
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(100, 35);
             this.btnlogin.TabIndex = 5;
-            this.btnlogin.Text = "Login(&L)";
+            this.btnlogin.Text = "Login";
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // uiContextMenuStrip1
@@ -308,7 +308,6 @@
             // lblInfo
             // 
             this.lblInfo.Font = new System.Drawing.Font("微软雅黑", 8F);
-            this.lblInfo.ForeColor = System.Drawing.Color.Empty;
             this.lblInfo.Location = new System.Drawing.Point(5, 311);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(535, 20);

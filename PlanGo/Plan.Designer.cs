@@ -318,7 +318,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 35);
             this.button1.TabIndex = 19;
-            this.button1.Text = "New(&N)";
+            this.button1.Text = "New";
             this.button1.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // btnsearch
@@ -331,13 +331,13 @@
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(100, 35);
             this.btnsearch.TabIndex = 36;
-            this.btnsearch.Text = "Search(&F)";
+            this.btnsearch.Text = "Search";
             this.btnsearch.Click += new System.EventHandler(this.Btnsearch_Click);
             // 
             // uiLabel6
             // 
             this.uiLabel6.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel6.Location = new System.Drawing.Point(483, 95);
+            this.uiLabel6.Location = new System.Drawing.Point(483, 85);
             this.uiLabel6.Name = "uiLabel6";
             this.uiLabel6.Size = new System.Drawing.Size(74, 23);
             this.uiLabel6.TabIndex = 35;
@@ -357,7 +357,7 @@
             // uiLabel4
             // 
             this.uiLabel4.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel4.Location = new System.Drawing.Point(241, 95);
+            this.uiLabel4.Location = new System.Drawing.Point(241, 85);
             this.uiLabel4.Name = "uiLabel4";
             this.uiLabel4.Size = new System.Drawing.Size(75, 23);
             this.uiLabel4.TabIndex = 33;
@@ -369,7 +369,7 @@
             this.txtcontent.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcontent.FillColor = System.Drawing.Color.White;
             this.txtcontent.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txtcontent.Location = new System.Drawing.Point(323, 95);
+            this.txtcontent.Location = new System.Drawing.Point(323, 85);
             this.txtcontent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcontent.Maximum = 2147483647D;
             this.txtcontent.Minimum = -2147483648D;
@@ -400,7 +400,7 @@
             this.cbsearchprocessor.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbsearchprocessor.FillColor = System.Drawing.Color.White;
             this.cbsearchprocessor.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.cbsearchprocessor.Location = new System.Drawing.Point(564, 95);
+            this.cbsearchprocessor.Location = new System.Drawing.Point(564, 85);
             this.cbsearchprocessor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbsearchprocessor.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbsearchprocessor.Name = "cbsearchprocessor";
@@ -422,7 +422,7 @@
             // uiLabel2
             // 
             this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel2.Location = new System.Drawing.Point(59, 95);
+            this.uiLabel2.Location = new System.Drawing.Point(59, 85);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(35, 23);
             this.uiLabel2.TabIndex = 28;
@@ -458,7 +458,7 @@
             // 
             this.dtsearchend.FillColor = System.Drawing.Color.White;
             this.dtsearchend.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.dtsearchend.Location = new System.Drawing.Point(101, 95);
+            this.dtsearchend.Location = new System.Drawing.Point(101, 85);
             this.dtsearchend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtsearchend.MaxLength = 10;
             this.dtsearchend.MinimumSize = new System.Drawing.Size(63, 0);
@@ -500,7 +500,7 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1003, 18);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1145, 18);
             this.toolStripStatusLabel2.Spring = true;
             // 
             // progressBar1
@@ -878,7 +878,7 @@
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(100, 35);
             this.btndel.TabIndex = 115;
-            this.btndel.Text = "Del(&D)";
+            this.btndel.Text = "Del";
             this.btndel.Click += new System.EventHandler(this.Btndel_Click);
             // 
             // btnsave
@@ -891,7 +891,7 @@
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(100, 35);
             this.btnsave.TabIndex = 112;
-            this.btnsave.Text = "Save(&S)";
+            this.btnsave.Text = "Save";
             this.btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
             // uiDataGridView1
@@ -937,7 +937,7 @@
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(4, 138);
+            this.uiDataGridView1.Location = new System.Drawing.Point(4, 122);
             this.uiDataGridView1.MultiSelect = false;
             this.uiDataGridView1.Name = "uiDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -954,7 +954,7 @@
             this.uiDataGridView1.SelectedIndex = -1;
             this.uiDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiDataGridView1.ShowGridLine = true;
-            this.uiDataGridView1.Size = new System.Drawing.Size(1357, 137);
+            this.uiDataGridView1.Size = new System.Drawing.Size(1357, 153);
             this.uiDataGridView1.TabIndex = 113;
             this.uiDataGridView1.DoubleClick += new System.EventHandler(this.Planlist_DoubleClick);
             // 
