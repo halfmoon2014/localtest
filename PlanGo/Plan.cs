@@ -184,7 +184,7 @@ namespace PlanGo
             for (int j = 0; j < uiDataGridView1.Columns.Count; j++)
             {
                 string colName = uiDataGridView1.Columns[j].DataPropertyName;
-                System.Console.WriteLine(colName);
+                 
                 if (colName.EqualsIgnoreCase("Status"))
                 {
                     uiDataGridView1.Columns[j].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -363,14 +363,14 @@ namespace PlanGo
                 catch (SystemException ex)
                 {
                     this.Invoke(new Action(() =>
-                    {                        
-                        UIMessageDialog.ShowMessageDialog(ex.Message, UILocalize.InfoTitle, false, Style);
+                    {
+                        ShowMessageDialog(ex.Message);
                     }));
                 }
             }
             else
             {
-                UIMessageDialog.ShowMessageDialog("请先打开一个任务", UILocalize.InfoTitle, false, Style);                
+                ShowMessageDialog("请先打开一个任务");                
             }
         }
 
@@ -558,7 +558,7 @@ namespace PlanGo
                     IntPtr vHandle = _lopen(FilePath + "\\" + item.Filename.ToString() + ".rtf", OF_READWRITE | OF_SHARE_DENY_NONE);
                     if (vHandle == HFILE_ERROR)
                     {
-                        UIMessageDialog.ShowMessageDialog("文件被占用", UILocalize.InfoTitle, false, Style);
+                        ShowMessageDialog("文件被占用");
                         ContentRTB.Text = "";
                         return;
                     }
@@ -577,7 +577,7 @@ namespace PlanGo
                             ContentRTB.LoadFile(FilePath + "\\" + item.Filename.ToString() + ".rtf", RichTextBoxStreamType.RichText);
                         else
                         {
-                            UIMessageDialog.ShowMessageDialog("下载文件失败", UILocalize.InfoTitle, false, Style);
+                            ShowMessageDialog("下载文件失败");
                             ContentRTB.Text = "";
                         }
                     }
@@ -594,7 +594,7 @@ namespace PlanGo
                     else
                     {
 
-                        UIMessageDialog.ShowMessageDialog("下载文件失败", UILocalize.InfoTitle, false, Style);
+                        ShowMessageDialog("下载文件失败");
                         ContentRTB.Text = "";
                     }
                 }
@@ -652,7 +652,7 @@ namespace PlanGo
             }
             catch (SystemException ex)
             {
-                UIMessageDialog.ShowMessageDialog(ex.Message, UILocalize.InfoTitle, false, Style);                
+                ShowMessageDialog(ex.Message);                
             }
         }
 
@@ -710,7 +710,7 @@ namespace PlanGo
                 {
                     int count = (int)e.Result;
                     
-                    if (count == 0) UIMessageDialog.ShowMessageDialog("上传文件服务器失败！，文件只保存在本地", UILocalize.InfoTitle, false, Style);
+                    if (count == 0) ShowMessageDialog("上传文件服务器失败！，文件只保存在本地");
 
 
                     FileInfo fi = new FileInfo(FilePath + "\\" + filename + ".rtf");
@@ -772,7 +772,7 @@ namespace PlanGo
                                     lbtip.Text = "refresh success";
                                     //前端新增一行end 
                                     btnsave.Enabled = true;
-                                    UIMessageDialog.ShowMessageDialog("save success", UILocalize.InfoTitle, false, Style);
+                                    ShowMessageDialog("save success");
                                     
                                 });
                                 sQLUtilEvent.Run("sql");
@@ -818,7 +818,7 @@ namespace PlanGo
                                 this.loadpc.Visible = false;
                                 btnsave.Enabled = true;
                                 lbtip.Text = "save success";
-                                UIMessageDialog.ShowMessageDialog("save success", UILocalize.InfoTitle, false, Style);                               
+                                ShowMessageDialog("save success");                               
                             }
 
                         });
@@ -831,7 +831,7 @@ namespace PlanGo
                         loadpc.Visible = false;
                         btnsave.Enabled = true;
                         lbtip.Text = "erroe";
-                        UIMessageDialog.ShowMessageDialog(ex.GetBaseException().ToString(), UILocalize.InfoTitle, false, Style);        
+                        ShowMessageDialog(ex.GetBaseException().ToString());        
                     }
 
                 });
@@ -839,7 +839,7 @@ namespace PlanGo
             }
             catch (Exception ex)
             {
-                UIMessageDialog.ShowMessageDialog(ex.GetBaseException().ToString(), UILocalize.InfoTitle, false, Style);                
+                ShowMessageDialog(ex.GetBaseException().ToString());                
             }
             //上传文件到服务器end
 
@@ -877,7 +877,10 @@ namespace PlanGo
             }
 
         }
-
+        private bool ShowMessageDialog(string msg)
+        {
+           return UIMessageDialog.ShowMessageDialog(msg, UILocalize.InfoTitle, false, Style);
+        }
         private string strToDateTime(string str)
         {
             if (str.Length == 0)
@@ -989,7 +992,7 @@ namespace PlanGo
 
         private void Btndel_Click(object sender, EventArgs e)
         {
-            if (UIMessageDialog.ShowMessageDialog("Are you sure to delete", UILocalize.InfoTitle, false, Style))  BtndelClickWork();            
+            if (ShowMessageDialog("Are you sure to delete"))  BtndelClickWork();            
         } 
 
         private void BtndelClickWork()
@@ -1025,7 +1028,7 @@ namespace PlanGo
                 loadpc.Visible = false;
                 btndel.Enabled = true;
                 lbtip.Text = "delete success";
-                UIMessageDialog.ShowMessageDialog("delete success", UILocalize.InfoTitle, false, Style);
+                ShowMessageDialog("delete success");
             });
             sQLUtilEvent.Run("sql");
         }
