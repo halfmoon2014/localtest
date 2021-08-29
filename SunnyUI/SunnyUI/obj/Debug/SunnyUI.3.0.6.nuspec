@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SunnyUI</id>
+    <version>3.0.6</version>
+    <authors>ShenYonghua</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>SunnyUI.png</icon>
+    <projectUrl>https://gitee.com/yhuse/SunnyUI</projectUrl>
+    <description>SunnyUI.Net 是基于.Net Framework 4.0+、.Net Core3.1、.Net 5 框架的 C# WinForm 开源控件库、工具类库、扩展类库、多页面开发框架。</description>
+    <copyright>CopyRight © SunnyUI.Net 2012-2021</copyright>
+    <repository url="https://gitee.com/yhuse/SunnyUI" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="SunnyUI.Common" version="3.0.6" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="SunnyUI.Common" version="3.0.6" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="SunnyUI.Common" version="3.0.6" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="SunnyUI.Common" version="3.0.6" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.6.2" />
+    </frameworkReferences>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Design" targetFramework=".NETFramework4.0, .NETFramework4.6.2" />
+      <frameworkAssembly assemblyName="System.Web.Extensions" targetFramework=".NETFramework4.0, .NETFramework4.6.2" />
+      <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework=".NETFramework4.0, .NETFramework4.6.2" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="G:\gitRepos\localtest\SunnyUI\Bin\net40\SunnyUI.dll" target="lib\net40\SunnyUI.dll" />
+    <file src="G:\gitRepos\localtest\SunnyUI\Bin\net462\SunnyUI.dll" target="lib\net462\SunnyUI.dll" />
+    <file src="G:\gitRepos\localtest\SunnyUI\Bin\net5.0-windows\SunnyUI.dll" target="lib\net5.0-windows7.0\SunnyUI.dll" />
+    <file src="G:\gitRepos\localtest\SunnyUI\Bin\netcoreapp3.1\SunnyUI.dll" target="lib\netcoreapp3.1\SunnyUI.dll" />
+    <file src="G:\gitRepos\localtest\SunnyUI\LICENSE" target="LICENSE" />
+    <file src="G:\gitRepos\localtest\SunnyUI\SunnyUI.png" target="SunnyUI.png" />
+  </files>
+</package>

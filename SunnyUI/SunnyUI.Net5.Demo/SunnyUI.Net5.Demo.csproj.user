@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Charts\FBarChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Charts\FBarChartEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Charts\FDoughnutChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Charts\FLineChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Charts\FPieChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FAvatar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FCheckBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FCombobox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FContextMenuStrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FDataGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FFlowLayoutPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FListBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FMeter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FNavigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FOther.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FRadioButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FScrollBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FTabControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\FTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FDialogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FFrames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FAsideHeaderMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FAsideHeaderMainFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FAsideMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FHeaderAsideMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FHeaderAsideMainFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FHeaderMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Frames\FHeaderMainFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pages\FPage1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pages\FPage2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pages\FPage3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pages\FTitlePage1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pages\FTitlePage2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Pages\FTitlePage3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

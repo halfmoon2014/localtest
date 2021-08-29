@@ -1,0 +1,213 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SunnyUI.Common/3.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SunnyUI.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SunnyUI.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.0": {
+      "SunnyUI.Common/3.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net40/SunnyUI.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SunnyUI.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.2": {
+      "SunnyUI.Common/3.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net462/SunnyUI.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net462/SunnyUI.Common.dll": {}
+        }
+      }
+    },
+    "net5.0-windows7.0": {
+      "SunnyUI.Common/3.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/SunnyUI.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/SunnyUI.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SunnyUI.Common/3.0.6": {
+      "sha512": "yzYi+kU3zvox8QLQ34Hhgj3rg6nniwE2Tbt77sDDV/gM2++jqVCVYVIOwvd0p/eMqu1UrNsDQax6L8AGkfZMyA==",
+      "type": "package",
+      "path": "sunnyui.common/3.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "SunnyUI.png",
+        "lib/net40/SunnyUI.Common.dll",
+        "lib/net462/SunnyUI.Common.dll",
+        "lib/net5.0/SunnyUI.Common.dll",
+        "lib/netcoreapp2.1/SunnyUI.Common.dll",
+        "lib/netcoreapp3.1/SunnyUI.Common.dll",
+        "sunnyui.common.3.0.6.nupkg.sha512",
+        "sunnyui.common.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "SunnyUI.Common >= 3.0.6"
+    ],
+    ".NETFramework,Version=v4.0": [
+      "SunnyUI.Common >= 3.0.6"
+    ],
+    ".NETFramework,Version=v4.6.2": [
+      "SunnyUI.Common >= 3.0.6"
+    ],
+    "net5.0-windows7.0": [
+      "SunnyUI.Common >= 3.0.6"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\min\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "3.0.6",
+    "restore": {
+      "projectUniqueName": "G:\\gitRepos\\localtest\\SunnyUI\\SunnyUI\\SunnyUI.csproj",
+      "projectName": "SunnyUI",
+      "projectPath": "G:\\gitRepos\\localtest\\SunnyUI\\SunnyUI\\SunnyUI.csproj",
+      "packagesPath": "C:\\Users\\min\\.nuget\\packages\\",
+      "outputPath": "G:\\gitRepos\\localtest\\SunnyUI\\SunnyUI\\obj\\",
+      "projectStyle": "PackageReference",
+      "crossTargeting": true,
+      "configFilePaths": [
+        "C:\\Users\\min\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net40",
+        "net462",
+        "net5.0-windows",
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        },
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {}
+        },
+        "net40": {
+          "targetAlias": "net40",
+          "projectReferences": {}
+        },
+        "net462": {
+          "targetAlias": "net462",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "SunnyUI.Common": {
+            "target": "Package",
+            "version": "[3.0.6, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+      },
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "SunnyUI.Common": {
+            "target": "Package",
+            "version": "[3.0.6, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+      },
+      "net40": {
+        "targetAlias": "net40",
+        "dependencies": {
+          "SunnyUI.Common": {
+            "target": "Package",
+            "version": "[3.0.6, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+      },
+      "net462": {
+        "targetAlias": "net462",
+        "dependencies": {
+          "SunnyUI.Common": {
+            "target": "Package",
+            "version": "[3.0.6, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

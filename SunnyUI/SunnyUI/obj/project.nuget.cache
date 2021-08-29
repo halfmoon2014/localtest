@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SCqvHpQpuW4wDXHRor/DPVEuoeNozcNaCVtXKIr5DHhc8gAHtdVXgAbuhY7tP43Y9Yj79j3AnNuLVrPb0rFVpA==",
+  "success": true,
+  "projectFilePath": "G:\\gitRepos\\localtest\\SunnyUI\\SunnyUI\\SunnyUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\min\\.nuget\\packages\\sunnyui.common\\3.0.6\\sunnyui.common.3.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
