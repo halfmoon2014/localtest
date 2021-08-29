@@ -43,19 +43,25 @@ namespace PlanGo
         /// 列表头信息
         /// </summary>
         //List<ListColumn> PlanListColumn = new List<ListColumn>();
-    
+        private Thread ProcessBarThread;
         private Dictionary<string, string> StatusDataList;
         /// <summary>
         /// 登陆线程
         /// </summary>
         //static Thread loginThread;
         private readonly LoginDto Login;
+
+        private delegate void ProcessDelegate();
+        private ProcessDelegate ShowProcess;
+
         public Plan()
         {
             InitializeComponent();
             Init(uiStyleManager1);
-            loadpc.Location = new System.Drawing.Point((Width - loadpc.Width) / 2, (Height - loadpc.Height) / 2);
-           
+            //loadpc.Location = new System.Drawing.Point((Width - loadpc.Width) / 2, (Height - loadpc.Height) / 2);
+            ProcessBarStart();
+            ShowProcess = new ProcessDelegate(ProcessBarRun);
+
         }
         public Plan(LoginDto loginDto) : this()
         {
@@ -92,8 +98,8 @@ namespace PlanGo
             sQLUtilEvent.Run("sql");
 
             Console.WriteLine("Init");
-            loadpc.Visible = false;
-         
+            //loadpc.Visible = false;
+            ProcessBarStop();
             if (!Directory.Exists(FilePath))
                 Directory.CreateDirectory(FilePath);
        
@@ -306,7 +312,8 @@ namespace PlanGo
                 CreateListView(ds.Tables[0]);
                 listStatus.Text = "总记录数：" + ds.Tables[0].Rows.Count;
                 BtnNew_Click(null, EventArgs.Empty);
-                loadpc.Visible = false;
+                //loadpc.Visible = false;
+                ProcessBarStop();
                 btnsearch.Enabled = true;
                 lbtip.Text = "refresh success";
             });
@@ -433,8 +440,8 @@ namespace PlanGo
             string status = cbsearchstatus.SelectedValue.ToString();
             string processor = cbsearchprocessor.SelectedValue.ToString();
             string content = txtcontent.Text.Trim();
-
-            loadpc.Visible = true;
+            ProcessBarStart();
+            //loadpc.Visible = true;
             btnsearch.Enabled = false;
 
             //Console.WriteLine(this.loadpc.Visible);
@@ -539,7 +546,8 @@ namespace PlanGo
             this.Invoke(new Action(() =>
             {
                
-                loadpc.Visible = true;
+                //loadpc.Visible = true;
+                ProcessBarStart();
                 txtcompor.Text = item.Compor.ToLower();
                 txtid.Text = item.Id.ToString();
                 txtfilename.Text = item.Filename.ToString();
@@ -598,11 +606,11 @@ namespace PlanGo
                         ContentRTB.Text = "";
                     }
                 }
-                this.loadpc.Visible = false;
+                //this.loadpc.Visible = false;
+                ProcessBarStop();
             }));
         }
-
-        
+       
 
         /// <summary>
         /// 下载带进度条代码（普通进度条）
@@ -664,8 +672,8 @@ namespace PlanGo
             string processor = "";
             string compor = "";
             string estimate = "";
-
-            loadpc.Visible = true;
+            ProcessBarStart();
+            //loadpc.Visible = true;
             content = ContentRTB.Text.Replace("\'", "\\\'");
             estimate = estimateDate.Text;
             btnsave.Enabled = false;
@@ -736,6 +744,7 @@ namespace PlanGo
                         {
                             DataSet dataSave = (DataSet)arg.Result;
                             txtid.Text = dataSave.Tables[0].Rows[0]["id"].ToString();
+                            lbtip.Text = "save success";
                             //前端新增一行
                             if (string.IsNullOrEmpty(id))
                             {
@@ -767,12 +776,13 @@ namespace PlanGo
                                     //    }
                                     //}
                                     
-                                    loadpc.Visible = false;
+                                    //loadpc.Visible = false;
+                                    ProcessBarStop();
                                     btnsearch.Enabled = true;
-                                    lbtip.Text = "refresh success";
+                                   
                                     //前端新增一行end 
                                     btnsave.Enabled = true;
-                                    ShowMessageDialog("save success");
+                                    //ShowMessageDialog("save success");
                                     
                                 });
                                 sQLUtilEvent.Run("sql");
@@ -811,14 +821,15 @@ namespace PlanGo
                                     string colName = uiDataGridView1.Columns[j].DataPropertyName;
                                     uiDataGridView1.SelectedRows[0].Cells[colName].Value = data.GetType().GetProperty(colName, BindingFlags.Public | BindingFlags.IgnoreCase | BindingFlags.Instance).GetValue(data, null);
                                 }
-                                    
-                             
-                                
+
+
+
                                 //前端新增一行end 
-                                this.loadpc.Visible = false;
+                                //this.loadpc.Visible = false;
+                                ProcessBarStop();
                                 btnsave.Enabled = true;
-                                lbtip.Text = "save success";
-                                ShowMessageDialog("save success");                               
+                               
+                                //ShowMessageDialog("save success");                               
                             }
 
                         });
@@ -828,7 +839,8 @@ namespace PlanGo
                     }
                     catch (Exception ex)
                     {
-                        loadpc.Visible = false;
+                        //loadpc.Visible = false;
+                        ProcessBarStop();
                         btnsave.Enabled = true;
                         lbtip.Text = "erroe";
                         ShowMessageDialog(ex.GetBaseException().ToString());        
@@ -877,10 +889,7 @@ namespace PlanGo
             }
 
         }
-        private bool ShowMessageDialog(string msg)
-        {
-           return UIMessageDialog.ShowMessageDialog(msg, UILocalize.InfoTitle, false, Style);
-        }
+    
         private string strToDateTime(string str)
         {
             if (str.Length == 0)
@@ -998,7 +1007,8 @@ namespace PlanGo
         private void BtndelClickWork()
         {
 
-            loadpc.Visible = true;
+            //loadpc.Visible = true;
+            ProcessBarStart();
             btndel.Enabled = false;
 
             string filename = txtfilename.Text;
@@ -1022,17 +1032,58 @@ namespace PlanGo
                 CreateListView(result.Tables[1]);
                 listStatus.Text = "总记录数：" + result.Tables[1].Rows.Count;
                 BtnNew_Click(null, EventArgs.Empty);
-                loadpc.Visible = false;
+                
+                ProcessBarStop();
                 btnsearch.Enabled = true;
 
-                loadpc.Visible = false;
                 btndel.Enabled = true;
                 lbtip.Text = "delete success";
-                ShowMessageDialog("delete success");
+                //ShowMessageDialog("delete success");
             });
             sQLUtilEvent.Run("sql");
         }
 
-       
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LocalConfig.SetConfigValue("name", "");
+            LocalConfig.SetConfigValue("pwd", "");
+            LocalConfig.SetConfigValue("username", "");
+            this.Close();
+        }
+
+        private void ProcessBarStart()
+        {
+            uiProcessBar2.Visible = true;
+            uiProcessBar2.Value = 0;
+            if (ProcessBarThread != null) ProcessBarThread.Abort();
+            ProcessBarThread = new Thread(() => {
+                while (true)
+                {
+                    ShowProcess();
+                    Thread.Sleep(10);
+                }
+            });
+            ProcessBarThread.Start();
+        }
+
+        private void ProcessBarRun()
+        {
+            if (uiProcessBar2.Value >= 100) uiProcessBar2.Value = 0;
+            uiProcessBar2.Value += 1;
+        }
+
+        private void ProcessBarStop()
+        {
+            uiProcessBar2.Visible = false;
+            uiProcessBar2.Value = 0;
+            ProcessBarThread.Abort();
+        }
+
+      
+        private void Plan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ProcessBarThread.Abort();
+            ProcessBarThread = null;
+        }
     }
 }

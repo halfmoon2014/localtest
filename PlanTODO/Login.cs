@@ -104,6 +104,8 @@ namespace PlanTODO
             {                
                 Invoke(new Action(() =>
                 {
+                   
+
                     pasn = new Pasn(name, ds.Tables[0].Rows[0]["username"].ToString());
                     Hide();
                     pasn.ShowDialog();

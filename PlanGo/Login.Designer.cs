@@ -36,7 +36,6 @@
             this.txtpassword = new Sunny.UI.UITextBox();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.btnlogin = new Sunny.UI.UIButton();
-            this.loadpc = new Sunny.UI.UIProgressIndicator();
             this.uiStyleManager1 = new Sunny.UI.UIStyleManager(this.components);
             this.uiContextMenuStrip1 = new Sunny.UI.UIContextMenuStrip();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +58,8 @@
             this.lightGrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightPurpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblInfo = new Sunny.UI.UILabel();
+            this.uiProcessBar2 = new Sunny.UI.UIProcessBar();
             this.uiContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,17 +137,6 @@
             this.btnlogin.TabIndex = 5;
             this.btnlogin.Text = "Login(&L)";
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
-            // 
-            // loadpc
-            // 
-            this.loadpc.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.loadpc.Location = new System.Drawing.Point(48, 88);
-            this.loadpc.MinimumSize = new System.Drawing.Size(1, 1);
-            this.loadpc.Name = "loadpc";
-            this.loadpc.Size = new System.Drawing.Size(100, 100);
-            this.loadpc.TabIndex = 7;
-            this.loadpc.Text = "uiProgressIndicator1";
-            this.loadpc.Visible = false;
             // 
             // uiContextMenuStrip1
             // 
@@ -315,11 +305,36 @@
             this.关于ToolStripMenuItem1.Text = "关于";
             this.关于ToolStripMenuItem1.Click += new System.EventHandler(this.关于ToolStripMenuItem1_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.Font = new System.Drawing.Font("微软雅黑", 8F);
+            this.lblInfo.ForeColor = System.Drawing.Color.Empty;
+            this.lblInfo.Location = new System.Drawing.Point(5, 311);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(535, 20);
+            this.lblInfo.TabIndex = 23;
+            this.lblInfo.Text = "helloworld";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // uiProcessBar2
+            // 
+            this.uiProcessBar2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiProcessBar2.Location = new System.Drawing.Point(0, 35);
+            this.uiProcessBar2.MinimumSize = new System.Drawing.Size(70, 1);
+            this.uiProcessBar2.Name = "uiProcessBar2";
+            this.uiProcessBar2.Radius = 0;
+            this.uiProcessBar2.Size = new System.Drawing.Size(545, 5);
+            this.uiProcessBar2.TabIndex = 91;
+            this.uiProcessBar2.Text = "50.0%";
+            this.uiProcessBar2.Value = 50;
+            this.uiProcessBar2.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(545, 334);
-            this.Controls.Add(this.loadpc);
+            this.Controls.Add(this.uiProcessBar2);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.uiLabel2);
@@ -337,6 +352,8 @@
             this.ShowIcon = true;
             this.ShowRadius = false;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.uiContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -350,7 +367,6 @@
         private Sunny.UI.UITextBox txtpassword;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UIButton btnlogin;
-        private Sunny.UI.UIProgressIndicator loadpc;
         private Sunny.UI.UIStyleManager uiStyleManager1;
         private Sunny.UI.UIContextMenuStrip uiContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
@@ -373,6 +389,8 @@
         private System.Windows.Forms.ToolStripMenuItem lightRedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lightGrayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lightPurpleToolStripMenuItem;
+        private Sunny.UI.UILabel lblInfo;
+        private Sunny.UI.UIProcessBar uiProcessBar2;
     }
 }
 

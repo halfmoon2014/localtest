@@ -21,9 +21,13 @@ namespace PlanGo.Tools
         public void Init(UIStyleManager uiStyleManager1)
         {        
             //初始化用户设置
-            String style=LocalConfig.GetConfigValue("style");
+            string style=LocalConfig.GetConfigValue("style");
             UIStyle t = (UIStyle)Enum.Parse(typeof(UIStyle), style);
             uiStyleManager1.Style = t;
+        }
+        public bool ShowMessageDialog(string msg)
+        {
+            return UIMessageDialog.ShowMessageDialog(msg, UILocalize.InfoTitle, false, Style);
         }
     }
 }

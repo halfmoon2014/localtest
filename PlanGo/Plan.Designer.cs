@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.loadpc = new Sunny.UI.UIProgressIndicator();
             this.uiStyleManager1 = new Sunny.UI.UIStyleManager(this.components);
             this.uiContextMenuStrip1 = new Sunny.UI.UIContextMenuStrip();
             this.待办ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +57,7 @@
             this.lightRedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightGrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightPurpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new Sunny.UI.UIButton();
             this.btnsearch = new Sunny.UI.UIButton();
@@ -73,11 +73,9 @@
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.dtsearchend = new Sunny.UI.UIDatePicker();
             this.dtsearchbegin = new Sunny.UI.UIDatePicker();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbtip = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -120,6 +118,7 @@
             this.filename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uiProcessBar2 = new Sunny.UI.UIProcessBar();
             this.uiContextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -127,31 +126,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // loadpc
-            // 
-            this.loadpc.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.loadpc.Location = new System.Drawing.Point(842, 35);
-            this.loadpc.MinimumSize = new System.Drawing.Size(1, 1);
-            this.loadpc.Name = "loadpc";
-            this.loadpc.Size = new System.Drawing.Size(100, 100);
-            this.loadpc.TabIndex = 7;
-            this.loadpc.Text = "uiProgressIndicator1";
-            this.loadpc.Visible = false;
-            // 
             // uiContextMenuStrip1
             // 
             this.uiContextMenuStrip1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.待办ToolStripMenuItem,
             this.关于ToolStripMenuItem,
+            this.logOutToolStripMenuItem,
             this.关于ToolStripMenuItem1});
             this.uiContextMenuStrip1.Name = "uiContextMenuStrip1";
-            this.uiContextMenuStrip1.Size = new System.Drawing.Size(113, 82);
+            this.uiContextMenuStrip1.Size = new System.Drawing.Size(138, 108);
             // 
             // 待办ToolStripMenuItem
             // 
             this.待办ToolStripMenuItem.Name = "待办ToolStripMenuItem";
-            this.待办ToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+            this.待办ToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.待办ToolStripMenuItem.Text = "待办";
             // 
             // 关于ToolStripMenuItem
@@ -176,7 +165,7 @@
             this.lightGrayToolStripMenuItem,
             this.lightPurpleToolStripMenuItem});
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.关于ToolStripMenuItem.Text = "主题";
             // 
             // blueToolStripMenuItem
@@ -305,10 +294,17 @@
             this.lightPurpleToolStripMenuItem.Text = "LightPurple";
             this.lightPurpleToolStripMenuItem.Click += new System.EventHandler(this.VoidToolStripMenuItem_Click);
             // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.logOutToolStripMenuItem.Text = "LogOut";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
             // 关于ToolStripMenuItem1
             // 
             this.关于ToolStripMenuItem1.Name = "关于ToolStripMenuItem1";
-            this.关于ToolStripMenuItem1.Size = new System.Drawing.Size(112, 26);
+            this.关于ToolStripMenuItem1.Size = new System.Drawing.Size(137, 26);
             this.关于ToolStripMenuItem1.Text = "关于";
             this.关于ToolStripMenuItem1.Click += new System.EventHandler(this.关于ToolStripMenuItem1_Click);
             // 
@@ -317,7 +313,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.button1.Location = new System.Drawing.Point(1260, 40);
+            this.button1.Location = new System.Drawing.Point(1260, 46);
             this.button1.MinimumSize = new System.Drawing.Size(1, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 35);
@@ -330,7 +326,7 @@
             this.btnsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnsearch.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btnsearch.Location = new System.Drawing.Point(1154, 40);
+            this.btnsearch.Location = new System.Drawing.Point(1154, 46);
             this.btnsearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(100, 35);
@@ -341,7 +337,7 @@
             // uiLabel6
             // 
             this.uiLabel6.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel6.Location = new System.Drawing.Point(483, 89);
+            this.uiLabel6.Location = new System.Drawing.Point(483, 95);
             this.uiLabel6.Name = "uiLabel6";
             this.uiLabel6.Size = new System.Drawing.Size(74, 23);
             this.uiLabel6.TabIndex = 35;
@@ -351,7 +347,7 @@
             // uiLabel5
             // 
             this.uiLabel5.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel5.Location = new System.Drawing.Point(492, 40);
+            this.uiLabel5.Location = new System.Drawing.Point(492, 46);
             this.uiLabel5.Name = "uiLabel5";
             this.uiLabel5.Size = new System.Drawing.Size(65, 23);
             this.uiLabel5.TabIndex = 34;
@@ -361,7 +357,7 @@
             // uiLabel4
             // 
             this.uiLabel4.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel4.Location = new System.Drawing.Point(241, 89);
+            this.uiLabel4.Location = new System.Drawing.Point(241, 95);
             this.uiLabel4.Name = "uiLabel4";
             this.uiLabel4.Size = new System.Drawing.Size(75, 23);
             this.uiLabel4.TabIndex = 33;
@@ -373,7 +369,7 @@
             this.txtcontent.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcontent.FillColor = System.Drawing.Color.White;
             this.txtcontent.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txtcontent.Location = new System.Drawing.Point(323, 89);
+            this.txtcontent.Location = new System.Drawing.Point(323, 95);
             this.txtcontent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcontent.Maximum = 2147483647D;
             this.txtcontent.Minimum = -2147483648D;
@@ -389,7 +385,7 @@
             this.cbsearchstatus.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbsearchstatus.FillColor = System.Drawing.Color.White;
             this.cbsearchstatus.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.cbsearchstatus.Location = new System.Drawing.Point(564, 40);
+            this.cbsearchstatus.Location = new System.Drawing.Point(564, 46);
             this.cbsearchstatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbsearchstatus.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbsearchstatus.Name = "cbsearchstatus";
@@ -404,7 +400,7 @@
             this.cbsearchprocessor.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cbsearchprocessor.FillColor = System.Drawing.Color.White;
             this.cbsearchprocessor.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.cbsearchprocessor.Location = new System.Drawing.Point(564, 89);
+            this.cbsearchprocessor.Location = new System.Drawing.Point(564, 95);
             this.cbsearchprocessor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbsearchprocessor.MinimumSize = new System.Drawing.Size(63, 0);
             this.cbsearchprocessor.Name = "cbsearchprocessor";
@@ -416,7 +412,7 @@
             // uiLabel3
             // 
             this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel3.Location = new System.Drawing.Point(247, 40);
+            this.uiLabel3.Location = new System.Drawing.Point(247, 46);
             this.uiLabel3.Name = "uiLabel3";
             this.uiLabel3.Size = new System.Drawing.Size(69, 23);
             this.uiLabel3.TabIndex = 29;
@@ -426,7 +422,7 @@
             // uiLabel2
             // 
             this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel2.Location = new System.Drawing.Point(59, 89);
+            this.uiLabel2.Location = new System.Drawing.Point(59, 95);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(35, 23);
             this.uiLabel2.TabIndex = 28;
@@ -438,7 +434,7 @@
             this.txtcreator.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcreator.FillColor = System.Drawing.Color.White;
             this.txtcreator.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txtcreator.Location = new System.Drawing.Point(323, 40);
+            this.txtcreator.Location = new System.Drawing.Point(323, 46);
             this.txtcreator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcreator.Maximum = 2147483647D;
             this.txtcreator.Minimum = -2147483648D;
@@ -451,7 +447,7 @@
             // uiLabel1
             // 
             this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel1.Location = new System.Drawing.Point(14, 40);
+            this.uiLabel1.Location = new System.Drawing.Point(14, 46);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(80, 23);
             this.uiLabel1.TabIndex = 26;
@@ -462,7 +458,7 @@
             // 
             this.dtsearchend.FillColor = System.Drawing.Color.White;
             this.dtsearchend.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.dtsearchend.Location = new System.Drawing.Point(101, 89);
+            this.dtsearchend.Location = new System.Drawing.Point(101, 95);
             this.dtsearchend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtsearchend.MaxLength = 10;
             this.dtsearchend.MinimumSize = new System.Drawing.Size(63, 0);
@@ -480,7 +476,7 @@
             // 
             this.dtsearchbegin.FillColor = System.Drawing.Color.White;
             this.dtsearchbegin.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.dtsearchbegin.Location = new System.Drawing.Point(101, 40);
+            this.dtsearchbegin.Location = new System.Drawing.Point(101, 46);
             this.dtsearchbegin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtsearchbegin.MaxLength = 10;
             this.dtsearchbegin.MinimumSize = new System.Drawing.Size(63, 0);
@@ -494,12 +490,6 @@
             this.dtsearchbegin.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.dtsearchbegin.Value = new System.DateTime(2021, 8, 19, 23, 4, 14, 281);
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 18);
-            this.toolStripStatusLabel1.Text = "提示信息:";
-            // 
             // lbtip
             // 
             this.lbtip.Name = "lbtip";
@@ -510,7 +500,7 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1086, 18);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1003, 18);
             this.toolStripStatusLabel2.Spring = true;
             // 
             // progressBar1
@@ -520,13 +510,6 @@
             this.progressBar1.Size = new System.Drawing.Size(100, 17);
             this.progressBar1.Visible = false;
             // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel3.Image")));
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(16, 18);
-            this.toolStripStatusLabel3.Visible = false;
-            // 
             // listStatus
             // 
             this.listStatus.Name = "listStatus";
@@ -535,6 +518,7 @@
             // 
             // toolStripSplitButton1
             // 
+            this.toolStripSplitButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -546,11 +530,9 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
             this.lbtip,
             this.toolStripStatusLabel2,
             this.progressBar1,
-            this.toolStripStatusLabel3,
             this.listStatus,
             this.toolStripSplitButton1});
             this.statusStrip1.Location = new System.Drawing.Point(2, 743);
@@ -589,10 +571,11 @@
             this.panel1.Controls.Add(this.btndel);
             this.panel1.Controls.Add(this.btnsave);
             this.panel1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.panel1.Location = new System.Drawing.Point(4, 270);
+            this.panel1.Location = new System.Drawing.Point(4, 275);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.panel1.Name = "panel1";
+            this.panel1.Radius = 0;
             this.panel1.Size = new System.Drawing.Size(1357, 468);
             this.panel1.TabIndex = 112;
             this.panel1.Text = "uiPanel1";
@@ -648,11 +631,12 @@
             this.ContentRTB.AutoWordSelection = true;
             this.ContentRTB.FillColor = System.Drawing.Color.White;
             this.ContentRTB.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ContentRTB.Location = new System.Drawing.Point(0, 84);
+            this.ContentRTB.Location = new System.Drawing.Point(0, 85);
             this.ContentRTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ContentRTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.ContentRTB.Name = "ContentRTB";
             this.ContentRTB.Padding = new System.Windows.Forms.Padding(2);
+            this.ContentRTB.Radius = 0;
             this.ContentRTB.Size = new System.Drawing.Size(1357, 383);
             this.ContentRTB.TabIndex = 132;
             this.ContentRTB.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -953,7 +937,7 @@
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(5, 125);
+            this.uiDataGridView1.Location = new System.Drawing.Point(4, 138);
             this.uiDataGridView1.MultiSelect = false;
             this.uiDataGridView1.Name = "uiDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -970,7 +954,7 @@
             this.uiDataGridView1.SelectedIndex = -1;
             this.uiDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiDataGridView1.ShowGridLine = true;
-            this.uiDataGridView1.Size = new System.Drawing.Size(1353, 137);
+            this.uiDataGridView1.Size = new System.Drawing.Size(1357, 137);
             this.uiDataGridView1.TabIndex = 113;
             this.uiDataGridView1.DoubleClick += new System.EventHandler(this.Planlist_DoubleClick);
             // 
@@ -1065,10 +1049,26 @@
             this.remark.HeaderText = "备注";
             this.remark.Name = "remark";
             // 
+            // uiProcessBar2
+            // 
+            this.uiProcessBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiProcessBar2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiProcessBar2.Location = new System.Drawing.Point(0, 35);
+            this.uiProcessBar2.MinimumSize = new System.Drawing.Size(70, 1);
+            this.uiProcessBar2.Name = "uiProcessBar2";
+            this.uiProcessBar2.Radius = 0;
+            this.uiProcessBar2.Size = new System.Drawing.Size(1357, 5);
+            this.uiProcessBar2.TabIndex = 114;
+            this.uiProcessBar2.Text = "50.0%";
+            this.uiProcessBar2.Value = 50;
+            this.uiProcessBar2.Visible = false;
+            // 
             // Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.uiProcessBar2);
             this.Controls.Add(this.uiDataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -1086,7 +1086,6 @@
             this.Controls.Add(this.dtsearchend);
             this.Controls.Add(this.dtsearchbegin);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.loadpc);
             this.ExtendBox = true;
             this.ExtendMenu = this.uiContextMenuStrip1;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1096,6 +1095,7 @@
             this.ShowIcon = true;
             this.ShowRadius = false;
             this.Text = "Plan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Plan_FormClosing);
             this.Load += new System.EventHandler(this.Plan_Load);
             this.uiContextMenuStrip1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
@@ -1109,7 +1109,6 @@
         }
 
         #endregion
-        private Sunny.UI.UIProgressIndicator loadpc;
         private Sunny.UI.UIStyleManager uiStyleManager1;
         private Sunny.UI.UIContextMenuStrip uiContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
@@ -1147,11 +1146,9 @@
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UIDatePicker dtsearchend;
         private Sunny.UI.UIDatePicker dtsearchbegin;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbtip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripProgressBar progressBar1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel listStatus;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -1194,6 +1191,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn filename;
         private System.Windows.Forms.DataGridViewTextBoxColumn creator;
         private System.Windows.Forms.DataGridViewTextBoxColumn remark;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private Sunny.UI.UIProcessBar uiProcessBar2;
     }
 }
 
