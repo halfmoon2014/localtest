@@ -34,8 +34,8 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
-            this.loadpc = new System.Windows.Forms.PictureBox();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.loadpc = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.loadpc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.txtpassword.PasswordChar = '#';
             this.txtpassword.Size = new System.Drawing.Size(100, 21);
             this.txtpassword.TabIndex = 16;
-            this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpassword_KeyDown);
+            this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtpassword_KeyDown);
             // 
             // label2
             // 
@@ -73,18 +73,19 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(100, 21);
             this.txtname.TabIndex = 14;
-            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtname_KeyPress);
+            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtname_KeyPress);
             // 
             // btnlogin
             // 
             this.btnlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnlogin.BackColor = System.Drawing.Color.White;
             this.btnlogin.Location = new System.Drawing.Point(283, 155);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(75, 23);
             this.btnlogin.TabIndex = 18;
             this.btnlogin.Text = "Login(&L)";
             this.btnlogin.UseVisualStyleBackColor = true;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            this.btnlogin.Click += new System.EventHandler(this.Btnlogin_Click);
             // 
             // btnexit
             // 
@@ -95,35 +96,37 @@
             this.btnexit.TabIndex = 19;
             this.btnexit.Text = "Exit(&E)";
             this.btnexit.UseVisualStyleBackColor = true;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
+            this.btnexit.Click += new System.EventHandler(this.Btnexit_Click);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblInfo.Location = new System.Drawing.Point(3, 241);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(522, 20);
+            this.lblInfo.TabIndex = 22;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // loadpc
             // 
             this.loadpc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loadpc.Image = global::PlanTODO.Properties.Resources.loading;
-            this.loadpc.Location = new System.Drawing.Point(457, 207);
+            this.loadpc.Location = new System.Drawing.Point(432, 96);
             this.loadpc.Name = "loadpc";
-            this.loadpc.Size = new System.Drawing.Size(68, 51);
-            this.loadpc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loadpc.Size = new System.Drawing.Size(44, 44);
+            this.loadpc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.loadpc.TabIndex = 20;
             this.loadpc.TabStop = false;
-            // 
-            // lblInfo
-            // 
-            this.lblInfo.ForeColor = System.Drawing.Color.Red;
-            this.lblInfo.Location = new System.Drawing.Point(158, 132);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(232, 20);
-            this.lblInfo.TabIndex = 22;
-            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.loadpc.Visible = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(537, 270);
-            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.loadpc);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnexit);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.label4);

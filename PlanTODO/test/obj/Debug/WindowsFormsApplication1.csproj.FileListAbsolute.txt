@@ -1,0 +1,9 @@
+G:\gitRepos\localtest\PlanTODO\test\bin\Debug\WindowsFormsApplication2.exe
+G:\gitRepos\localtest\PlanTODO\test\bin\Debug\WindowsFormsApplication2.pdb
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication2.Form1.resources
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication2.exe
+G:\gitRepos\localtest\PlanTODO\test\obj\Debug\WindowsFormsApplication2.pdb

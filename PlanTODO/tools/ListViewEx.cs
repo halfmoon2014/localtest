@@ -80,20 +80,20 @@ public class ListViewEx : ListView
         //    // FocusedItem.Selected = true;
         //}
 
-        HideSelection = true;
-        foreach (ListViewItem item in Items)
-        {
-            if (dicItemColor.ContainsKey(item))
-            {
-                var ic = dicItemColor[item];
-                item.ForeColor = ic.ForeColor;
-                item.BackColor = ic.BackColor;
-            }
-        }
-        foreach (ListViewItem item in SelectedItems)
-        {
-            item.ForeColor = Color.White;
-            item.BackColor = SystemColors.Highlight;
-        }
+        //HideSelection = true;
+        //foreach (ListViewItem item in Items)
+        //{
+        //    if (dicItemColor.ContainsKey(item))
+        //    {
+        //        var ic = dicItemColor[item];
+        //        item.ForeColor = ic.ForeColor;
+        //        item.BackColor = ic.BackColor;
+        //    }
+        //}
+        //foreach (ListViewItem item in SelectedItems)
+        //{
+        //    item.ForeColor = Color.White;
+        //    item.BackColor = SystemColors.Highlight;
+        //}
     }
 }

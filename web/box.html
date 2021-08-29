@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/jquery-1.8.0.min.js"></script>
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .father1 {
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            padding: 20px;
+            background-color: #ddd;
+        }
+
+        .father2 {
+            width: 200px;
+            height: 250px;
+            border: 10px solid red;
+            padding: 20px;
+            background-color: #ddd;
+        }
+
+        .son1 {
+            width: 100%;
+            border: 10px solid blue;
+            padding: 20px;
+            margin: -30px;
+            background-color: chartreuse;
+        }
+
+        .son2 {
+            width: auto;
+            border: 10px solid blue;
+            padding: 20px;
+            margin: 30px;
+            background-color: chartreuse;
+        }
+
+        .testflex {
+            height: 800px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            align-items: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="testflex">
+        <div class="father1">
+            <div class="son1">son1</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son2</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son3</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son4</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son5</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son6</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son7</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son8</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son8</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son8</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son8</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son8</div>
+        </div>
+        <div class="father2">
+            <div class="son2">son8</div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var tm = "123";
+    window.onload = function () {
+        tm="123"
+        test();
+        tm = "321"
+        test();
+    }
+    function test() {  
+        console.log("1:" + tm)        
+        $.ajax({
+            type: "POST",
+            url: "./Handler.ashx",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            data: { },
+            async: false,
+            success: function (msg) {
+                console.log(tm);               
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status + "|" + XMLHttpRequest.readyState + "|" + textStatus);
+            }
+        });
+    }
+  
+    
+
+</script>

@@ -115,6 +115,23 @@
     <Compile Include="Shar.Designer.cs">
       <DependentUpon>Shar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test\CustomRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="test\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\FileUploadItem.cs" />
+    <Compile Include="tools\FileUploadUtilChange.cs" />
     <Compile Include="tools\ListColumn.cs" />
     <Compile Include="loading\LoadingDot.cs" />
     <Compile Include="loading\LoadingHelper.cs" />
@@ -134,6 +151,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tools\FileUploadUtilEvent.cs" />
+    <Compile Include="tools\SQLUtilEvent .cs" />
     <Compile Include="tools\TimeHelp.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -157,6 +176,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -249,11 +274,14 @@
     <None Include="Skins\XPSilver.ssk" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ico\Book.png" />
     <Content Include="LocalConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
     <Content Include="main.ico" />
+    <Content Include="Resources\loading2.gif" />
+    <Content Include="Resources\loadingpingzhi.gif" />
     <None Include="Resources\loading.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -263,9 +291,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ico\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

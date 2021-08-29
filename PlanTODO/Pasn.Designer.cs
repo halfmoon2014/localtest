@@ -75,11 +75,14 @@
             this.listStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.loadpcForm = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.estimateDate = new System.Windows.Forms.DateTimePicker();
             this.planlist = new ListViewEx();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadpcForm)).BeginInit();
             this.SuspendLayout();
             // 
             // btnsearch
@@ -91,7 +94,7 @@
             this.btnsearch.TabIndex = 10;
             this.btnsearch.Text = "Search(&F)";
             this.btnsearch.UseVisualStyleBackColor = true;
-            this.btnsearch.Click += new System.EventHandler(this.button1_Click);
+            this.btnsearch.Click += new System.EventHandler(this.Button1_Click);
             // 
             // dtsearchbegin
             // 
@@ -137,7 +140,7 @@
             this.btnsave.TabIndex = 32;
             this.btnsave.Text = "Save(&S)";
             this.btnsave.UseVisualStyleBackColor = true;
-            this.btnsave.Click += new System.EventHandler(this.button2_Click);
+            this.btnsave.Click += new System.EventHandler(this.Button2_Click);
             // 
             // txttitle
             // 
@@ -195,7 +198,7 @@
             // 
             this.txtfilename.Location = new System.Drawing.Point(63, 27);
             this.txtfilename.Name = "txtfilename";
-            this.txtfilename.Size = new System.Drawing.Size(196, 21);
+            this.txtfilename.Size = new System.Drawing.Size(147, 21);
             this.txtfilename.TabIndex = 29;
             // 
             // label6
@@ -242,7 +245,7 @@
             this.btndel.TabIndex = 33;
             this.btndel.Text = "Del(&D)";
             this.btndel.UseVisualStyleBackColor = true;
-            this.btndel.Click += new System.EventHandler(this.btndel_Click);
+            this.btndel.Click += new System.EventHandler(this.Btndel_Click);
             // 
             // button1
             // 
@@ -253,7 +256,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "New(&N)";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // txtcreator
             // 
@@ -281,7 +284,7 @@
             this.button2.TabIndex = 13;
             this.button2.Text = "Close(&C)";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
             // label10
             // 
@@ -344,7 +347,7 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "流程分享";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // cbprocessor
             // 
@@ -460,7 +463,7 @@
             // 
             // loadpc
             // 
-            this.loadpc.Image = global::PlanTODO.Properties.Resources.loading;
+            this.loadpc.Image = ((System.Drawing.Image)(resources.GetObject("loadpc.Image")));
             this.loadpc.Name = "loadpc";
             this.loadpc.Size = new System.Drawing.Size(16, 18);
             this.loadpc.Visible = false;
@@ -479,13 +482,15 @@
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(48, 21);
             this.toolStripSplitButton1.Text = "隐藏";
-            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.ToolStripSplitButton1_ButtonClick);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.loadpcForm);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.btnsave);
             this.panel1.Controls.Add(this.estimateDate);
@@ -514,6 +519,29 @@
             this.panel1.Size = new System.Drawing.Size(1401, 576);
             this.panel1.TabIndex = 40;
             // 
+            // loadpcForm
+            // 
+            this.loadpcForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loadpcForm.Image = ((System.Drawing.Image)(resources.GetObject("loadpcForm.Image")));
+            this.loadpcForm.Location = new System.Drawing.Point(803, 151);
+            this.loadpcForm.Name = "loadpcForm";
+            this.loadpcForm.Size = new System.Drawing.Size(146, 147);
+            this.loadpcForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.loadpcForm.TabIndex = 44;
+            this.loadpcForm.TabStop = false;
+            this.loadpcForm.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(216, 26);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(43, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "..(&F)";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.FileEdit_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -539,7 +567,7 @@
             this.planlist.Size = new System.Drawing.Size(1401, 147);
             this.planlist.TabIndex = 0;
             this.planlist.UseCompatibleStateImageBehavior = false;
-            this.planlist.DoubleClick += new System.EventHandler(this.planlist_DoubleClick);
+            this.planlist.DoubleClick += new System.EventHandler(this.Planlist_DoubleClick);
             // 
             // Pasn
             // 
@@ -567,12 +595,13 @@
             this.Controls.Add(this.planlist);
             this.Name = "Pasn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "pasn";
+            this.Text = "Pasn";
             this.Load += new System.EventHandler(this.Pasn_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadpcForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,5 +659,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker estimateDate;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox loadpcForm;
     }
 }

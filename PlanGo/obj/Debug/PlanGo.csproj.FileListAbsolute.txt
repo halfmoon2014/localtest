@@ -1,0 +1,16 @@
+G:\gitRepos\localtest\PlanGo\bin\Debug\LocalConfig.xml
+G:\gitRepos\localtest\PlanGo\bin\Debug\Ico\Book.png
+G:\gitRepos\localtest\PlanGo\bin\Debug\PlanGo.exe.config
+G:\gitRepos\localtest\PlanGo\bin\Debug\PlanGo.exe
+G:\gitRepos\localtest\PlanGo\bin\Debug\PlanGo.pdb
+G:\gitRepos\localtest\PlanGo\bin\Debug\mysql.data.dll
+G:\gitRepos\localtest\PlanGo\bin\Debug\SunnyUI.Common.dll
+G:\gitRepos\localtest\PlanGo\bin\Debug\SunnyUI.dll
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.Plan.resources
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.Login.resources
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.Properties.Resources.resources
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.csproj.GenerateResource.cache
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.csproj.CoreCompileInputs.cache
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.csproj.CopyComplete
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.exe
+G:\gitRepos\localtest\PlanGo\obj\Debug\PlanGo.pdb
