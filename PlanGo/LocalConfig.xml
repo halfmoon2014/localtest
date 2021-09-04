@@ -25,5 +25,5 @@
   <SystemConfig ConfigName="username" ConfigValue="" Remark=""/>
   
   <SystemConfig ConfigName="mysql" ConfigValue="Server=192.168.35.160;Uid=root;Pwd=ll=8805;Database=commoditycenter;allowuservariables=true" Remark="" />
-  <SystemConfig ConfigName="ver" ConfigValue="16" Remark="版本号,用于升级"/>
+  <SystemConfig ConfigName="ver" ConfigValue="17" Remark="版本号,用于升级"/>
 </NewDataSet>

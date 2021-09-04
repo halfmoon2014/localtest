@@ -535,7 +535,7 @@
             this.progressBar1,
             this.listStatus,
             this.toolStripSplitButton1});
-            this.statusStrip1.Location = new System.Drawing.Point(2, 743);
+            this.statusStrip1.Location = new System.Drawing.Point(2, 715);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1362, 23);
             this.statusStrip1.TabIndex = 60;
@@ -576,7 +576,7 @@
             this.panel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Radius = 0;
-            this.panel1.Size = new System.Drawing.Size(1357, 468);
+            this.panel1.Size = new System.Drawing.Size(1357, 435);
             this.panel1.TabIndex = 112;
             this.panel1.Text = "uiPanel1";
             this.panel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -637,7 +637,7 @@
             this.ContentRTB.Name = "ContentRTB";
             this.ContentRTB.Padding = new System.Windows.Forms.Padding(2);
             this.ContentRTB.Radius = 0;
-            this.ContentRTB.Size = new System.Drawing.Size(1357, 383);
+            this.ContentRTB.Size = new System.Drawing.Size(1357, 350);
             this.ContentRTB.TabIndex = 132;
             this.ContentRTB.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.ContentRTB.WordWrap = true;
@@ -1067,7 +1067,7 @@
             // Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1366, 740);
             this.Controls.Add(this.uiProcessBar2);
             this.Controls.Add(this.uiDataGridView1);
             this.Controls.Add(this.panel1);
